@@ -11775,7 +11775,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Interpolaci&#243;n-BL-para-una-se&#241;al-obtenida-por-servicio-web">Interpolaci&#243;n-BL para una se&#241;al obtenida por servicio web<a class="anchor-link" href="#Interpolaci&#243;n-BL-para-una-se&#241;al-obtenida-por-servicio-web">&#182;</a></h1><hr>
+<h1 id="Interpolaci&#243;n-BL-para-el-tipo-de-cambio-del-d&#243;lar">Interpolaci&#243;n-BL para el tipo de cambio del d&#243;lar<a class="anchor-link" href="#Interpolaci&#243;n-BL-para-el-tipo-de-cambio-del-d&#243;lar">&#182;</a></h1><p>Por Juan M. Fonseca-Solís</p>
+<hr>
 <h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este documento se explica cómo hacer interpolación de banda limitada (BL) con una señal construida a partir de los datos obtenidos del servicio web del Banco Central de Costa Rica (BCCR).</p>
 <p>Los datos corresponden al tipo de cambio diario del dólar durante todo el año 2014 y la interpolación se realiza sobre una versión muestreada aleatoriamente del tipo de cambio. La razón de hacer este muestreo es demostrar que es posible obtener una muy buena aproximación de la señal original después de haber usado decimación aleatoria.<sup>1</sup></p>
 <p>Para consumir el servicio web SOAP se utilizó la librería <a href="http://pywebsvcs.sourceforge.net/zsi.html">Zolera Soap Infraestructure</a> para python y la operación <a href="http://indicadoreseconomicos.bccr.fi.cr/IndicadoresEconomicos/WebServices/wsIndicadoresEconomicos.asmx">ObtenerIndicadoresEconomicosXML</a> del WSDL proveído por el BCCR.</p>
@@ -13612,9 +13613,6 @@ Compresión lograda:  88 %
 <li>Para escribir este ipython notebook se usó la sintaxis <a href="https://help.github.com/articles/markdown-basics/">Markdown</a> y un interpretador <a href="https://docs.python.org/2/library/xml.etree.elementtree.html">XML</a>. Aunque no fue usado, éste documento soporta $\LaTeX$</li>
 <li>Es importante destacar que el método BL no consiste solo en aplicar la transformada discreta de Fourier, sino también en reconstruir la señal a partir de los coeficientes obtenidos para los puntos que no forman parte del muestreo original</li>
 </ol>
-<h2 id="Cr&#233;ditos">Cr&#233;ditos<a class="anchor-link" href="#Cr&#233;ditos">&#182;</a></h2><ul>
-<li>Este Ipython notebook fue creado por <strong>Juan M. Fonseca</strong> (juan.fonsecasolis@ucr.ac.cr) para la investigación bibliográfica del curso CI2454, Universidad de Costa Rica, Julio 2015</li>
-</ul>
 
 </div>
 </div>
