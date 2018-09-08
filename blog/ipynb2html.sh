@@ -1,1 +1,2 @@
-ipython nbconvert --to html JFonseca.investigacion1.CI2454.ipynb
+$!/bin/bash
+ipython nbconvert --to html $1
