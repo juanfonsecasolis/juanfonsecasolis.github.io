@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-java.js"></script>
+
+	</head>
+	<body>
+
+		<h1>Adding style to your equations and code using Mathjax and Prism</h1>
+
+		By <a href="https://www.linkedin.com/in/juan-m-fonseca-solis">Juan M. Fonseca-Solís</a>, Nov 2018.
+
+		<p>Let's say you want to know Latex and want to add an equation to your blog, then you add the following HTML code to your header:</p>
+		<pre><code class="language-markup">
+			&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>&lt;/script>
+		</code></pre>
+	
+		sdjflkdj
+		
+		\(x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\) created by the following code: <pre>\(x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\).</pre> Its expanded version can be written as: <pre>$$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$$,</pre>
+
+		and looks like follows (we are using Latex notation):
+		$$
+		x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+		$$
+		
+		Bash code:
+		<pre><code class="language-bash">
+		sudo apt-get install elasticsearch
+		vi /etc/elasticsearch/elasticsearch.yml
+		vi /etc/elasticsearch/jvm.options
+		-Xms512m
+		-Xmx1g
+		sudo systemctl start elasticsearch.service
+		sudo journalctl -f
+		sudo journalctl --unit elasticsearch --since  
+		</code>
+		</pre>
+
+		Java code:
+		<pre><code class="language-java">
+		package kareltherobot;
+
+		public class Temporary implements Directions
+		{ 
+		public static void main(String [] args)
+		{
+		UrRobot Karel = new UrRobot(1, 1, East, 0);
+		// Deliver the robot to the origin (1,1),
+		// facing East, with no beepers.
+		Karel.move();
+		Karel.move();
+		Karel.move();
+		Karel.pickBeeper();
+		Karel.turnOff();
+		}
+
+		}
+		</code>
+		</pre>
+
+		* To add support for more languajes go to: https://cdnjs.com/libraries/prism
+
+	</body>
+
+</html>
+
