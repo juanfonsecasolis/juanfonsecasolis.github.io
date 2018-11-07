@@ -13,59 +13,53 @@
 	<body>
 
 		<h1>Adding style to your equations and code using Mathjax and Prism</h1>
+		By <a href="https://www.linkedin.com/in/juan-m-fonseca-solis">Juan M. Fonseca-Solís</a>, Nov 2018.</br></br>
 
-		By <a href="https://www.linkedin.com/in/juan-m-fonseca-solis">Juan M. Fonseca-Solís</a>, Nov 2018.
+		Before starting, remember the basic structure of an HTML document:
 
-		<p>Let's say you want to know Latex and want to add an equation to your blog, then you add the following HTML code to your header:</p>
-		<pre><code class="language-markup">
-			&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>&lt;/script>
-		</code></pre>
+		<pre><code class="language-markup">&lt;!DOCTYPE html>
+&lt;html>
+	&lt;head>...&lt;/head>
+	&lt;body>...&lt;/body>
+&lt;/html></code></pre>
+
+
+		<p>Let's say you are familiar with Latex and want to add an equation to your blog, and you add Mathjax support by including the following HTML code to your header:</p>
+		<pre><code class="language-markup">&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>&lt;/script></code></pre>
 	
-		sdjflkdj
-		
-		\(x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\) created by the following code: <pre>\(x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\).</pre> Its expanded version can be written as: <pre>$$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$$,</pre>
-
-		and looks like follows (we are using Latex notation):
+		Then you are able to write an inline equation, like this \(x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\), by adding the following code: <pre>\(x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\),</pre> and its expanded version: 
 		$$
-		x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+		x = \frac{-b \pm \sqrt{b^2-4ac}}{2a},
 		$$
+		by writting the same formula inside the dollar symbols: 
+		<pre>
+$$
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+$$.
+		</pre> Now, let's say that you also want to add bash and java code to your blog, so you link your document to Prism.js by adding the following lines in the header:
 		
-		Bash code:
-		<pre><code class="language-bash">
-		sudo apt-get install elasticsearch
-		vi /etc/elasticsearch/elasticsearch.yml
-		vi /etc/elasticsearch/jvm.options
-		-Xms512m
-		-Xmx1g
-		sudo systemctl start elasticsearch.service
-		sudo journalctl -f
-		sudo journalctl --unit elasticsearch --since  
-		</code>
-		</pre>
+		<pre><code class="language-markup">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css" rel="stylesheet" />
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.js">&lt;/script>
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-java.js">&lt;/script>;</code></pre>
 
-		Java code:
-		<pre><code class="language-java">
-		package kareltherobot;
+		In that way you can add Bash code:
+		<pre><code class="language-bash">git clone git@github.com:juanfonsecasolis/juanfonsecasolis.github.io.git
+echo "I was here" >> README.md
+git commit -a -m "Appending a surprise"
+git push origin master</code></pre>
 
-		public class Temporary implements Directions
-		{ 
-		public static void main(String [] args)
-		{
-		UrRobot Karel = new UrRobot(1, 1, East, 0);
-		// Deliver the robot to the origin (1,1),
-		// facing East, with no beepers.
-		Karel.move();
-		Karel.move();
-		Karel.move();
-		Karel.pickBeeper();
-		Karel.turnOff();
-		}
+		And Java code:
+		<pre><code class="language-java">package juanfonsecasolis.samples;
 
-		}
-		</code>
-		</pre>
+public class Main implements MyInterface{ 
+	public static void main(String [] args){
+		// Print something in screen
+		System.out.println("Hello world!");
+	}
+}</code></pre>
 
-		* To add support for more languajes go to: https://cdnjs.com/libraries/prism
+		To add support for more languajes please visit <a href="https://cdnjs.com/libraries/prism">https://cdnjs.com/libraries/prism</a>.
 
 	</body>
 
