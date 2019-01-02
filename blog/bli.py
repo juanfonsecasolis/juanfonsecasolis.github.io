@@ -1,9 +1,11 @@
+import numpy as np
+
 def BL_interp_1D(x, z, T, order, grid_step=0.01, win=True):
     """
     Band-limited interpolation of 1D functions (P.Prandoni, M.Vetterli)
     """
     # Create Fourier order vector
-    k = expand_dims(arange(-order, order+1), 0)
+    k = np.expand_dims(arange(-order, order+1), 0)
     
     # construct the Fourier matrix
     F = exp(2j*pi*x*k/(T[1]-T[0]))
@@ -21,3 +23,5 @@ def BL_interp_1D(x, z, T, order, grid_step=0.01, win=True):
     zg = dot(exp(2j*pi*xg*k/(T[1]-T[0])), C)
         
     return zg, xg, C, k
+
+
