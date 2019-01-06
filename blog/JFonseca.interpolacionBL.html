@@ -13126,7 +13126,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Interpolaci&#243;n-de-banda-limitada">Interpolaci&#243;n de banda limitada<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada">&#182;</a></h2><p>Por definir... <sup>2</sup></p>
+<h2 id="Interpolaci&#243;n-de-banda-limitada">Interpolaci&#243;n de banda limitada<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada">&#182;</a></h2><p>El método de BLI funciona modelando las muestras $\{(x_i,z_i)\}_{i=0}^{N-1}$, de la señal, como sigue [2]:<sup>2</sup>
+$$
+Fc=z,
+$$
+donde $\{F\}_{ik}=e^{j2\pi \frac{x_ik}{T}}$ son los vectores linealmente independientes (LI) de las series de Fourier, $N$ y $T$ son el número de muestras y el periodo de la señal a representar, $c=(c_{-M}, \ldots, c_M)^t$ es el vector de coeficientes de Fourier (iterado por $k$). Dado que es común que la cantidad de muestras a modelar sea mayor al número de coeficientes disponible, esto es $N &lt; 2M+1$, entonces Prandoni y Veterli resuelven el sistema usando mínimos cuadrados, como sigue:
+$$
+\hat{c}=(F^t F)^{-1}F^tz.
+$$
+Donde la interpolación en los puntos deseados se logra sustituyendo en $\{F\}_{ik}$ los $x_i$ por $\tilde{x}_i=i\frac{T}{L}$, con $L$, la nueva cantidad de muestras. Se recuerda que el método de mínimos cuadrados funciona usando el teorema de aproximación de la norma.</p>
 
 </div>
 </div>
