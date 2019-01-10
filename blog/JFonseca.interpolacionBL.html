@@ -13118,7 +13118,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">Interpolaci&#243;n de banda limitada para el tipo de cambio del d&#243;lar<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">&#182;</a></h1><p>© 2018 <a href="https://cr.linkedin.com/in/juan-m-fonseca-solis">Juan M. Fonseca-Solís</a></p>
 <hr>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>La reconstrucción de secuencias temporales continuas a partir de muestras tomadas discretamente es un problema que ha sido resuelto tradicionalmente usando el teorema de Nyquist. Este teorema establece que la frecuencia de muestreo debe ser el doble de la frecuencia máxima contenida en la señal original para evitar la pérdida de información (ver teorema de Nyquist <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">aquí</a>). La reconstrucción &ndash;también llamada interpolación&ndash; se logra convolucionando una función de interpolación &ndash;también llamada núcleo de interpolación&ndash; con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener la función continua. Hasta aquí, teoría conocida. El problema se vuelve interesante cuando se quiere reconstruir una señal a partir de muestras tomadas aleatoriamente, es decir, donde no hay una frecuencia de muestreo fija.<sup>1</sup> En este caso existe un método llamado interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación de la señal original. El método BLI supone que la señal a representar no tiene frecuencias altas, pero si las tiene y estas no son significativas, no hay problema, pues basta con aplicar un filtrado pasabajas. En este <em>notebook</em> se explica con mayor detalle en qué consiste el método mencionado y se presenta un ejemplo estudiando el tipo de cambio del dólar en Costa Rica ofrecido por el Banco Central de Costa Rica (BCCR).</p>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>La reconstrucción de secuencias temporales continuas a partir de muestras tomadas discretamente es un problema que ha sido resuelto tradicionalmente usando el teorema de Nyquist. Este teorema establece que la frecuencia de muestreo debe ser el doble de la frecuencia máxima contenida en la señal original para evitar la pérdida de información (ver teorema de Nyquist <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">aquí</a>). La reconstrucción &ndash;también llamada interpolación&ndash; se logra convolucionando una función de interpolación &ndash;también llamada núcleo de interpolación&ndash; con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener la función continua. Hasta aquí, teoría conocida. El problema se vuelve interesante cuando se quiere reconstruir una señal a partir de muestras tomadas aleatoriamente, es decir, donde no hay una frecuencia de muestreo fija.<sup>1</sup> En este caso se puede usar el método de interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación de la señal original. El método BLI supone es usado cuando la señal a representar no tiene frecuencias altas. En este <em>notebook</em> se explica con mayor detalle en qué consiste el método mencionado y se presenta un ejemplo estudiando el tipo de cambio del dólar en Costa Rica ofrecido por el Banco Central de Costa Rica (BCCR).</p>
 
 </div>
 </div>
@@ -13126,16 +13126,22 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Interpolaci&#243;n-de-banda-limitada">Interpolaci&#243;n de banda limitada<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada">&#182;</a></h2><p>El método de BLI funciona modelando las muestras $\{(x_i,z_i)\}_{i=0}^{N-1}$, de la señal, como sigue [2]:<sup>2</sup>
+<h2 id="Interpolaci&#243;n-de-banda-limitada">Interpolaci&#243;n de banda limitada<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada">&#182;</a></h2><p>Una señal discreta de $N$ entradas $\{(x_i,z_i)\}_{i=0}^{N-1}$, con soporte temporal $0&lt;x_i \le T$, se puede modelar usando un sistema lineal como sigue [2]:<sup>2</sup></p>
 $$
-Fc=z,
+Fc=z,\qquad (1)
+$$<p>donde $\{F\}_{ik}=e^{j2\pi \frac{x_ik}{T}}$ es la $k$-ésima entrada del $i$-ésimo vector ortogonal de las series de Fourier y $c=(c_{-M}, \ldots, c_M)^t$ es el vector de coeficientes usados para las tareas de análisis y reconstrucción. Suponiendo que la cantidad de filas y columnas de $F$ es el mismo (esto es, $N=2M+1$), se podría resolver el sistema encontrando la inversa de la matriz, de la siguiente manera:</p>
 $$
-donde $\{F\}_{ik}=e^{j2\pi \frac{x_ik}{T}}$ son los vectores linealmente independientes (LI) de las series de Fourier, $N$ y $T$ son el número de muestras y el periodo de la señal a representar, $c=(c_{-M}, \ldots, c_M)^t$ es el vector de coeficientes de Fourier (iterado por $k$). Dado que es común que la cantidad de muestras a modelar sea mayor al número de coeficientes disponible, esto es $N &lt; 2M+1$, entonces Prandoni y Veterli resuelven el sistema usando mínimos cuadrados, como sigue:
+c=F^{-1}z,
+$$<p>Este sería el caso ideal. Sin embargo, en la realidad esto no pasa porque la cantidad de muestras de la señal usualmente es mayor al número de coeficientes elegido para el modelado ($2M+1&lt;N$). Lo que obliga a realizar una aproximación, por ejemplo, usando mínimos cuadrados (para saber más de este método visitar la <a href="https://es.wikipedia.org/wiki/M%C3%ADnimos_cuadrados">wikipedia</a>):<sup>3</sup></p>
 $$
 \hat{c}=(F^t F)^{-1}F^tz.
+$$<h3 id="Interpolaci&#243;n">Interpolaci&#243;n<a class="anchor-link" href="#Interpolaci&#243;n">&#182;</a></h3><p>El procedimiento anterior modela la señal en los puntos que fueron muestreados, pero no en medio de las muestras, por lo que es necesario utilizar la regla de tres:</p>
 $$
-Donde la interpolación en los puntos deseados se logra sustituyendo en $\{F\}_{ik}$ los $x_i$ por $\tilde{x}_i=i\frac{T}{L}$, con $L$, la nueva cantidad de muestras. Se recuerda que el método de mínimos cuadrados funciona usando el teorema de aproximación de la norma.</p>
-
+\tilde{x}_i=i\frac{T}{L},
+$$<p>y sustituir $x_i$ por el $\tilde{x}_i$ en la ecuación 1. El sistema resultante es modela por Prandoni y Veterli en la siguiente expresión:</p>
+$$
+\tilde{z}_i=\tilde{F}\hat{c}.
+$$
 </div>
 </div>
 </div>
@@ -13186,7 +13192,7 @@ Donde la interpolación en los puntos deseados se logra sustituyendo en $\{F\}_{
 &lt;/Datos_de_INGC011_CAT_INDICADORECONOMIC&gt;&lt;/string&gt;
 
 </code></pre>
-<p>El cual retorna un valor del tipo de cambio por día (fijando la frecuencia de muestreo en $f_s=1/86400$ s). Para consumir el servicio y obtener un arreglo de entradas tipo <code>float</code> a partir del XML usamos el siguiente código:<sup>2</sup></p>
+<p>El cual retorna un valor del tipo de cambio por día (fijando la frecuencia de muestreo en $f_s=1/86400$ s). Para consumir el servicio y obtener un arreglo de entradas tipo <code>float</code> a partir del XML usamos el siguiente código:<sup>4</sup></p>
 
 </div>
 </div>
@@ -13233,7 +13239,7 @@ Donde la interpolación en los puntos deseados se logra sustituyendo en $\{F\}_{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Dado que el método hace la suposición de que no hay frecuencias altas en la señal a representar, y en nuestro caso, estas corresponden a información descartable pues representan tendencias intermitentes, realizamos un filtrado pasabajas para obtener una versión suavizada.</p>
+<p>Dado que el método hace la suposición de que no hay frecuencias altas en la señal a representar, y en nuestro caso, estas corresponden a información descartable pues representan tendencias transitorias, realizamos un filtrado pasabajas para obtener una versión suavizada.</p>
 
 </div>
 </div>
@@ -13545,7 +13551,7 @@ Donde la interpolación en los puntos deseados se logra sustituyendo en $\{F\}_{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Se obseva que aunque la BLI presenta un MSE mayor en comparación con la interpolación lineal, la cantidad de picos estimados más precisa (sin mencionar que la curva es derivable en todos los puntos). Si graficamos los coeficientes de Fourier obtenemos el siguiente gráfico:</p>
+<p>Se obseva que aunque la BLI presenta un MSE mayor en comparación con la interpolación lineal (ouch!), pero la cantidad de picos estimados más precisa, sin mencionar que la curva es derivable en todos los puntos. Si graficamos los coeficientes de Fourier obtenemos el siguiente gráfico:</p>
 
 </div>
 </div>
@@ -13603,8 +13609,8 @@ Donde la interpolación en los puntos deseados se logra sustituyendo en $\{F\}_{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Cantidad-de-coeficientes">Cantidad de coeficientes<a class="anchor-link" href="#Cantidad-de-coeficientes">&#182;</a></h2><p>Como la señal analizada es real, los curva de coeficientes es simétrica (una propiedad de las series de Fourier), y por lo tanto no necesitamos almacenar los $2M+1$ coeficientes para realizar la reconstrucción. Esto nos permite aprovechar la BLI como un mecanismo para "comprimir" los datos de la versión muestreada aleatoriamente. Si $N$ es la cantidad de muestras de la señal original y $M$ la cantidad de coeficientes usados, el "porcentaje de compresión" $c$ sería calculado como sigue:</p>
-$$c=\frac{N-M}{N}$$
+<h2 id="Cantidad-de-coeficientes">Cantidad de coeficientes<a class="anchor-link" href="#Cantidad-de-coeficientes">&#182;</a></h2><p>Como punto adicional, se pueden estudiar las series de Fourier como método de "compresión". Como la señal analizada en el ejemplo es real, los curva de coeficientes es simétrica (una propiedad de las series de Fourier), y por lo tanto no necesitamos almacenar los $2M+1$ coeficientes para realizar la reconstrucción. Recordando que $N$ es la cantidad de muestras de la señal original y $M$ la cantidad de coeficientes usados, esto nos permite calcular el "porcentaje de compresión" $c$ como sigue:</p>
+$$c=\frac{N-M}{N}.$$
 </div>
 </div>
 </div>
@@ -13656,6 +13662,7 @@ Compresión lograda: 94%
 <h2 id="Notas">Notas<a class="anchor-link" href="#Notas">&#182;</a></h2><ol>
 <li>En estos casos se habla de una <em>tasa de innovación</em> (FIR, por sus siglas en inglés), en lugar de frecuencia de muestreo.</li>
 <li>Para escribir este ipython notebook se usó la sintaxis <a href="https://help.github.com/articles/markdown-basics/">Markdown</a> y un interpretador <a href="https://docs.python.org/2/library/xml.etree.elementtree.html">XML</a>. Este documento también soporta $\LaTeX$.</li>
+<li>Se recuerda que el método de mínimos cuadrados funciona usando el teorema de aproximación de la norma.</li>
 <li>Un excelente recurso de cómo usar los servicios del BCCR también puede encontrarse en <a href="https://tecnitico.wordpress.com/2010/11/11/webservice-del-banco-central-de-costa-rica-y-ruby/">Tico</a>.</li>
 </ol>
 
