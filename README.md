@@ -10,7 +10,7 @@ San José, Costa Rica
 <li>Email:&#9;juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
 <li>Github:&#9;<a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
 <li>Interests:&#9;mathematical signal processing, audio processing, models and systems, data science, algorithm design, statistics, programming, quality control and assurance.</li>
-<li><a href=''>Curriculum vitae</a></li>
+<li><a href=''>CV</a></li>
 </ul>
 </div>
 </div>
