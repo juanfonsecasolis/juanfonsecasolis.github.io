@@ -7,7 +7,9 @@
 Research Center on Information and Communication Technologies (<a href='http://www.citic.ucr.ac.cr/'>CITIC</a>)<br> 
 San José, Costa Rica
 <ul>
-<li>Email: juan [dot] fonsecasolis [dot] ucr [dot] ac [dot] cr</li>
+<li>Email: juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
+<li>Github: https://github.com/juanfonsecasolis</li>
+<li>Interests: digital signal processing, audio processing, mathematical models and systems, data science, algorithm design, statistics, programming</li>
 </ul>
 </div>
 </div>
