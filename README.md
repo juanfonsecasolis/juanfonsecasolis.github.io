@@ -21,4 +21,4 @@ San José, Costa Rica
 * 08 Jul 2018 >> [Interpolacion BL](blog/JFonseca.interpolacionBL.html)
 
 ---
-© 2013-2018 Juan Fonseca <a href="https://cr.linkedin.com/in/juan-m-fonseca-solis" style="border: medium none;"><img style="float: left;width: 52px;height: 19px" src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn Profile">
+ 2013-2018 Juan Fonseca <a href="https://cr.linkedin.com/in/juan-m-fonseca-solis" style="border: medium none;"><img style="float: left;width: 52px;height: 19px" src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn Profile">
