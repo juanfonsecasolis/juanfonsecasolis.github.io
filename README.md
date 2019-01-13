@@ -10,7 +10,6 @@ San José, Costa Rica
 <li>Email:&#9;juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
 <li>Github:&#9;<a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
 <li>Interests:&#9;mathematical signal processing, audio processing, models and systems, data science, algorithm design, statistics, programming, quality control and assurance.</li>
-<li><a href=''>CV</a></li>
 </ul>
 </div>
 </div>
@@ -22,5 +21,4 @@ San José, Costa Rica
 * 08 Jul 2018 >> [Interpolacion BL](blog/JFonseca.interpolacionBL.html)
 
 ---
-© 2013-2018 Juan Fonseca<br>
-<a href="https://cr.linkedin.com/in/juan-m-fonseca-solis" style="border: medium none;"><img style="float: left;width: 105px;height: 39px" src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn Profile">
+© 2013-2018 Juan Fonseca <a href="https://cr.linkedin.com/in/juan-m-fonseca-solis" style="border: medium none;"><img style="float: left;width: 52px;height: 19px" src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn Profile">
