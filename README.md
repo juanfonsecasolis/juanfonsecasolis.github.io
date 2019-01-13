@@ -1,5 +1,12 @@
 # Juan Fonseca's blog
-Personal blog devoted to DSP stuff.
+<div class="row" style='content: "";display: table;clear: both;'>
+<div class="column" style='float: left;width: 50%;'>
+<img src='blog/img/yop.jpeg'>
+</div>
+<div class="column" style='float: left;width: 50%;'>
+[Linkedin profile](https://cr.linkedin.com/in/juan-m-fonseca-solis) 
+</div>
+</div>
 
 ## Posts
 * 13 Ene 2019 >> [JuanmaHOS](blog/JFonseca.styling.html)
@@ -8,4 +15,4 @@ Personal blog devoted to DSP stuff.
 * 08 Jul 2018 >> [Interpolacion BL](blog/JFonseca.interpolacionBL.html)
 
 ---
-© 2013-2018 Juan Fonseca - [Linkedin profile](https://cr.linkedin.com/in/juan-m-fonseca-solis) 
+© 2013-2018 Juan Fonseca
