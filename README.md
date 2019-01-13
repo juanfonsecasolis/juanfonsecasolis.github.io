@@ -4,10 +4,11 @@
 <img src='blog/img/yop.jpeg'>
 </div>
 <div class="column" style='float: left;width: 75%;'>
+Research Center on Information and Communication Technologies (<a href='http://www.citic.ucr.ac.cr/'>CITIC</a>)</br> 
+San José, Costa Rica
 <ul>
-<li>Research Center on Information and Communication Technologies (<a href='http://www.citic.ucr.ac.cr/'>CITIC</a>)</li> 
-<li>San José, Costa Rica</li> 
-<li><a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>Linkedin</a></li>
+<li><a href="https://cr.linkedin.com/in/juan-m-fonseca-solis" style="border: medium none;"><img style="float: left;width: 105px;height: 39px" src="https://github.com/juanfonsecasolis/juanfonsecasolis.github.io/tree/master/blog/img/LinkedIn_logo.png" alt="LinkedIn Profile"></a>
+</li>
 <li><a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>Academia</a></li>
 </ul>
 </div>
