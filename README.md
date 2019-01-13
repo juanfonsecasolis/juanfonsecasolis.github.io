@@ -7,9 +7,7 @@
 Research Center on Information and Communication Technologies (<a href='http://www.citic.ucr.ac.cr/'>CITIC</a>)<br> 
 San José, Costa Rica
 <ul>
-<li><a href="https://cr.linkedin.com/in/juan-m-fonseca-solis" style="border: medium none;"><img style="float: left;width: 105px;height: 39px" src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn Profile"></a>
-</li>
-<li><a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>Academia</a></li>
+<li>Email: juan [dot] fonsecasolis [dot] ucr [dot] ac [dot] cr</li>
 </ul>
 </div>
 </div>
@@ -21,4 +19,5 @@ San José, Costa Rica
 * 08 Jul 2018 >> [Interpolacion BL](blog/JFonseca.interpolacionBL.html)
 
 ---
-© 2013-2018 Juan Fonseca
+© 2013-2018 Juan Fonseca<br>
+<a href="https://cr.linkedin.com/in/juan-m-fonseca-solis" style="border: medium none;"><img style="float: left;width: 105px;height: 39px" src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn Profile">
