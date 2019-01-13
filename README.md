@@ -1,10 +1,15 @@
 # Juan Fonseca's blog
-<div class="row" style='content: "";display: table;clear: both;'>
-<div class="column" style='float: left;width: 50%;'>
+<div class="row" style='content: "";display: table;clear: both;width=100%'>
+<div class="column" style='float: left;width: 25%;'>
 <img src='blog/img/yop.jpeg'>
 </div>
-<div class="column" style='float: left;width: 50%;'>
-[Linkedin profile](https://cr.linkedin.com/in/juan-m-fonseca-solis) 
+<div class="column" style='float: left;width: 75%;'>
+<ul>
+<li>Research Center on Information and Communication Technologies (<a href='http://www.citic.ucr.ac.cr/'>CITIC</a>)</li> 
+<li>San José, Costa Rica</li> 
+<li><a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>Linkedin</li>
+<li><a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>Academia</li>
+</ul>
 </div>
 </div>
 
