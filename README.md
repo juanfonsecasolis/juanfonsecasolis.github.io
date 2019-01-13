@@ -7,8 +7,8 @@
 <ul>
 <li>Research Center on Information and Communication Technologies (<a href='http://www.citic.ucr.ac.cr/'>CITIC</a>)</li> 
 <li>San José, Costa Rica</li> 
-<li><a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>Linkedin</li>
-<li><a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>Academia</li>
+<li><a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>Linkedin</a></li>
+<li><a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>Academia</a></li>
 </ul>
 </div>
 </div>
