@@ -14,13 +14,14 @@ San José, Costa Rica
 </div>
 </div>
 
-## Posts
+## Projects
 * 11 Nov 2018 >> [Blog styling using MathJax and Prism](blog/JFonseca.styling.html)
 * 08 Sep 2018 >> [Media móvil para la emisión de alertas tempranas: el día en el que falló el sistema de facturación electrónica en Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
 * 21 Mar 2015 >> [Interpolacion BL](blog/JFonseca.interpolacionBL.html)
-* 13 Jan 2011 >> [JuanmaHOS](blog/JFonseca.styling.html)
+* 01 Apr 2013 >> [ACAI webpage (TCU work)](http://www.acai.cr/)
+* 13 Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
 
-# Publications
+## Publications
 * Author. *Accessible pedestrian signals recognition using an adaptive approach.* Escuela de electrónica. TEC. Cartago, CR. 2018. Master thesis.
 * Co-author. *Automatic recognition of accessible pedestrian signals.* The Journal of the Acoustical Society of America 141. 3913. Boston, USA. 2017. [https://doi.org/10.1121/2.0000675](https://doi.org/10.1121/2.0000675).
 * Co-author. *Automatic recognition of accessible pedestrian signals.* JoCICI17 (2). Cartago, Costa Rica. 2017.
