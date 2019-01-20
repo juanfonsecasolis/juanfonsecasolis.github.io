@@ -16,8 +16,9 @@ San José, Costa Rica
 
 ## Projects
 * 11 Nov 2018 >> [Blog styling using MathJax and Prism](blog/JFonseca.styling.html)
-* 08 Sep 2018 >> [Media móvil para la emisión de alertas tempranas: el día en el que falló el sistema de facturación electrónica en Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
-* 21 Mar 2015 >> [Interpolacion BL](blog/JFonseca.interpolacionBL.html)
+* 08 Sep 2018 >> [Moving average for sending earlier alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
+* 13 Nov 2017 >> [Automatic recognition of pedestrian signals - RASP (PlayStore)](https://play.google.com/store/apps/details?id=ucr.citic.rasp&hl=en_US)
+* 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
 * 01 Apr 2013 >> [ACAI webpage (TCU work)](http://www.acai.cr/)
 * 13 Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
 
