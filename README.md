@@ -9,7 +9,7 @@ San José, Costa Rica
 <ul>
 <li><b>Email:</b> juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
 <li><b>Github:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
-<li><b>Interests:</b> mathematical signal processing, audio processing, models and systems, data science, algorithm design, music information retrieval, statistics, programming, quality control and assurance.</li>
+<li><b>Interests:</b> mathematical signal processing, audio processing, models and systems, data science, algorithm design, music information retrieval, statistics, programming, quality control and assurance, data structures.</li>
 </ul>
 </div>
 </div>
@@ -28,6 +28,10 @@ San José, Costa Rica
 * Co-author. *Automatic recognition of accessible pedestrian signals.* JoCICI17 (2). Cartago, Costa Rica. 2017.
 * Author. *Detección de voces y otros ruidos en ambientes de trabajo y estudio.* JoCICI15 (1): 68-71. CITIC-PCI. San José, CR. 2015.
 * Author. *Automatic pitch recognition in a computer game interface.* Ingeniería 25 (1): 13-33, ISSN: 2215-2652; 2015. San José, CR. 2015. [https://doi.org/10.15517/ri.v25i1.11751](https://doi.org/10.15517/ri.v25i1.11751).
+
+## Talks
+* Centro de las Artes TEC. Reconocimiento automático de señales peatonales accesibles de semáforo en dispositivos móviles (_automatic recognition of accessible pedestrian signals to be used in mobile devices_). JoCICI 2017. August 24th, 2017. [https://youtu.be/POIF7RVtp0c?t=43](https://youtu.be/POIF7RVtp0c?t=43)
+* Canal de transferencia del conocimiento. Detección de voces y otros ruidos en ambientes de trabajo y estudio (_Voice and noise detection in work and study environments_). JoCICI 2015. March 6th, 2015. [https://youtu.be/6o-dmx2vQSA](https://youtu.be/6o-dmx2vQSA)
 
 ---
  2013-2018 Juan Fonseca <a href="https://cr.linkedin.com/in/juan-m-fonseca-solis" style="border: medium none;"><img style="float: left;width: 52px;height: 19px" src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn Profile">
