@@ -13116,7 +13116,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">Interpolaci&#243;n de banda limitada para el tipo de cambio del d&#243;lar<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">&#182;</a></h1><p>© 2013 <a href="https://cr.linkedin.com/in/juan-m-fonseca-solis">Juan M. Fonseca-Solís</a></p>
+<h1 id="Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">Interpolaci&#243;n de banda limitada para el tipo de cambio del d&#243;lar<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">&#182;</a></h1><p>Por <a href="https://cr.linkedin.com/in/juan-m-fonseca-solis">Juan M. Fonseca-Solís</a>, Mar 2015</p>
 <hr>
 <h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>La reconstrucción de secuencias temporales continuas a partir de muestras tomadas discretamente es un problema que ha sido resuelto tradicionalmente usando el teorema de Nyquist. Este teorema establece que la frecuencia de muestreo debe ser el doble de la frecuencia máxima contenida en la señal original para evitar la pérdida de información (ver teorema de Nyquist <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">aquí</a>). La reconstrucción &ndash;también llamada interpolación&ndash; se logra convolucionando una función de interpolación &ndash;también llamada núcleo de interpolación&ndash; con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener la función continua. Hasta aquí, teoría conocida. El problema se vuelve interesante cuando se quiere reconstruir una señal a partir de muestras tomadas aleatoriamente, es decir, donde no hay una frecuencia de muestreo fija.<sup>1</sup> En este caso, si las frecuencias altas son despreciables, se puede usar el método de interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación de la señal original. En este <em>notebook</em> se explica con mayor detalle en qué consiste el método mencionado y se presenta un ejemplo estudiando el tipo de cambio del dólar en Costa Rica ofrecido por el Banco Central de Costa Rica (BCCR).</p>
 
@@ -13684,24 +13684,24 @@ Compresión lograda: 94%
 <p><div id="disqus_thread"></div></p>
 <script>
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
+<p>/**</p>
+<ul>
+<li>RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.</li>
+<li>LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: <a href="https://disqus.com/admin/universalcode/#configuration-variables*/">https://disqus.com/admin/universalcode/#configuration-variables*/</a>
+/<em>
 var disqus_config = function () {
-this.page.url = https://juanfonsecasolis.github.io/blog/JFonseca.interpolacionBL.html;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = 3; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
+this.page.url = <a href="https://juanfonsecasolis.github.io/blog/JFonseca.interpolacionBL.html">https://juanfonsecasolis.github.io/blog/JFonseca.interpolacionBL.html</a>;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 1; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};</em>/
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
-s.src = 'https://https-juanfonsecasolis-github-io-1.disqus.com/embed.js';
+s.src = '<a href="https://https-juanfonsecasolis-github-io.disqus.com/embed.js">https://https-juanfonsecasolis-github-io.disqus.com/embed.js</a>';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<script id="dsq-count-scr" src="//https-juanfonsecasolis-github-io-1.disqus.com/count.js" async></script>
+&lt;/script&gt;<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></li>
+</ul>
+
 </div>
 </div>
 </div>
