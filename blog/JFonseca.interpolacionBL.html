@@ -13138,7 +13138,7 @@ $$
 $$<h3 id="Interpolaci&#243;n">Interpolaci&#243;n<a class="anchor-link" href="#Interpolaci&#243;n">&#182;</a></h3><p>El procedimiento anterior modela la señal en los puntos que fueron muestreados originalmente, pero no en medio de las muestras, donde es necesaria realizar la interpolación. Por lo que es necesario realizar un remuestreo lineal en el intervalo $[0, T]$, para ello se puede usar una simple regla de tres:</p>
 $$
 \tilde{x}_i=i\frac{T}{L},
-$$<p>y sustituir $x_i$ por el $\tilde{x}_i$ en la ecuación 1. El sistema resultante es modela por Prandoni y Veterli en la siguiente expresión:</p>
+$$<p>y sustituir $x_i$ por el $\tilde{x}_i$ en la ecuación 1. El sistema resultante es modelado por Prandoni y Veterli en la siguiente expresión:</p>
 $$
 \tilde{z}_i=\tilde{F}\hat{c}.
 $$
@@ -13392,7 +13392,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Aquí vemos puntos rojos que representan la nueva señal sobre la que vamos a trabajar. Una interpolación lineal uniría los puntos disponibles con una línea recta, pero la aproximación obtenida no sería suave (y por lo tanto no derivable en los puntos de quiebre). Sin embargo procedemos a construirla para fines ilustrativos.</p>
+<p>Aquí vemos puntos rojos que representan la nueva señal sobre la que vamos a trabajar. Una interpolación lineal uniría los puntos disponibles con una línea recta, pero la aproximación obtenida no sería suave (y por lo tanto su segunda derivada no existiría). Sin embargo procedemos a construirla para fines ilustrativos.</p>
 
 </div>
 </div>
@@ -13551,7 +13551,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Se obseva que aunque la BLI presenta un MSE mayor en comparación con la interpolación lineal (ouch!), pero la cantidad de picos estimados más precisa, sin mencionar que la curva es derivable en todos los puntos. Si graficamos los coeficientes de Fourier obtenemos el siguiente gráfico:</p>
+<p>Se obseva que la BLI presenta un MSE mayor en comparación con la interpolación lineal, pero la cantidad de picos estimados más precisa y la curva es derivable en todos los puntos, lo que la hace una mejor candidata para estudiar los puntos de inflexión. Si graficamos los coeficientes de Fourier obtenemos el siguiente gráfico:</p>
 
 </div>
 </div>
@@ -13673,7 +13673,7 @@ Compresión lograda: 94%
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="img/80x15_by-nd.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">licencia de Creative Commons Reconocimiento-SinObraDerivada 4.0 Internacional</a>.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="img/80x15_by-nd.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">licencia de Creative Commons Reconocimiento-SinObraDerivada 4.0 Internacional</a>. El sitio juanfonsecasolis.github.io es un blog costarricence dedicado a la investigación independiente en temas relacionados al procesamiento digital de señales.</p>
 
 </div>
 </div>
