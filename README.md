@@ -9,14 +9,6 @@ Welcome! I'm a software developer, DSP consultant, speaker, trainer, and author.
 
 Mathematical signal processing, audio processing, models and systems, data science, algorithm design, quality control and assurance, and data structures.
 
-<h2>Contact</h2>
-
-I'm always happy to hear from people who are interested in my work. You can connect with me through these details:
-<ul>
-<li><b>Email:</b> juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
-<li><b>Github:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
-<li><b>Linkedin:</b><a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
-</ul>
 </div>
 </div>
 
@@ -42,5 +34,12 @@ I'm always happy to hear from people who are interested in my work. You can conn
 * Centro de las Artes TEC. Reconocimiento automático de señales peatonales accesibles de semáforo en dispositivos móviles (_automatic recognition of accessible pedestrian signals to be used in mobile devices_). JoCICI 2017. August 24th, 2017. [https://youtu.be/POIF7RVtp0c?t=43](https://youtu.be/POIF7RVtp0c?t=43)
 * Canal de transferencia del conocimiento. Detección de voces y otros ruidos en ambientes de trabajo y estudio (_Voice and noise detection in work and study environments_). JoCICI 2015. March 6th, 2015. [https://youtu.be/6o-dmx2vQSA](https://youtu.be/6o-dmx2vQSA)
 
----
- 2013-2018 Juan Fonseca <a href="https://cr.linkedin.com/in/juan-m-fonseca-solis" style="border: medium none;"><img style="float: left;width: 52px;height: 19px" src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn Profile">
+## Contact
+
+I'm always happy to hear from people who are interested in my work. You can connect with me through these details:
+<ul>
+<li><b>Email:</b> juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
+<li><b>Github:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
+<li><b>Linkedin:</b> <a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
+</ul>
+
