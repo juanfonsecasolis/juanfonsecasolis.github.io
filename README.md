@@ -5,16 +5,17 @@
 <div class="column" style='float: left;width: 75%;'>
 Welcome! I'm a software developer, DSP consultant, speaker, trainer, and author. At this site you can get information about the services I provide, the articles I've written, my background, and interests.
 
-# Interests
+<h2>Interests</h2>
 
 Mathematical signal processing, audio processing, models and systems, data science, algorithm design, quality control and assurance, and data structures.
 
-## Contact
+<h2>Contact</h2>
 
 I'm always happy to hear from people who are interested in my work. You can connect with me through these details:
 <ul>
 <li><b>Email:</b> juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
 <li><b>Github:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
+<li><b>Linkedin:</b><a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</li>
 </ul>
 </div>
 </div>
