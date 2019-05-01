@@ -3,8 +3,8 @@
 <img src='blog/img/yop.jpeg'>
 </div>
 <div class="column" style='float: left;width: 75%;'>
-Welcome! I'm a DSP consultant, software developer, speaker, trainer, and author. At this site you can get information about the services I provide, the articles I've written, and my background and interests.
-
+Welcome! I'm a software developer, DSP consultant, speaker, trainer, and author. At this site you can get information about the services I provide, the articles I've written, my background, and interests.
+## Contact
 I'm always happy to hear from people who are interested in my work. You can connect with me through this page:
 <ul>
 <li><b>Email:</b> juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
