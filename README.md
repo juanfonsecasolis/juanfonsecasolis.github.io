@@ -4,19 +4,22 @@
 </div>
 <div class="column" style='float: left;width: 75%;'>
 Welcome! I'm a software developer, DSP consultant, speaker, trainer, and author. At this site you can get information about the services I provide, the articles I've written, my background, and interests.
+<ul>
+<li><b>Interests:</b> mathematical signal processing, audio processing, models and systems, data science, algorithm design, quality control and assurance, and data structures.</li>
+</ul>
+
 ## Contact
-I'm always happy to hear from people who are interested in my work. You can connect with me through this page:
+I'm always happy to hear from people who are interested in my work. You can connect with me through these details:
 <ul>
 <li><b>Email:</b> juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
 <li><b>Github:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
-<li><b>Interests:</b> mathematical signal processing, audio processing, models and systems, data science, algorithm design, quality control and assurance, and data structures.</li>
 </ul>
 </div>
 </div>
 
 ## Blog
 * 11 Nov 2018 >> [Blog styling using MathJax and Prism](blog/JFonseca.styling.html)
-* 08 Sep 2018 >> [Moving average for sending earlier alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
+* 08 Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
 * 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
 
 ## Projects
