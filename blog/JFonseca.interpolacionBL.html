@@ -13116,7 +13116,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">Interpolaci&#243;n de banda limitada para el tipo de cambio del d&#243;lar<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">&#182;</a></h1><p>Por <a href="https://cr.linkedin.com/in/juan-m-fonseca-solis">Juan M. Fonseca-Solís</a>, Mar 2015</p>
+<h1 id="Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">Interpolaci&#243;n de banda limitada para el tipo de cambio del d&#243;lar<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">&#182;</a></h1><p>Por <a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a>, Mar 2015</p>
 <hr>
 <h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>La reconstrucción de secuencias temporales continuas a partir de muestras tomadas discretamente es un problema que ha sido resuelto tradicionalmente usando el teorema de Nyquist. Este teorema establece que la frecuencia de muestreo debe ser el doble de la frecuencia máxima contenida en la señal original para evitar la pérdida de información (ver teorema de Nyquist <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">aquí</a>). La reconstrucción &ndash;también llamada interpolación&ndash; se logra convolucionando una función de interpolación &ndash;también llamada núcleo de interpolación&ndash; con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener la función continua. Hasta aquí, teoría conocida. El problema se vuelve interesante cuando se quiere reconstruir una señal a partir de muestras tomadas aleatoriamente, es decir, donde no hay una frecuencia de muestreo fija.<sup>1</sup> En este caso, si las frecuencias altas son despreciables, se puede usar el método de interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación de la señal original. En este <em>notebook</em> se explica con mayor detalle en qué consiste el método mencionado y se presenta un ejemplo estudiando el tipo de cambio del dólar en Costa Rica ofrecido por el Banco Central de Costa Rica (BCCR).</p>
 
@@ -13673,7 +13673,15 @@ Compresión lograda: 94%
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="img/80x15_by-nd.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">licencia de Creative Commons Reconocimiento-SinObraDerivada 4.0 Internacional</a>. El sitio juanfonsecasolis.github.io es un blog costarricence dedicado a la investigación independiente en temas relacionados al procesamiento digital de señales.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="licencia Creative Commons" style="border-width:0" src="img/80x15.png" /></a><p style="text-align: center;"> Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia Creative Commons Atribución 4.0 Internacional</a>. El sitio juanfonsecasolis.github.io es un blog costarricence dedicado a la investigación independiente en temas relacionados al procesamiento digital de señales. Para reutilizar este artículo y citar la fuente puede usar Bibtex:</p></p>
+
+<pre><code>@online{Fonseca2018,
+  author = {Juan M. Fonseca-Solís},
+  title = {Interpolación de banda limitada para el tipo de cambio del dólar},
+  year = 2015,
+  url = {https://juanfonsecasolis.github.io/blog/JFonseca.interpolacionBL.html},
+  urldate = {}
+}</code></pre>
 
 </div>
 </div>

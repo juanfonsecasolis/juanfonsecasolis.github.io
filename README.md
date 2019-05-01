@@ -13,7 +13,7 @@ Mathematical signal processing, audio processing, models and systems, data scien
 </div>
 
 ## Blog
-* 11 Nov 2018 >> [Blog styling using MathJax and Prism](blog/JFonseca.styling.html)
+* 11 Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
 * 08 Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
 * 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
 
