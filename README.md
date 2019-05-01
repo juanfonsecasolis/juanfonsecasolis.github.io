@@ -36,7 +36,7 @@ Mathematical signal processing, audio processing, models and systems, data scien
 
 ## Contact
 
-I'm always happy to hear from people who are interested in my work. You can connect with me through these details:
+I'm always happy to hear from people who are interested in my work. You can connect with me through these links:
 <ul>
 <li><b>Email:</b> juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
 <li><b>Github:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
