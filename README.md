@@ -1,24 +1,26 @@
-# Juan Fonseca's portfolio
 <div class="row" style='content: "";display: table;clear: both;width=100%'>
 <div class="column" style='float: left;width: 25%;'>
 <img src='blog/img/yop.jpeg'>
 </div>
 <div class="column" style='float: left;width: 75%;'>
-Research Center on Information and Communication Technologies (<a href='http://www.citic.ucr.ac.cr/'>CITIC</a>)<br> 
-San José, Costa Rica
+Welcome! I'm a DSP consultant, software developer, speaker, trainer, and author. At this site you can get information about the services I provide, the articles I've written, and my background and interests.
+
+I'm always happy to hear from people who are interested in my work. You can connect with me through this page:
 <ul>
 <li><b>Email:</b> juan [dot] fonsecasolis [at] ucr [dot] ac [dot] cr</li>
 <li><b>Github:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
-<li><b>Interests:</b> mathematical signal processing, audio processing, models and systems, data science, algorithm design, music information retrieval, statistics, programming, quality control and assurance, data structures.</li>
+<li><b>Interests:</b> mathematical signal processing, audio processing, models and systems, data science, algorithm design, quality control and assurance, and data structures.</li>
 </ul>
 </div>
 </div>
 
-## Projects
+## Blog
 * 11 Nov 2018 >> [Blog styling using MathJax and Prism](blog/JFonseca.styling.html)
 * 08 Sep 2018 >> [Moving average for sending earlier alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
-* 13 Nov 2017 >> [Automatic recognition of pedestrian signals - RASP (PlayStore)](https://play.google.com/store/apps/details?id=ucr.citic.rasp&hl=en_US)
 * 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
+
+## Projects
+* 13 Nov 2017 >> [Automatic recognition of pedestrian signals - RASP (PlayStore)](https://play.google.com/store/apps/details?id=ucr.citic.rasp&hl=en_US)
 * 01 Apr 2013 >> [ACAI webpage (TCU work)](http://www.acai.cr/)
 * 13 Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
 
