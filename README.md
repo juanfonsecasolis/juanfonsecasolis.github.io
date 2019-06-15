@@ -7,7 +7,7 @@ Welcome! I'm a software developer, DSP consultant, speaker, trainer, and author.
 
 <h2>Interests</h2>
 
-Mathematical signal processing, audio processing, models and systems, data science, algorithm design, quality control and assurance, and data structures.
+Mathematical signal processing, models and systems, audio processing, algorithm design, quality control/assurance, and data structures.
 
 </div>
 </div>
@@ -23,7 +23,7 @@ Mathematical signal processing, audio processing, models and systems, data scien
 * 13 Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
 
 ## Publications
-* Author. *Accessible pedestrian signals recognition using an adaptive approach.* Escuela de electrónica. TEC. Cartago, CR. 2018. Master thesis.
+* Author. *Accessible pedestrian signals recognition using an adaptive approach.* Escuela de electrónica. TEC. Cartago, CR. 2018. Master thesis. [https://repositoriotec.tec.ac.cr/handle/2238/10642](https://repositoriotec.tec.ac.cr/handle/2238/10642) ([repository](https://github.com/juanfonsecasolis/ARAPSUAA))
 * Co-author. *Automatic recognition of accessible pedestrian signals.* The Journal of the Acoustical Society of America 141. 3913. Boston, USA. 2017. [https://doi.org/10.1121/2.0000675](https://doi.org/10.1121/2.0000675).
 * Co-author. *Automatic recognition of accessible pedestrian signals.* JoCICI17 (2). Cartago, Costa Rica. 2017.
 * Author. *Detección de voces y otros ruidos en ambientes de trabajo y estudio.* JoCICI15 (1): 68-71. CITIC-PCI. San José, CR. 2015.
