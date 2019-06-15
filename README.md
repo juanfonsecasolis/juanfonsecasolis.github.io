@@ -23,7 +23,7 @@ Mathematical signal processing, models and systems, audio processing, algorithm 
 * 13 Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
 
 ## Publications
-* Author. *Accessible pedestrian signals recognition using an adaptive approach.* Escuela de electrónica. TEC. Cartago, CR. 2018. Master thesis. [https://repositoriotec.tec.ac.cr/handle/2238/10642](https://repositoriotec.tec.ac.cr/handle/2238/10642) ([repository](https://github.com/juanfonsecasolis/ARAPSUAA))
+* Author. *Accessible pedestrian signals recognition using an adaptive approach.* Escuela de electrónica. TEC. Cartago, CR. 2018. Master thesis. [https://repositoriotec.tec.ac.cr/handle/2238/10642](https://repositoriotec.tec.ac.cr/handle/2238/10642) (Github repository [here](https://github.com/juanfonsecasolis/ARAPSUAA))
 * Co-author. *Automatic recognition of accessible pedestrian signals.* The Journal of the Acoustical Society of America 141. 3913. Boston, USA. 2017. [https://doi.org/10.1121/2.0000675](https://doi.org/10.1121/2.0000675).
 * Co-author. *Automatic recognition of accessible pedestrian signals.* JoCICI17 (2). Cartago, Costa Rica. 2017.
 * Author. *Detección de voces y otros ruidos en ambientes de trabajo y estudio.* JoCICI15 (1): 68-71. CITIC-PCI. San José, CR. 2015.
