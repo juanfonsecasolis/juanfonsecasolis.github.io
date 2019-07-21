@@ -3,11 +3,11 @@
 <img src='blog/img/yop.jpeg'>
 </div>
 <div class="column" style='float: left;width: 75%;'>
-Welcome! I'm a software developer, DSP consultant, speaker, trainer, and author. At this site you can get information about the services I provide, the articles I've written, my background, and interests.
+Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written, my background, and interests.
 
 <h2>Interests</h2>
 
-Mathematical signal processing, models and systems, audio processing, algorithm design, quality control/assurance, and data structures.
+Mathematical signal processing, systems and models, acoustics, and quality control/assurance.
 
 </div>
 </div>
