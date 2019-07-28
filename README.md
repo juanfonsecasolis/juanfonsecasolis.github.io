@@ -1,3 +1,13 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144706135-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144706135-1');
+</script>
+
 <div class="row" style='content: "";display: table;clear: both;width=100%'>
 <div class="column" style='float: left;width: 25%;'>
 <img src='blog/img/yop.jpeg'>
