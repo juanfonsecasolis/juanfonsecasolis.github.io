@@ -17,7 +17,7 @@ Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this 
 
 <h2>Interests</h2>
 
-Mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance.
+Mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance. 
 
 </div>
 </div>
