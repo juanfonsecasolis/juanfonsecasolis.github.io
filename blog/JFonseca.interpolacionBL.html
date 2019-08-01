@@ -13118,7 +13118,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">Interpolaci&#243;n de banda limitada para el tipo de cambio del d&#243;lar<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada-para-el-tipo-de-cambio-del-d&#243;lar">&#182;</a></h1><p>Por <a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a>, Mar 2015</p>
 <hr>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>La reconstrucción de secuencias temporales continuas a partir de muestras tomadas de forma discreta es un problema que ha sido resuelto tradicionalmente usando el <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">teorema de Nyquist</a>, este teorema establece que la frecuencia de muestreo debe ser el doble de la frecuencia máxima contenida en la señal original para evitar la pérdida de información. La reconstrucción &ndash;también llamada interpolación&ndash; se logra <a href="https://en.wikipedia.org/wiki/Convolution">convolucionando</a> una función de interpolación &ndash;también llamada núcleo de interpolación&ndash; con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener la función continua; hasta aquí, teoría conocida. El problema se vuelve más complejo cuando se desea reconstruir la señal pero a partir de muestras tomadas aleatoriamente, es decir, sin una tasa de muestreo fija.<sup>1</sup> En este caso, si las frecuencias altas son despreciables, se puede usar el método de interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación razonable. En este <em>ipython notebook</em> se explica con mayor detalle en qué consiste el método mencionado y se presenta un ejemplo interpolando el tipo de cambio del dólar en Costa Rica ofrecido mensualmente por el Banco Central de Costa Rica (BCCR).</p>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>La reconstrucción de secuencias temporales continuas a partir de muestras tomadas de forma discreta es un problema que ha sido resuelto tradicionalmente usando el teorema de Nyquist, este teorema establece que la frecuencia de muestreo debe ser el doble de la frecuencia máxima contenida en la señal original para evitar la pérdida de información. La reconstrucción &ndash;también llamada interpolación&ndash; se logra convolucionando una función de interpolación &ndash;también llamada núcleo de interpolación&ndash; con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener la función continua; hasta aquí, teoría conocida. El problema se vuelve más complejo cuando se desea reconstruir la señal a partir de muestras tomadas aleatoriamente, es decir, sin una tasa de muestreo fija. En este caso, si las frecuencias altas son despreciables, se puede usar el método de interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación razonable. En este <em>ipython notebook</em> se explica en qué consiste el método mencionado y se presenta un ejemplo interpolando el tipo de cambio del dólar en Costa Rica ofrecido mensualmente por el Banco Central de Costa Rica (BCCR).</p>
 
 </div>
 </div>
@@ -13126,12 +13126,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Construcci&#243;n-de-una-se&#241;al-discreta">Construcci&#243;n de una se&#241;al discreta<a class="anchor-link" href="#Construcci&#243;n-de-una-se&#241;al-discreta">&#182;</a></h2><p>Para registrar una señal continua del mundo real es inevitable hacer mediciones de forma discreta, así, por ejemplo, una persona con diabetes utiliza su glucómetro de cuatro a diez veces al día, pero no cada segundo, aunque sabe que el nivel de azúcar en la sangre puede variar a esa velocidad. Las anotaciones realizadas de la señal continua conforman lo que se conoce como señal discreta, y si esta señal es además finita, tiene las siguientes características:</p>
-<ul>
-<li>Contiene $N$ entradas </li>
-<li>Su soporte temporal es $0&lt;x_i \le T$ (expresado en segundo, minutos, horas, etc...)</li>
-<li>Puede representarse de forma compacta como $\{(x_i,z_i)\}_{i=0}^{N-1}$, donde $x_i$ es la variable independiente</li>
-</ul>
+<h2 id="Breve-introducci&#243;n-al-muestreo-e-interpolaci&#243;n-de-una-se&#241;al">Breve introducci&#243;n al muestreo e interpolaci&#243;n de una se&#241;al<a class="anchor-link" href="#Breve-introducci&#243;n-al-muestreo-e-interpolaci&#243;n-de-una-se&#241;al">&#182;</a></h2><p>Las señales del mundo real son casi siempre continuas y, para registrarlas, es necesario hacer mediciones periódicas de los valores observados. Así, por ejemplo, una persona con diabetes utiliza su glucómetro de cuatro a diez veces al día, pero no cada segundo, aunque sabe que el nivel de azúcar en la sangre puede variar a esa velocidad. Las anotaciones realizadas de la señal continua conforman lo que se conoce como señal discreta y pueden expresarse de la siguiente manera:</p>
+$$
+z[i] = Z(iT) \quad i \in \mathbb{Z},
+$$<p>donde $T$ es el periodo de muestreo (en segundos), $z[n]$ es la señal discreta y $Z(t)$ es la señal continua. Si además, $z[n]$ es finita (de longitud $N$), entonces se puede expresar como un conjunto de pares ordenados de la siguiente manera:</p>
+$$
+\{(x_i,z_i)\}_{i=0}^{N-1},
+$$<p>y se dice que $0&lt;x_i \le T$ es el soporte temporal, y $z_i$, la variable dependiente.</p>
+<p>A veces se cuenta solo con la señal discreta y se desea reconstruir la señal continua, para ello es necesario asegurarse que la frecuencia de muestreo $F_s$ (el inverso de $T$) con la que se construyó $z[i]$, haya sido al menos el doble de la frecuencia máxima representable, de acuerdo al <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">teorema de Nyquist</a>. A menos que se tenga conocimiento previo de la señal muestreada (excepto si es sintética o ya fue caracterizada previamente) es necesario usar una herramienta que llamada la <a href="https://en.wikipedia.org/wiki/Fourier">transformada de Fourier</a> para determinar la frecuencia máxima representable. Sino se respeta esta regla, se puede caer en un vicio llamado <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a>, en donde se termina reconstruyendo una señal distinta a la original.<sup>1</sup></p>
+<p>La reconstrucción –también llamada interpolación– se logra <a href="https://en.wikipedia.org/wiki/Convolution">convolucionando</a> una función de interpolación –también llamada núcleo de interpolación– con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener la función continua.</p>
+<p>TBD...</p>
 
 </div>
 </div>
@@ -13139,27 +13143,19 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Interpolaci&#243;n">Interpolaci&#243;n<a class="anchor-link" href="#Interpolaci&#243;n">&#182;</a></h2><p>Por definir...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Interpolaci&#243;n-por-banda-limitada">Interpolaci&#243;n por banda limitada<a class="anchor-link" href="#Interpolaci&#243;n-por-banda-limitada">&#182;</a></h2><p>Si la señal discreta es <a href="https://en.wikipedia.org/wiki/Linear_time-invariant_system">lineal e invariante en el tiempo</a> puede modelarse como un sistema lineal, es decir, como la multiplicación entre una matriz de transformación y un vector de coeficientes, de la siguiente manera [2]:<sup>2</sup></p>
+<h2 id="Interpolaci&#243;n-por-banda-limitada">Interpolaci&#243;n por banda limitada<a class="anchor-link" href="#Interpolaci&#243;n-por-banda-limitada">&#182;</a></h2><p>El problema se vuelve más complejo cuando se desea reconstruir la señal a partir de muestras tomadas aleatoriamente, es decir, sin una tasa de muestreo fija.<sup>2</sup> En este caso, si las frecuencias altas son despreciables, se puede usar el método de interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación razonable. Para ello, se hace la suposición que la señal discreta es <a href="https://en.wikipedia.org/wiki/Linear_time-invariant_system">lineal e invariante en el tiempo</a>, si es así, puede modelarse como un sistema lineal, es decir, como la multiplicación entre una matriz de transformación y un vector de coeficientes, de la siguiente manera [2]:</p>
 $$
 Fc=z,\qquad (1)
 $$<p>donde $\{F\}_{ik}=e^{j2\pi \frac{x_ik}{T}}$ es la $k$-ésima entrada del $i$-ésimo vector ortogonal de las series de Fourier y $c=(c_{-M}, \ldots, c_M)^t$ es el vector obtenido al aplicar la transformada de Fourier. Suponiendo que la cantidad de filas y columnas linealmente independientes de $F$ es el mismo (esto es, $N=2M+1$), es posible resolver el sistema encontrando la inversa de la matriz, de la siguiente manera:</p>
 $$
 c=F^{-1}z.
-$$<p>Sin embargo, en la vida real esto raramente vez ocurre porque la cantidad de muestras de la señal usualmente es mayor al número de coeficientes elegido para el modelado ($2M+1&lt;N$). Afortunadamente, se puede mitigar este problema realizando una aproximación con el método de mínimos cuadrados [2]:<sup>3</sup></p>
+$$<p>Sin embargo, en la vida real esto raramente vez ocurre porque la cantidad de muestras de la señal usualmente es mayor al número de coeficientes elegido para el modelado ($2M+1&lt;N$). Afortunadamente, existe una aproximación usando el método de mínimos cuadrados [2]:<sup>3</sup></p>
 $$
 \hat{c}=(F^t F)^{-1}F^tz.
-$$<p>Hasta aquí, esta aproximación no es una todavía una interpolación, porque modela la señal solo en los puntos que fueron muestreados, por lo que es necesario realizar un remuestreo lineal del soporte temporal $x_i$ en el intervalo $[0, T]$, y para ello se puede usar una simple regla de tres:</p>
+$$<p>Que se convierte en interpolación al realizar un remuestreo lineal del soporte temporal $x_i$ en el intervalo $[0, T]$. Para ello se puede usar una simple regla de tres:</p>
 $$
 \tilde{x}_i=i\frac{T}{L}.
-$$<p>Finalmente, se sustituye $x_i$ por el $\tilde{x}_i$ en la ecuación 1, y el sistema resultante es modelado en la siguiente expresión [2]:</p>
+$$<p>Finalmente, se sustituye $x_i$ por el $\tilde{x}_i$ en la ecuación 1, y el sistema resultante se resume en la siguiente expresión [2]:</p>
 $$
 \tilde{z}_i=\tilde{F}\hat{c}.
 $$
@@ -13655,7 +13651,7 @@ Compresión lograda: 99%
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Aunque el método BLI no fue ideado para realizar extrapolación, se podría hacer la prueba y tratar de predecir el futuro para los siguientes dos años. ¡Dejenos sus comentarios si ha visto que funciona!</p>
+<p>El método BLI no fue ideado para realizar extrapolación, para ello se utilizan métodos probabilísticos y de aprendizaje por computadora, que realizan un estudio de variables de importancia. Aunque bien... se puede hacer la prueba forzar una prueba.</p>
 
 </div>
 </div>
@@ -13726,9 +13722,9 @@ Compresión lograda: 99%
 </li>
 </ol>
 <h2 id="Notas">Notas<a class="anchor-link" href="#Notas">&#182;</a></h2><ol>
+<li>Se puede encontrar una explicación con lujo de detalles sobre el tema de muestreo e interpolación en el libro "Señales y Sistemas, fundamentos matemáticos" de Pablo Alvarado Moya, del Instituto Tecnológico de Costa Rica.</li>
 <li>En estos casos se habla de una <em>tasa de innovación</em> (FIR, por sus siglas en inglés), en lugar de frecuencia de muestreo.</li>
-<li>Para escribir este ipython notebook se usó la sintaxis <a href="https://help.github.com/articles/markdown-basics/">Markdown</a> y un interpretador <a href="https://docs.python.org/2/library/xml.etree.elementtree.html">XML</a>. Este documento también soporta $\LaTeX$.</li>
-<li>Se recuerda que el método de mínimos cuadrados funciona usando el teorema de aproximación de la norma. Para saber más de este método visitar la <a href="https://es.wikipedia.org/wiki/M%C3%ADnimos_cuadrados">wikipedia</a>.</li>
+<li>Puede probarse que el <a href="https://es.wikipedia.org/wiki/M%C3%ADnimos_cuadrados">método de mínimos cuadrados</a> funciona usando el teorema de aproximación de la norma.</li>
 <li>Un excelente recurso de cómo usar los servicios del BCCR también puede encontrarse en <a href="https://tecnitico.wordpress.com/2010/11/11/webservice-del-banco-central-de-costa-rica-y-ruby/">Tico</a>.</li>
 </ol>
 
