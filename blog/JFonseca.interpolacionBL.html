@@ -13140,7 +13140,7 @@ $$<p>donde $x_{i+1}-x_i=T$ segundos. En ambos casos es necesario asegurarse que 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Interpolaci&#243;n-lineal">Interpolaci&#243;n lineal<a class="anchor-link" href="#Interpolaci&#243;n-lineal">&#182;</a></h1><p>La reconstrucción –también llamada interpolación– se logra <a href="https://en.wikipedia.org/wiki/Convolution">convolucionando</a> una función de interpolación $I(t)$ –también llamada núcleo de interpolación– con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener una función continua [3]:</p>
+<h2 id="Interpolaci&#243;n-lineal">Interpolaci&#243;n lineal<a class="anchor-link" href="#Interpolaci&#243;n-lineal">&#182;</a></h2><p>La reconstrucción –también llamada interpolación– se logra <a href="https://en.wikipedia.org/wiki/Convolution">convolucionando</a> una función de interpolación $I(t)$ –también llamada núcleo de interpolación– con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener una función continua [3]:</p>
 $$
     \hat{y}(t) = \sum_{i=-\infty}^{\infty}{\tilde{y}[i]I\big(\frac{t-iT}{T}\big)} 
 $$<p>Esto es más fácil de apreciar con un ejemplo:</p>
