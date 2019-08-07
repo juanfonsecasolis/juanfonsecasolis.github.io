@@ -1,6 +1,6 @@
 #!/bin/bash
-ipython nbconvert --to html JFonseca.suavizadoTraficoServidorWeb.ipynb
-ipython nbconvert --to html JFonseca.interpolacionBL.ipynb
+ipython nbconvert JFonseca.suavizadoTraficoServidorWeb.ipynb --to html --template template.tpl
+ipython nbconvert JFonseca.interpolacionBL.ipynb --to html --template template.tpl
 
 sed 's/max-width: calc(100% - 14ex);/max-width: 100%;/g' JFonseca.interpolacionBL.html > JFonseca.interpolacionBL2.html
 sed 's/max-width: calc(100% - 14ex);/max-width: 100%;/g' JFonseca.suavizadoTraficoServidorWeb.html > JFonseca.suavizadoTraficoServidorWeb2.html
