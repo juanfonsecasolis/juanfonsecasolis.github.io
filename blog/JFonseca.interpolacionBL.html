@@ -13158,9 +13158,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Interpolaci&#243;n-de-banda-limitada-para-la-tasa-diaria-del-d&#243;lar">Interpolaci&#243;n de banda limitada para la tasa diaria del d&#243;lar<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada-para-la-tasa-diaria-del-d&#243;lar">&#182;</a></h1><p>Por <a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a>, Mar 2015</p>
+<h1 id="Interpolaci&#243;n-de-banda-limitada-para-tasas-de-referencia-diaria">Interpolaci&#243;n de banda limitada para tasas de referencia diaria<a class="anchor-link" href="#Interpolaci&#243;n-de-banda-limitada-para-tasas-de-referencia-diaria">&#182;</a></h1><p>Por <a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a>, Mar 2015 - Ago 2019</p>
 <hr>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>La reconstrucción de secuencias temporales continuas a partir de muestras tomadas de forma discreta es un problema que ha sido resuelto tradicionalmente usando el teorema de Nyquist, este teorema establece que la frecuencia de muestreo debe ser el doble de la frecuencia máxima contenida en la señal original para evitar la pérdida de información. La reconstrucción &ndash;también llamada interpolación&ndash; se logra convolucionando una función de interpolación &ndash;también llamada núcleo de interpolación&ndash; con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener la función continua; hasta aquí, teoría conocida. El problema se vuelve más complejo cuando se desea reconstruir la señal a partir de muestras tomadas aleatoriamente, es decir, sin una tasa de muestreo fija. En este caso, si las frecuencias altas son despreciables, se puede usar el método de interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación razonable. En este <em>ipython notebook</em> se explica en qué consiste el método mencionado y se presenta un ejemplo interpolando el tipo de cambio del dólar en Costa Rica ofrecido mensualmente por el Banco Central de Costa Rica (BCCR).</p>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este <em>ipython notebook</em> se aborda el tema de las tasas de referencia diaria, como el libor o el tipo de cambio del dólar en Costa Rica ofrecido mensualmente por el Banco Central de Costa Rica (BCCR), para explicar técnicas de interpolación lineal y de banda limitada.</p>
 
 </div>
 </div>
@@ -13168,10 +13168,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Muestreo-de-una-se&#241;al">Muestreo de una se&#241;al<a class="anchor-link" href="#Muestreo-de-una-se&#241;al">&#182;</a></h2><p>Elegiendo un periodo de muestreo $T$, se puede discretizar una señal continua haciendo mediciones periódicas de los valores observados, esto se puede expresar de dos formas [2,3]:</p>
+<h1 id="Historia">Historia<a class="anchor-link" href="#Historia">&#182;</a></h1><p>En Junio del 2012, cuando resolvía una disputa legal, la Comisión de Negociación de Futuros de Productos Básicos de Estados Unidos (CFTC, por sus siglas en inglés) descubrió una serie de irregularidades en el manejo de la tasa de interés del <em>london interbank offered rate</em> (libor) por parte del banco multinacional británico Barclays. El periódico Financial Times confirmó luego la manipulación de esta tasa desde 1991, lo que provocó indignación a nivel internacional, pues es libor es usado como referencia para fijar las tasas de interés de los préstamos en moneda extranjera, incluso en Costa Rica [4, 5].</p>
+<p><img src="img/libor-scandal-headlines-the-financial-times-newspaper-london-august-CTX670.jpg" alt=""></p>
+<p>Como consecuencia, multas millonarias fueron impuestas al banco británico y se inició una investigacion para encontrar otras tasas de interés más confiables, entre ellas el <em>prime rate</em>, una tasa manejada por bancos estadounidenses que basada en transacciones reales y no en encuestas de opinión. Se estableció el 2021 como fecha límite para prescindir de la tasa antigua, lo que junto al Brexit, ha venido a ser tema de interés reciente [4, 5].</p>
+<p><img src="img/article-2172377-140736A7000005DC-647_634x422.jpg" alt=""></p>
+<p>El libor, junto con otras tasas de interés de referencia diaria (como el tipo de cambio del dólar), son publicadas una vez al día, lo que obliga a realizar una interpolación lineal cuando se requiere cobrar una transacción pasada en moneda local. Por ejemplo, si las tasas de interés entre entre dos días consecutivos es de $5.11$% y $5.09$%, el valor intermedio es calculado como sigue [6]:</p>
+$$
+x = (x_1-x_0)\Delta{t} + x_0,
+$$<p>donde $x_0, x_1$ son las tasas de interés consecutivas, y $\Delta{t}$ es el tiempo a interpolar. Con $x_1=5.11\%$, $x_1=5.09\%$ y $\Delta{t}=0.5$ días (12h), se tiene un valor intermedio de $x=5.10\%$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Muestreo-de-una-se&#241;al">Muestreo de una se&#241;al<a class="anchor-link" href="#Muestreo-de-una-se&#241;al">&#182;</a></h2><p>Este caso de interpolación del libor es un ejemplo de reconstrucción de secuencias temporales continuas a partir de muestras tomadas de forma discreta. Las muestras discretas forman una nueva señal, que, matemáticamente, se puede expresar elegiendo un periodo de muestreo $T$ y evaluando la función continua como sigue [2,3]:</p>
 $$
 \tilde{z}[i] = z(iT) \quad i \in \mathbb{Z},
-$$<p>donde $\tilde{z}[i]$ es la señal discreta y $z(t)$ es la señal continua; y mediante un conjunto de pares ordenados:</p>
+$$<p>donde $\tilde{z}[i]$ es la señal discreta y $z(t)$ es la señal continua. Esto significa que la señal continua se puede convertir en una señal discreta leyendo sus valores en los instantes $iT$. Usando una notación de conjuntos de pares ordenados esto también se puede expresar de la siguiente manera:</p>
 $$
 \{(x_i,\tilde{z}_i)\}_{i=-\infty}^{\infty},
 $$<p>donde $x_{i+1}-x_i=T$ segundos. En ambos casos es necesario asegurarse que la relación $T_{\max} \ge 2T$ (donde $T_{\max}$ es la componente más grande de la señal) se cumpla, por el <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">teorema de Nyquist</a>, sino, se sufre de un efecto llamado <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a> que afecta la señal reconstruída.</p>
@@ -13182,7 +13197,7 @@ $$<p>donde $x_{i+1}-x_i=T$ segundos. En ambos casos es necesario asegurarse que 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Interpolaci&#243;n-lineal">Interpolaci&#243;n lineal<a class="anchor-link" href="#Interpolaci&#243;n-lineal">&#182;</a></h2><p>La reconstrucción –también llamada interpolación– se logra <a href="https://en.wikipedia.org/wiki/Convolution">convolucionando</a> una función de interpolación $I(t)$ –también llamada núcleo de interpolación– con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener una función continua [3]:</p>
+<h2 id="Interpolaci&#243;n-lineal">Interpolaci&#243;n lineal<a class="anchor-link" href="#Interpolaci&#243;n-lineal">&#182;</a></h2><p>Para ahondar en el tema, decimos que la reconstrucción de la señal discreta –también llamada interpolación– se logra <a href="https://en.wikipedia.org/wiki/Convolution">convolucionando</a> una función de interpolación $I(t)$ –también llamada núcleo de interpolación– con cada muestra disponible, luego se realiza una suma de todas las convoluciones para obtener una función continua [3]:</p>
 $$
     z(t) = \sum_{i=-\infty}^{\infty}{\tilde{z}[i]I\big(\frac{t-iT}{T}\big)} 
 $$<p>Esto es más fácil de apreciar con un ejemplo:</p>
@@ -13423,7 +13438,7 @@ $$<p>Esto es más fácil de apreciar con un ejemplo:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lo cual constituye una buena aproximación. Utilizando un núcleo no triangular se puede obtener una aproximación más suave:</p>
+<p>Utilizando un núcleo no triangular se puede obtener una aproximación más suave:</p>
 
 </div>
 </div>
@@ -13588,7 +13603,15 @@ $$<p>Esto es más fácil de apreciar con un ejemplo:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Interpolaci&#243;n-por-banda-limitada">Interpolaci&#243;n por banda limitada<a class="anchor-link" href="#Interpolaci&#243;n-por-banda-limitada">&#182;</a></h2><p>Como se observó en el ejemplo anterior, el problema se vuelve más complejo cuando se desea reconstruir la señal a partir de muestras tomadas aleatoriamente, es decir, sin una tasa de muestreo fija.<sup>1</sup> En este caso, si las frecuencias altas son despreciables, se puede usar el método de interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación razonable. Para ello, se hace la suposición que la señal discreta es <a href="https://en.wikipedia.org/wiki/Linear_time-invariant_system">lineal e invariante en el tiempo</a>, si es así, puede modelarse como un sistema lineal, es decir, como la multiplicación entre una matriz de transformación y un vector de coeficientes, de la siguiente manera [2]:</p>
+<p>Este sería el caso cuando en algún día determinado, los bancos hayan olvidado publicar el valor de referencia de la tasa de referencia diaria o cuando los registros históricos tengan datos faltantes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Interpolaci&#243;n-por-banda-limitada">Interpolaci&#243;n por banda limitada<a class="anchor-link" href="#Interpolaci&#243;n-por-banda-limitada">&#182;</a></h2><p>Como se observó anteriormente, el problema de interpolación se vuelve más complejo cuando se desea reconstruir la señal a partir de muestras tomadas aleatoriamente, es decir, sin una tasa de muestreo fija.<sup>1</sup> En este caso, si las frecuencias altas son despreciables, se puede usar el método de interpolación de banda limitada (BLI, por sus siglas en inglés) que utiliza las series de Fourier y el método de mínimos cuadrados para obtener una aproximación razonable. Para ello, se hace la suposición que la señal discreta es <a href="https://en.wikipedia.org/wiki/Linear_time-invariant_system">lineal e invariante en el tiempo</a>, si es así, puede modelarse como un sistema lineal, es decir, como la multiplicación entre una matriz de transformación y un vector de coeficientes, de la siguiente manera [2]:</p>
 $$
 Fc=z,\qquad (1)
 $$<p>donde $\{F\}_{ik}=e^{j2\pi \frac{x_ik}{T}}$ es la $k$-ésima entrada del $i$-ésimo vector ortogonal de las series de Fourier y $c=(c_{-M}, \ldots, c_M)^t$ es el vector obtenido al aplicar la transformada de Fourier. Suponiendo que la cantidad de filas y columnas linealmente independientes de $F$ es el mismo (esto es, $N=2M+1$), es posible resolver el sistema encontrando la inversa de la matriz, de la siguiente manera:</p>
@@ -14092,11 +14115,19 @@ Compresión lograda: 99%
 </li>
 <li><p>P. Prandoni, M. Vertterli. <strong>Signal processing for communications.</strong> EPFL press 2008.</p>
 </li>
+<li><p>Wikipedia contributors. (2019, August 1). Libor scandal. In Wikipedia, The Free Encyclopedia. Retrieved 23:50, August 15, 2019, from <a href="https://en.wikipedia.org/w/index.php?title=Libor_scandal&amp;oldid=908807968">https://en.wikipedia.org/w/index.php?title=Libor_scandal&amp;oldid=908807968</a>.</p>
+</li>
+<li><p>Miguel Elizondo. El LIBOR dejará de existir en el 2021. La República.net, Impacto legal. Lunes 31 julio, 2017. URL: <a href="https://www.larepublica.net/noticia/el-libor-dejara-de-existir-en-el-2021">https://www.larepublica.net/noticia/el-libor-dejara-de-existir-en-el-2021</a></p>
+</li>
+<li><p>Linear interpolation example. International Swaps and Derivatives Association. URL: <a href="https://www.isda.org/a/7KiDE/linear-interpolation-example-1-10.pdf">https://www.isda.org/a/7KiDE/linear-interpolation-example-1-10.pdf</a></p>
+</li>
 </ol>
 <h2 id="Notas">Notas<a class="anchor-link" href="#Notas">&#182;</a></h2><ol>
 <li>En estos casos se habla de una <em>tasa de innovación</em> (FIR, por sus siglas en inglés), en lugar de frecuencia de muestreo.</li>
 <li>Puede probarse que el <a href="https://es.wikipedia.org/wiki/M%C3%ADnimos_cuadrados">método de mínimos cuadrados</a> funciona usando el teorema de aproximación de la norma.</li>
 <li>Un excelente recurso de cómo usar los servicios del BCCR también puede encontrarse en <a href="https://tecnitico.wordpress.com/2010/11/11/webservice-del-banco-central-de-costa-rica-y-ruby/">Tico</a>.</li>
+<li>Las imágenes fueron tomadas de los sitios:
+<a href="https://i.dailymail.co.uk/i/pix/2012/07/12/article-2172377-140736A7000005DC-647_634x422.jpg">https://i.dailymail.co.uk/i/pix/2012/07/12/article-2172377-140736A7000005DC-647_634x422.jpg</a> y <a href="https://c8.alamy.com/comp/CTX670/libor-scandal-headlines-the-financial-times-newspaper-london-august-CTX670.jpg">https://c8.alamy.com/comp/CTX670/libor-scandal-headlines-the-financial-times-newspaper-london-august-CTX670.jpg</a></li>
 </ol>
 
 </div>
