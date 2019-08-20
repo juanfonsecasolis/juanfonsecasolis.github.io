@@ -13158,9 +13158,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Limited-band-interpolation-for-daily-reference-rates">Limited band interpolation for daily reference rates<a class="anchor-link" href="#Limited-band-interpolation-for-daily-reference-rates">&#182;</a></h1><p>By [Juan M. Fonseca-Solís] (<a href="https://juanfonsecasolis.github.io/">https://juanfonsecasolis.github.io/</a>), Mar 2015 - Aug 2019</p>
+<h1 id="Limited-band-interpolation-for-daily-reference-rates">Limited band interpolation for daily reference rates<a class="anchor-link" href="#Limited-band-interpolation-for-daily-reference-rates">&#182;</a></h1><p>By <a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a>, Mar 2015 - Aug 2019</p>
 <hr>
-<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>This <em>ipython notebook</em> addresses the issue of daily reference rates, such as the London interbank interest rate (LIBOR) or the dollar exchange rate in Costa Rica offered monthly by the Central Bank of Costa Rica (BCCR), to explain linear and band interpolation techniques limited</p>
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>In this <em>ipython notebook</em> we'll issue data from daily reference rates, such as the London interbank interest rate (LIBOR) or the dollar exchange rate in Costa Rica offered monthly by the Central Bank of Costa Rica (BCCR), to explain linear and band-limited interpolation techniques.</p>
 
 </div>
 </div>
@@ -13168,14 +13168,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="History">History<a class="anchor-link" href="#History">&#182;</a></h1><p>In June 2012, when resolving a legal dispute, the Commodity Futures Negotiation Commission of the United States (CFTC) discovered a series of irregularities in the management of the LIBOR by the British multinational bank Barclays. The Financial Times newspaper later confirmed the manipulation of this rate since 1991, which caused an scandal at the international level, since the LIBOR is used as a reference to determine the interest rate of the loans in foreign currency, even in Costa Rica [4, 5 ]</p>
+<h1 id="History">History<a class="anchor-link" href="#History">&#182;</a></h1><p>In June 2012, when resolving a legal dispute, the Commodity Futures Negotiation Commission of the United States (CFTC) discovered a series of irregularities in the management of the LIBOR by the British multinational bank Barclays. The Financial Times newspaper later confirmed the manipulation of this rate since 1991, which caused an international scandal, since the LIBOR is used as a reference to determine the interest rate of the loans in foreign currency, even in Costa Rica [4,5].</p>
 <p><img src="img/libor-scandal-headlines-the-financial-times-journal-london-august-CTX670.jpg" alt=""></p>
-<p>As a result, millionaire fines were imposed on the British bank and an investigation was performed to find more reliable interest rates, including the first-rate, a rate managed by US banks that is based on real transactions and not on opinion polls. The year 2021 was proposed as the deadline to definitely substitute the LIBOR [4,5].</p>
+<p>As a result, millionaire fines were imposed on the British bank and an investigation was performed to find more reliable interest rates, including the first-rate, a rate managed by US banks that is based on real transactions and not on opinion polls like the LIBOR. Because 2021 was proposed as the deadline to definitely substitute the LIBOR, and because Brexit is comming to an end, this topic has become of interest again [4,5].</p>
 <p><img src="img/article-2172377-140736A7000005DC-647_634x422.jpg" alt=""></p>
-<p>The LIBOR, along with other daily reference interest rates (such as the dollar exchange rate), is published once a day, which requires a linear interpolation when a past transaction in local currency is required. For example, if interest rates between two consecutive days are $5.11\%$ and $5.09\%$, the intermediate value is calculated as follows [6]:</p>
+<p>The LIBOR, along with other daily reference interest rates (such as the dollar exchange rate), is published once a day with a few of maturity levels (the time until the loan will be charged):</p>
+<ul>
+<li>1 month</li>
+<li>3 months</li>
+<li>6 months</li>
+<li>12 months,</li>
+</ul>
+<p>which requires a linear interpolation when a different maturity level is required. For example, if interest rates of 1 and 2 months LIBOR are $4.3313$% and $4.3944$%, respectively, the maturity level at $1.5$ months is $4.29\%$, calculated as follows [6]:</p>
 $$
-x = (x_1-x_0) \Delta{t} + x_0,
-$$<p>where $x_0,x_1$ are consecutive interest rates, and $\Delta {t}$ is the time to interpolate. With $x_1=5.11\%$, $x_1=5.09\%$ and $\Delta{t}=0.5$ days (12h), it has an intermediate value of $x=5.10\%$.</p>
+y_n = \frac{y_1-y_0}{x_1-x_0} (x_n-x_0) + y_0,
+$$<p>where $(x_0,y_0)=(30$ days$, 4.3313\%)$, and $(x_1,y_1)=(60$ days$, 4.3944\%)$.</p>
 
 </div>
 </div>
@@ -13183,14 +13190,14 @@ $$<p>where $x_0,x_1$ are consecutive interest rates, and $\Delta {t}$ is the tim
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Sampling-of-a-signal">Sampling of a signal<a class="anchor-link" href="#Sampling-of-a-signal">&#182;</a></h2><p>This case of interpolation of the LIBOR is an example of reconstruction of continuous temporal sequences from samples taken by discrete mans. The discrete samples form a new signal, which, mathematically, can be expressed by choosing a sampling period $T$ and evaluating the continuous function as follows [2,3]:
+<h2 id="Sampling-of-a-signal">Sampling of a signal<a class="anchor-link" href="#Sampling-of-a-signal">&#182;</a></h2><p>The previous case of interpolation of the LIBOR is an example of reconstruction of continuous temporal sequences from samples taken by discrete mans. The discrete samples form a new signal, which, mathematically, can be expressed by choosing a sampling period $T$ and evaluating the continuous function as follows [2,3]:
 $$
 \tilde{z}[i] = z(iT) \quad i \in \mathbb{Z},
 $$</p>
-<p>where $\tilde{z}[i]$ is the discrete signal and $z(t)$ is the continuous signal. This means that the continuous signal can be converted into a discrete signal by reading its values in the instant $iT$. Using a notation of sets of ordered pairs this can also be expressed as follows:</p>
+<p>where $\tilde{z}[i]$ is the discrete signal and $z(t)$ is the continuous signal. This means that the continuous signal can be converted into a discrete signal by reading its values in the instants $iT$. Using a notation of ordered pairs this can also be expressed as follows:</p>
 $$
 \{(x_i,\tilde{z}_i)\}_{i=-\infty}^{\infty},
-$$<p>where $x_{i+1}-x_i = T$ seconds. In both cases it is necessary to ensure that the $T_{\max} \ge 2T$ relationship (where $T{\max}$ is the largest component of the signal) is fulfilled, by the <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist theorem</a>, if not you might suffer from an effect called <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a> that affects the reconstructed signal.</p>
+$$<p>where $x_{i+1}-x_i = T$ seconds. In both cases it is necessary to ensure that the $T_{\max} \ge 2T$ relationship is fulfilled (where $T{\max}$ is the largest component of the signal), by the <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist theorem</a>, if not you might suffer from an effect called <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a> that corrupts the reconstructed signal.</p>
 
 </div>
 </div>
@@ -13198,7 +13205,7 @@ $$<p>where $x_{i+1}-x_i = T$ seconds. In both cases it is necessary to ensure th
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Lineal-interpolation">Lineal interpolation<a class="anchor-link" href="#Lineal-interpolation">&#182;</a></h2><p>To delve into the topic, we say that the reconstruction of the discrete signal -also called interpolation- is achieved [convolving] (<a href="https://en.wikipedia.org/wiki/Convolution">https://en.wikipedia.org/wiki/Convolution</a>) an interpolation function $I(t)$ -also called interpolation core– with each sample available, then a sum of all convolutions is performed to obtain a continuous function [3]:</p>
+<h2 id="Lineal-interpolation">Lineal interpolation<a class="anchor-link" href="#Lineal-interpolation">&#182;</a></h2><p>To delve into the topic, we say that the reconstruction of the discrete signal &ndash;also called interpolation&ndash; is achieved <a href="https://en.wikipedia.org/wiki/Convolution">convolving</a> an interpolation function $I(t)$ &ndash;also called interpolation core&ndash; with each sample available, then a sum of all convolutions is performed to obtain a continuous function [3]:</p>
 $$
     z(t) = \sum_{i=-\infty}^{\infty}{\tilde{z}[i]I\big(\frac{t-iT}{T}\big)} 
 $$<p>This is easier to understand with an example:</p>
@@ -13671,16 +13678,16 @@ $$<p>This is easier to understand with an example:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Bandlimited-interpolation">Bandlimited interpolation<a class="anchor-link" href="#Bandlimited-interpolation">&#182;</a></h2><p>As noted above, the interpolation problem becomes more complex when it is desired to reconstruct the signal from randomly taken samples, that is, without a fixed sampling rate.<sup>1</sup> In this case, if the high frequencies are negligible, the limited band interpolation method (BLI) (that uses the Fourier series and the least-squares method) can be used to obtain a reasonable approximation. For this, the assumption is made that the discrete signal is <a href="https://en.wikipedia.org/wiki/Linear_time-invariant_system">linear and invariant in time</a>, if so, it can be modeled as a linear system, it is that is, as the multiplication between a transformation matrix and a coefficient vector, as follows [2]:</p>
+<h2 id="Bandlimited-interpolation">Bandlimited interpolation<a class="anchor-link" href="#Bandlimited-interpolation">&#182;</a></h2><p>As noted above, the interpolation problem becomes more complex when we desire to reconstruct the signal from samples taken randomly, that is, without a fixed sampling rate.<sup>1</sup> In this case, if the high frequencies are negligible, the limited band interpolation method (BLI) (that uses the Fourier series and the least-squares method) can be used to obtain a reasonable approximation. For this, the assumption is made that the discrete signal is <a href="https://en.wikipedia.org/wiki/Linear_time-invariant_system">linear and invariant in time</a>, if so, it can be modeled as a linear system, it is that is, as the multiplication between a transformation matrix and a coefficient vector, as follows [2]:</p>
 $$
 Fc=z,\qquad (1)
-$$<p>where $\{F\}_{ik} = e^{j2 \pi \frac{x_ik}{T}} $ is the $k$-th entry of the $i$-th orthogonal vector of the Fourier series and $c=(c-M, \ldots, c_M)^t $ is the vector obtained by applying the Fourier transform. Assuming that the number of linearly independent rows and columns of $F$ is the same (that is, $N = 2M + 1$), it is possible to solve the system by finding the inverse of the matrix, as follows:</p>
+$$<p>where $\{F\}_{ik} = e^{j2 \pi \frac{x_ik}{T}}$ is the $k$-th entry of the $i$-th orthogonal vector of the Fourier series and $c=(c-M, \ldots, c_M)^t $ is the vector obtained by applying the Fourier transform. Assuming that the number of linearly independent rows and columns of $F$ is the same (that is, $N = 2M + 1$), it is possible to solve the system by finding the inverse of the matrix, as follows:</p>
 $$
 c=F^{-1}z.
 $$<p>However, in real life, this rarely happens because the amount of signal samples is usually greater than the number of coefficients chosen for modeling ($2M+1&lt;N$). Fortunately, there is an approximation using the least-squares method [2]:<sup>2</sup></p>
 $$
 \hat{c}=(F^t F)^{-1}F^tz.
-$$<p>This approach becomes interpolation when performing a linear resampling of the temporary support $x_i$ in the interval $[0, T]$. For this you can use a simple rule of three:</p>
+$$<p>This approach becomes interpolation when we do a linear resampling of the temporary support $x_i$ in the interval $[0, T]$. For this we can use a simple rule of three:</p>
 $$
 \tilde{x}_i=i\frac{T}{L}.
 $$<p>Finally, $x_i$ is replaced by the $\tilde{x}_i$ in equation 1, and the resulting system is summarized in the following expression [2]:</p>
@@ -13693,7 +13700,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="BCCR-web-service-consumption">BCCR web service consumption<a class="anchor-link" href="#BCCR-web-service-consumption">&#182;</a></h2><p>Now we are going to practice with an example that consumes the BAPR SOAP web service available on the site <code>https://gee.bccr.fi.cr/Indicators/Subscriptions/WS/wsindicadoreseconomicos.asmx</code>. We start by importing the packages from the <a href="http://pywebsvcs.sourceforge.net/zsi.html">Zolera Soap Infrastructure</a> library, among other utilities.</p>
+<h2 id="BCCR-web-service-consumption">BCCR web service consumption<a class="anchor-link" href="#BCCR-web-service-consumption">&#182;</a></h2><p>Now we are going to practice with an example that consumes the SOAP web service available on the site <code>https://gee.bccr.fi.cr/Indicators/Subscriptions/WS/wsindicadoreseconomicos.asmx</code>. We start by importing the packages from the <a href="http://pywebsvcs.sourceforge.net/zsi.html">Zolera Soap Infrastructure</a> library, among other utilities.</p>
 <p><strong>Note:</strong> As a prerequisite, it is necessary to install the Zolera library using the Ubuntu instruction: <code>sudo apt-get install python-zsi</code>.</p>
 
 </div>
@@ -13718,7 +13725,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The operation that allows obtaining the daily exchange rate is called "ObtenerIndicadoresEconomicosXML" and, according to the <em>web service description language</em> (WSDL) of the BCCR, receives five parameters:</p>
+<p>The operation that offers the daily exchange rate is called "ObtenerIndicadoresEconomicosXML" and, according to the <em>web service description language</em> (WSDL) of the BCCR, receives five parameters:</p>
 <ul>
 <li><strong>Indicator ID</strong> (317, for the purchase exchange rate) [1]</li>
 <li><strong>Initial date</strong> (in dd/mm/YYYY format)</li>
@@ -13738,7 +13745,7 @@ $$
 &lt;/Datos_de_INGC011_CAT_INDICADORECONOMIC&gt;&lt;/string&gt;
 
 </code></pre>
-<p>Which returns a value of the exchange rate per day, setting the sampling frequency at $0.01$ ms ($f_s=1/86400$ Hz). To consume the service and obtain an array of <code>float</code> entries from XML we use the following code:<sup>3</sup></p>
+<p>Which returns a value of the exchange rate per day. A sample per day means that the sampling frequency is $0.01$ ms ($f_s=1/86400$ Hz). To consume the service and obtain an array of <code>float</code> entries from XML we use the following code:<sup>3</sup></p>
 
 </div>
 </div>
@@ -13748,17 +13755,17 @@ $$
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># creamos un proxy con los servicios del WSDL</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># create a proxy of the services provided in the WSDL</span>
 <span class="n">URL_WSDL</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;http://indicadoreseconomicos.bccr.fi.cr/</span><span class="se">\</span>
 <span class="s2">IndicadoresEconomicos/WebServices/wsIndicadoresEconomicos.asmx?WSDL&quot;</span><span class="p">)</span>
 <span class="n">servicio</span> <span class="o">=</span> <span class="n">ServiceProxy</span><span class="p">(</span><span class="n">URL_WSDL</span><span class="p">)</span>
 
-<span class="c1"># obtenemos la fecha de hoy según explica https://www.saltycrane.com/blog/2008/06/how-to-get-current-date-and-time-in/</span>
+<span class="c1"># obtain today&#39;s date with the method from  https://www.saltycrane.com/blog/2008/06/how-to-get-current-date-and-time-in/</span>
 <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="n">fechaInicio</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">fechaFinal</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
 
-<span class="c1"># encontramos la tasa del dolar desde el 2014</span>
+<span class="c1"># find the dollar exchange rate since a date in the past</span>
 <span class="n">dicc</span> <span class="o">=</span> <span class="n">servicio</span><span class="o">.</span><span class="n">ObtenerIndicadoresEconomicosXML</span><span class="p">(</span>
 	<span class="n">tcIndicador</span><span class="o">=</span><span class="s1">&#39;317&#39;</span><span class="p">,</span> <span class="c1"># 317 dolares</span>
 	<span class="n">tcFechaInicio</span><span class="o">=</span><span class="n">fechaInicio</span><span class="p">,</span>
@@ -13766,17 +13773,17 @@ $$
 	<span class="n">tcNombre</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span>
 	<span class="n">tnSubNiveles</span> <span class="o">=</span> <span class="s1">&#39;N&#39;</span><span class="p">)</span>
 
-<span class="c1"># sacamos el XML que viene encapsulado en el diccionario</span>
+<span class="c1"># extract the XML that comes embedded in the dictionary data structure</span>
 <span class="n">xml</span> <span class="o">=</span> <span class="n">dicc</span><span class="p">[</span><span class="s1">&#39;ObtenerIndicadoresEconomicosXMLResult&#39;</span><span class="p">]</span>
 <span class="n">raiz</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
 
-<span class="c1"># almacenamos los valores de cambio en un arreglo</span>
+<span class="c1"># store the obtained values in an array</span>
 <span class="n">z</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">hijo</span> <span class="ow">in</span> <span class="n">raiz</span><span class="p">:</span>
 	<span class="n">act</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">hijo</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 	<span class="n">z</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">act</span><span class="p">)</span>
     
-<span class="c1"># graficamos</span>
+<span class="c1"># plot</span>
 <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Days since </span><span class="si">%s</span><span class="s1"> until </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">fechaInicio</span><span class="p">,</span> <span class="n">fechaFinal</span><span class="p">))</span>
@@ -13826,7 +13833,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Random-decimation-of-the-original-signal">Random decimation of the original signal<a class="anchor-link" href="#Random-decimation-of-the-original-signal">&#182;</a></h2><p>To demonstrate the usefulness of the BLI we simulate the case in which samples are taken at random intervals. To do this, we iterate through the inputs of the original signal and keep each sample only if the random number generated is less than a defined $p$ value.</p>
+<h2 id="Random-decimation-of-the-original-signal">Random decimation of the original signal<a class="anchor-link" href="#Random-decimation-of-the-original-signal">&#182;</a></h2><p>To demonstrate the usefulness of the BLI we simulate the case in which samples are taken at random intervals. To do this, we iterate through the inputs of the original signal and keep each sample only if the random number generated is less than a defined $p$ value (does not confuse with the significance level on hypothesis testing).</p>
 
 </div>
 </div>
@@ -13896,7 +13903,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here we see red dots that represent the new signal we are going to work on. A linear interpolation would join the available points with a straight line, but the approximation obtained would not be smooth. However, we proceed to build it for illustrative purposes.</p>
+<p>Here we see red dots that represent the new signal we are going to work on. A linear interpolation would join the available points with a straight line, but the obtained approximation would not be smooth. However, we proceed to build it for illustrative purposes.</p>
 
 </div>
 </div>
@@ -13958,7 +13965,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Limited-band-interpolation">Limited band interpolation<a class="anchor-link" href="#Limited-band-interpolation">&#182;</a></h2><p>Now we use BLI to approximate the original signal using a smoother curve and with greater robustness against missing data.</p>
+<h2 id="Limited-band-interpolation">Limited band interpolation<a class="anchor-link" href="#Limited-band-interpolation">&#182;</a></h2><p>Now we use BLI to approximate the original signal using a smoother curve with greater robustness against missing data.</p>
 
 </div>
 </div>
@@ -14074,7 +14081,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Although it is noted that the BLI has a higher MSE compared to linear interpolation, it offers a smoother and cheaper interpolation, because to store the signal it is only necessary to save the vector of coefficients that usually takes 5 to 15 coefficient (the higher the frequencies, the more coefficients are needed).</p>
+<p>Although it is noted that the BLI has a higher MSE compared to linear interpolation, it offers a smoother and cheaper interpolation, because it is only necessary to save the vector of coefficients (that usually takes 5 to 15 coefficient) to store the whole signal approximation. Take into accoutn that if you want to store higher frequencies more coefficients are needed.</p>
 
 </div>
 </div>
@@ -14082,7 +14089,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Number-of-coefficients-to-store">Number of coefficients to store<a class="anchor-link" href="#Number-of-coefficients-to-store">&#182;</a></h2><p>If the low frequencies of the signal are not important, but only the general trend (something feasible in the example of the dollar exchange rate just studied), the BLI method can be used to "compress" the data and save disk space. Recalling that $N$ is the number of samples of the original signal and $M$ the number of coefficients used, this allows us to calculate the "compression rate" $c$ as follows:</p>
+<h2 id="Number-of-coefficients-to-store">Number of coefficients to store<a class="anchor-link" href="#Number-of-coefficients-to-store">&#182;</a></h2><p>If the low frequencies of the signal are not important, but only the general trend, the BLI method can be used to "compress" the data and save disk space. Recalling that $N$ is the number of samples of the original signal and $M$ the number of coefficients used, this allows us to calculate the "compression rate" $c$ as follows:</p>
 $$c = \frac{N-M}{N}.$$<p><strong>Note:</strong> the signal analyzed in the example is real, therefore the coefficient vector is even, and this allows us to discard half of the coefficients.</p>
 
 </div>
