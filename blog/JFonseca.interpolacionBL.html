@@ -13179,10 +13179,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <li>6 months</li>
 <li>12 months,</li>
 </ul>
-<p>which requires a linear interpolation when a different maturity level is required. For example, if interest rates of 1 and 2 months LIBOR are $4.3313$% and $4.3944$%, respectively, the maturity level at $1.5$ months is $4.29\%$, calculated as follows [6]:</p>
+<p>which requires a linear interpolation when a different maturity level is required. For example, if interest rates of 1 and 3 months LIBOR are $4.3313$% and $4.3944$%, respectively, the maturity level at $1.5$ months is $4.3155\%$, calculated as follows [6]:</p>
 $$
 y_n = \frac{y_1-y_0}{x_1-x_0} (x_n-x_0) + y_0,
-$$<p>where $(x_0,y_0)=(30$ days$, 4.3313\%)$, and $(x_1,y_1)=(60$ days$, 4.3944\%)$.</p>
+$$<p>where $(x_0,y_0)=(30$ days$, 4.3313\%)$, and $(x_1,y_1)=(90$ days$, 4.3944\%)$.</p>
 
 </div>
 </div>
@@ -13190,14 +13190,14 @@ $$<p>where $(x_0,y_0)=(30$ days$, 4.3313\%)$, and $(x_1,y_1)=(60$ days$, 4.3944\
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Sampling-of-a-signal">Sampling of a signal<a class="anchor-link" href="#Sampling-of-a-signal">&#182;</a></h2><p>The previous case of interpolation of the LIBOR is an example of reconstruction of continuous temporal sequences from samples taken by discrete mans. The discrete samples form a new signal, which, mathematically, can be expressed by choosing a sampling period $T$ and evaluating the continuous function as follows [2,3]:
+<h2 id="Sampling-of-a-signal">Sampling of a signal<a class="anchor-link" href="#Sampling-of-a-signal">&#182;</a></h2><p>Even they are not continuous, LIBOR daily rates constitute a discrete signal that mathematically can be expressed by choosing a sampling period $T=1$ day and evaluating the continuous "imaginary" function as follows [2,3]:
 $$
 \tilde{z}[i] = z(iT) \quad i \in \mathbb{Z},
 $$</p>
 <p>where $\tilde{z}[i]$ is the discrete signal and $z(t)$ is the continuous signal. This means that the continuous signal can be converted into a discrete signal by reading its values in the instants $iT$. Using a notation of ordered pairs this can also be expressed as follows:</p>
 $$
 \{(x_i,\tilde{z}_i)\}_{i=-\infty}^{\infty},
-$$<p>where $x_{i+1}-x_i = T$ seconds. In both cases it is necessary to ensure that the $T_{\max} \ge 2T$ relationship is fulfilled (where $T{\max}$ is the largest component of the signal), by the <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist theorem</a>, if not you might suffer from an effect called <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a> that corrupts the reconstructed signal.</p>
+$$<p>where $x_{i+1}-x_i = T$ seconds. In both cases it is necessary to ensure that the $T_{\max} \ge 2T$ relationship is fulfilled (where $T{\max}$ is the largest component of the signal), by the <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist theorem</a>, if not you might suffer from an effect called <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a> that corrupts the reconstructed signal. Nyquist theorem is an important topic on audio and video processing applications, but we will ignore it here for practical purposes and because we know that the daily rate signal is bandlimited (i.e. there are no measurements each 12h or less).</p>
 
 </div>
 </div>
@@ -13205,7 +13205,7 @@ $$<p>where $x_{i+1}-x_i = T$ seconds. In both cases it is necessary to ensure th
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Lineal-interpolation">Lineal interpolation<a class="anchor-link" href="#Lineal-interpolation">&#182;</a></h2><p>To delve into the topic, we say that the reconstruction of the discrete signal &ndash;also called interpolation&ndash; is achieved <a href="https://en.wikipedia.org/wiki/Convolution">convolving</a> an interpolation function $I(t)$ &ndash;also called interpolation core&ndash; with each sample available, then a sum of all convolutions is performed to obtain a continuous function [3]:</p>
+<h2 id="Lineal-interpolation">Lineal interpolation<a class="anchor-link" href="#Lineal-interpolation">&#182;</a></h2><p>The interpolation of a discrete signal is achieved by <a href="https://en.wikipedia.org/wiki/Convolution">convolving</a> an interpolation function $I(t)$ &ndash;also called interpolation kernel&ndash; with each sample available, then a sum of all convolutions is performed to obtain a continuous function [3]:</p>
 $$
     z(t) = \sum_{i=-\infty}^{\infty}{\tilde{z}[i]I\big(\frac{t-iT}{T}\big)} 
 $$<p>This is easier to understand with an example:</p>
