@@ -13158,9 +13158,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Limited-band-interpolation-for-daily-reference-rates">Limited band interpolation for daily reference rates<a class="anchor-link" href="#Limited-band-interpolation-for-daily-reference-rates">&#182;</a></h1><p>By <a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a>, Mar 2015 - Aug 2019</p>
+<h1 id="Limited-band-interpolation-for-daily-reference-rates">Limited band interpolation for daily reference rates<a class="anchor-link" href="#Limited-band-interpolation-for-daily-reference-rates">&#182;</a></h1><p>By <a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a>, Mar 2015</p>
 <hr>
-<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>In this <em>ipython notebook</em> we'll issue data from daily reference rates, such as the London interbank interest rate (LIBOR) or the dollar exchange rate in Costa Rica offered monthly by the Central Bank of Costa Rica (BCCR), to explain linear and band-limited interpolation techniques.</p>
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>In this <em>ipython notebook</em> we'll use data from daily reference rates, such as the London interbank interest rate (LIBOR) or the dollar exchange rate in Costa Rica offered monthly by the Central Bank of Costa Rica (BCCR), to explain linear and band-limited interpolation techniques.</p>
 
 </div>
 </div>
@@ -13168,18 +13168,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="History">History<a class="anchor-link" href="#History">&#182;</a></h1><p>In June 2012, when resolving a legal dispute, the Commodity Futures Negotiation Commission of the United States (CFTC) discovered a series of irregularities in the management of the LIBOR by the British multinational bank Barclays. The Financial Times newspaper later confirmed the manipulation of this rate since 1991, which caused an international scandal, since the LIBOR is used as a reference to determine the interest rate of the loans in foreign currency, even in Costa Rica [4,5].</p>
+<h1 id="History">History<a class="anchor-link" href="#History">&#182;</a></h1><p>In June 2012, when resolving a legal dispute, the Commodity Futures Negotiation Commission of the United States (CFTC) discovered a series of irregularities in the management of the LIBOR by the British multinational bank Barclays. The Financial Times newspaper later confirmed the manipulation of this rate since 1991, which caused an international scandal, since the LIBOR is used as a reference to determine the interest rate of the loans in foreign currency all over the world [4,5].</p>
 <p><img src="img/libor-scandal-headlines-the-financial-times-newspaper-london-august-CTX670.jpg" alt=""></p>
 <p>As a result, millionaire fines were imposed on the British bank and an investigation was performed to find more reliable interest rates, including the first-rate, a rate managed by US banks that is based on real transactions and not on opinion polls like the LIBOR. Because 2021 was proposed as the deadline to definitely substitute the LIBOR, and because Brexit is comming to an end, this topic has become of interest again [4,5].</p>
 <p><img src="img/article-2172377-140736A7000005DC-647_634x422.jpg" alt=""></p>
-<p>The LIBOR, along with other daily reference interest rates (such as the dollar exchange rate), is published once a day with a few of maturity levels (the time until the loan will be charged):</p>
+<p>The LIBOR, along with other daily reference rates, is published once a day with a few bunch of maturity levels (the time until the loan will be charged):</p>
 <ul>
 <li>1 month</li>
 <li>3 months</li>
 <li>6 months</li>
-<li>12 months,</li>
+<li>12 months</li>
 </ul>
-<p>which requires a linear interpolation when a different maturity level is required. For example, if interest rates of 1 and 3 months LIBOR are $4.3313$% and $4.3944$%, respectively, the maturity level at $1.5$ months is $4.3155\%$, calculated as follows [6]:</p>
+<p>Because only 4 values are published, banks usually require to linearly interpolate other maturity levels. For example, if interest rates of 1 and 3 months LIBOR are $4.3313$% and $4.3944$%, respectively, the maturity level at $1.5$ months is $4.3155\%$, calculated as follows [6]:</p>
 $$
 y_n = \frac{y_1-y_0}{x_1-x_0} (x_n-x_0) + y_0,
 $$<p>where $(x_0,y_0)=(30$ days$, 4.3313\%)$, and $(x_1,y_1)=(90$ days$, 4.3944\%)$.</p>
@@ -13190,14 +13190,15 @@ $$<p>where $(x_0,y_0)=(30$ days$, 4.3313\%)$, and $(x_1,y_1)=(90$ days$, 4.3944\
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Sampling-of-a-signal">Sampling of a signal<a class="anchor-link" href="#Sampling-of-a-signal">&#182;</a></h2><p>Even they are not continuous, LIBOR daily rates constitute a discrete signal that mathematically can be expressed by choosing a sampling period $T=1$ day and evaluating the continuous "imaginary" function as follows [2,3]:
+<h2 id="Sampling-of-a-signal">Sampling of a signal<a class="anchor-link" href="#Sampling-of-a-signal">&#182;</a></h2><p>Even they are not continuous, LIBOR daily rates constitute a discrete signal, that mathematically, can be expressed by choosing a sampling period $T$ of 1 day and evaluating the continuous "imaginary" function as follows [2,3]:
 $$
 \tilde{z}[i] = z(iT) \quad i \in \mathbb{Z},
 $$</p>
 <p>where $\tilde{z}[i]$ is the discrete signal and $z(t)$ is the continuous signal. This means that the continuous signal can be converted into a discrete signal by reading its values in the instants $iT$. Using a notation of ordered pairs this can also be expressed as follows:</p>
 $$
 \{(x_i,\tilde{z}_i)\}_{i=-\infty}^{\infty},
-$$<p>where $x_{i+1}-x_i = T$ seconds. In both cases it is necessary to ensure that the $T_{\max} \ge 2T$ relationship is fulfilled (where $T{\max}$ is the largest component of the signal), by the <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist theorem</a>, if not you might suffer from an effect called <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a> that corrupts the reconstructed signal. Nyquist theorem is an important topic on audio and video processing applications, but we will ignore it here for practical purposes and because we know that the daily rate signal is bandlimited (i.e. there are no measurements each 12h or less).</p>
+$$<p>where $x_{i+1}-x_i = T$ seconds. In both cases it is necessary to ensure that the $T_{\max} \ge 2T$ relationship is fulfilled (where $T_\max$ is the largest component of the signal). This relationship is summarized in what is known as the <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist theorem</a>, if this theorem is not respected <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a> might corrupt the reconstructed signal.</p>
+<p><strong>Note:</strong> although the Nyquist theorem is an important topic on audio and video processing applications, we will ignore it here for practical purposes and because we know that the daily rate signal is bandlimited (i.e. there are no variations between days).</p>
 
 </div>
 </div>
@@ -13207,7 +13208,7 @@ $$<p>where $x_{i+1}-x_i = T$ seconds. In both cases it is necessary to ensure th
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Lineal-interpolation">Lineal interpolation<a class="anchor-link" href="#Lineal-interpolation">&#182;</a></h2><p>The interpolation of a discrete signal is achieved by <a href="https://en.wikipedia.org/wiki/Convolution">convolving</a> an interpolation function $I(t)$ &ndash;also called interpolation kernel&ndash; with each sample available, then a sum of all convolutions is performed to obtain a continuous function [3]:</p>
 $$
-    z(t) = \sum_{i=-\infty}^{\infty}{\tilde{z}[i]I\big(\frac{t-iT}{T}\big)} 
+    z(t) =  \sum_{i=-\infty}^{\infty}{\tilde{z}[i]I\big(\frac{t-iT}{T}\big)} 
 $$<p>This is easier to understand with an example:</p>
 
 </div>
@@ -13670,21 +13671,13 @@ $$<p>This is easier to understand with an example:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This would be the case when on any given day, banks have forgotten to publish the reference value of the daily reference rate (not likely) or when historical records have missing data.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Bandlimited-interpolation">Bandlimited interpolation<a class="anchor-link" href="#Bandlimited-interpolation">&#182;</a></h2><p>As noted above, the interpolation problem becomes more complex when we desire to reconstruct the signal from samples taken randomly, that is, without a fixed sampling rate.<sup>1</sup> In this case, if the high frequencies are negligible, the limited band interpolation method (BLI) (that uses the Fourier series and the least-squares method) can be used to obtain a reasonable approximation. For this, the assumption is made that the discrete signal is <a href="https://en.wikipedia.org/wiki/Linear_time-invariant_system">linear and invariant in time</a>, if so, it can be modeled as a linear system, it is that is, as the multiplication between a transformation matrix and a coefficient vector, as follows [2]:</p>
+<h2 id="Bandlimited-interpolation">Bandlimited interpolation<a class="anchor-link" href="#Bandlimited-interpolation">&#182;</a></h2><p>As noted above, the interpolation problem becomes more complex when we desire to reconstruct the signal from samples taken randomly, that is, without a fixed sampling rate.<sup>1</sup> In this case, if the high frequencies are negligible, the limited band interpolation method (BLI) can be used to obtain a reasonable approximation. For this, the assumption is made that the discrete signal is <a href="https://en.wikipedia.org/wiki/Linear_time-invariant_system">linear and invariant in time</a>, if so, it can be modeled as a linear system, it is that is, as the multiplication between a transformation matrix and a coefficient vector, as follows [2]:</p>
 $$
 Fc=z,\qquad (1)
 $$<p>where $\{F\}_{ik} = e^{j2 \pi \frac{x_ik}{T}}$ is the $k$-th entry of the $i$-th orthogonal vector of the Fourier series and $c=(c-M, \ldots, c_M)^t $ is the vector obtained by applying the Fourier transform. Assuming that the number of linearly independent rows and columns of $F$ is the same (that is, $N = 2M + 1$), it is possible to solve the system by finding the inverse of the matrix, as follows:</p>
 $$
 c=F^{-1}z.
-$$<p>However, in real life, this rarely happens because the amount of signal samples is usually greater than the number of coefficients chosen for modeling ($2M+1&lt;N$). Fortunately, there is an approximation using the least-squares method [2]:<sup>2</sup></p>
+$$<p>However, in real life, this rarely happens because the amount of signal samples is usually greater than the number of coefficients chosen for modeling ($2M+1&lt;N$). Fortunately, there is an approximation using the least-squares method [2,7]:<sup>2</sup></p>
 $$
 \hat{c}=(F^t F)^{-1}F^tz.
 $$<p>This approach becomes interpolation when we do a linear resampling of the temporary support $x_i$ in the interval $[0, T]$. For this we can use a simple rule of three:</p>
@@ -13693,14 +13686,15 @@ $$
 $$<p>Finally, $x_i$ is replaced by the $\tilde{x}_i$ in equation 1, and the resulting system is summarized in the following expression [2]:</p>
 $$
 \tilde{z}_i=\tilde{F}\hat{c}.
-$$
+$$<p><strong>Note:</strong> a better explanation of the BLI theory can be found in the referenced ipython notebook <em>Safecast : Band-limited interpolation of radiation measurements in Fukushima</em>, make sure to check it out.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="BCCR-web-service-consumption">BCCR web service consumption<a class="anchor-link" href="#BCCR-web-service-consumption">&#182;</a></h2><p>Now we are going to practice with an example of another daily rate, the dollar exchange rate for colones. To get the date we consume the SOAP web service of the BCCR available on the site <code>https://gee.bccr.fi.cr/Indicators/Subscriptions/WS/wsindicadoreseconomicos.asmx</code>. We start by importing the packages from the <a href="http://pywebsvcs.sourceforge.net/zsi.html">Zolera Soap Infrastructure</a> library, among other utilities.</p>
+<h2 id="BCCR-web-service-consumption">BCCR web service consumption<a class="anchor-link" href="#BCCR-web-service-consumption">&#182;</a></h2><p>Now we are going to practice with an example of another daily rate, called the dollar exchange rate for Costa Rican colones. To get the date we consume the SOAP web service of the BCCR available on the site <code>https://gee.bccr.fi.cr/Indicators/Subscriptions/WS/wsindicadoreseconomicos.asmx</code>. We start by importing the packages from the <a href="http://pywebsvcs.sourceforge.net/zsi.html">Zolera Soap Infrastructure</a> library, among other utilities.</p>
 <p><strong>Note:</strong> As a prerequisite, it is necessary to install the Zolera library using the Ubuntu instruction: <code>sudo apt-get install python-zsi</code>.</p>
 
 </div>
@@ -13777,7 +13771,9 @@ $$
 <span class="n">xml</span> <span class="o">=</span> <span class="n">dicc</span><span class="p">[</span><span class="s1">&#39;ObtenerIndicadoresEconomicosXMLResult&#39;</span><span class="p">]</span>
 <span class="n">raiz</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
 
-<span class="c1"># store the obtained values in an array</span>
+<span class="c1"># store the tps://www.larepublica.net/noticia/el-libor-dejara-de-existir-en-el-2021</span>
+
+<span class="mf">1.</span> <span class="n">Linearobtained</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">array</span>
 <span class="n">z</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">hijo</span> <span class="ow">in</span> <span class="n">raiz</span><span class="p">:</span>
 	<span class="n">act</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">hijo</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
@@ -13833,7 +13829,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Random-decimation-of-the-original-signal">Random decimation of the original signal<a class="anchor-link" href="#Random-decimation-of-the-original-signal">&#182;</a></h2><p>To demonstrate the usefulness of the BLI we simulate the case in which samples are taken at random intervals. To do this, we iterate through the inputs of the original signal and keep each sample only if the random number generated is less than a defined $p$ value (does not confuse with the significance level on hypothesis testing).</p>
+<h2 id="Random-decimation-of-the-original-signal">Random decimation of the original signal<a class="anchor-link" href="#Random-decimation-of-the-original-signal">&#182;</a></h2><p>To demonstrate the usefulness of the BLI we simulate the case in which samples are taken at random intervals. To do this, we iterate through the inputs of the original signal and keep each sample only if the random number generated is less than a defined $p$ value (do not confuse with the significance level on hypothesis testing).</p>
 
 </div>
 </div>
@@ -14089,8 +14085,8 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Number-of-coefficients-to-store">Number of coefficients to store<a class="anchor-link" href="#Number-of-coefficients-to-store">&#182;</a></h2><p>If the low frequencies of the signal are not important, but only the general trend, the BLI method can be used to "compress" the data and save disk space. Recalling that $N$ is the number of samples of the original signal and $M$ the number of coefficients used, this allows us to calculate the "compression rate" $c$ as follows:</p>
-$$c = \frac{N-M}{N}.$$<p><strong>Note:</strong> the signal analyzed in the example is real, therefore the coefficient vector is even, and this allows us to discard half of the coefficients.</p>
+<h2 id="Number-of-coefficients-to-store">Number of coefficients to store<a class="anchor-link" href="#Number-of-coefficients-to-store">&#182;</a></h2><p>If the low frequencies of the signal are not important, but only the general trend, the BLI method can be used to "compress" the data and save disk space. Recalling that $N$ is the number of samples of the original signal and $M$ the number of coefficients used, the "compression rate" $c$ is calculated as follows:</p>
+$$c = \frac{N-M}{N}.$$<p><strong>Note:</strong> the imaginary component of analyzed signal is zero, therefore the coefficient vector is even, and this allows us to discard half of the coefficients.</p>
 
 </div>
 </div>
@@ -14186,6 +14182,8 @@ Compression achieved: 99%
 <li><p>Miguel Elizondo. El LIBOR dejará de existir en el 2021. La República.net, Impacto legal. Monday, July 31-th, 2017. URL: <a href="https://www.larepublica.net/noticia/el-libor-dejara-de-existir-en-el-2021">https://www.larepublica.net/noticia/el-libor-dejara-de-existir-en-el-2021</a></p>
 </li>
 <li><p>Linear interpolation example. International Swaps and Derivatives Association. URL: <a href="https://www.isda.org/a/7KiDE/linear-interpolation-example-1-10.pdf">https://www.isda.org/a/7KiDE/linear-interpolation-example-1-10.pdf</a></p>
+</li>
+<li><p>Penn engineering. Least Squares, Pseudo-Inverses, PCA &amp; SVD. URL: <a href="http://www.cis.upenn.edu/~cis610/cis61009sl10.pdf">http://www.cis.upenn.edu/~cis610/cis61009sl10.pdf</a></p>
 </li>
 </ol>
 <h2 id="Notes">Notes<a class="anchor-link" href="#Notes">&#182;</a></h2><ol>
