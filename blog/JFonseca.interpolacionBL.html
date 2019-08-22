@@ -13680,7 +13680,7 @@ c=F^{-1}z.
 $$<p>However, in real life, this rarely happens because the amount of signal samples is usually greater than the number of coefficients chosen for modeling ($2M+1&lt;N$). Fortunately, there is an approximation using the least-squares method [2,7]:<sup>2</sup></p>
 $$
 \hat{c}=(F^t F)^{-1}F^tz.
-$$<p>This approach becomes interpolation when we do a linear resampling of the temporary support $x_i$ in the interval $[0, T]$. For this we can use a simple rule of three:</p>
+$$<p>This approach works as the pseudo-inverse matrix can be approximated by any method that minimizes the square error. The interpolation comes into the play when we do a linear resampling of the temporary support $x_i$ in the interval $[0, T]$. For this we can use a simple rule of three:</p>
 $$
 \tilde{x}_i=i\frac{T}{L}.
 $$<p>Finally, $x_i$ is replaced by the $\tilde{x}_i$ in equation 1, and the resulting system is summarized in the following expression [2]:</p>
