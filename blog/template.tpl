@@ -46,7 +46,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!--link rel="stylesheet" href="dist/custom.css"-->
 <script src="dist/VerLim.min.js"></script>
 <link rel="stylesheet" href="dist/themeNUIwithCounter.css">
-<script>
+<!--script>
 	jQuery(document).ready(function () {
 	$(window).VerLim(
 		{
@@ -58,6 +58,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			shadow: "on"
 		});
 	})
-</script>
+</script-->
 
 {% endblock header %}
