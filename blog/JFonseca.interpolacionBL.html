@@ -13150,6 +13150,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 </script>
 
+<!--script src="dist/jquery.progressScroll.min.js"></script-->
+<!--link rel="stylesheet" href="dist/custom.css"-->
+<script src="dist/VerLim.min.js"></script>
+<link rel="stylesheet" href="dist/themeNUIwithCounter.css">
+<script>
+	jQuery(document).ready(function () {
+	$(window).VerLim(
+		{
+			autoHide: "on",
+			autoHideTime: "2",
+			theme: "off",
+			position: "top",
+			thickness: "10px",
+			shadow: "on"
+		});
+	})
+</script>
+
 
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
@@ -13158,8 +13176,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Limited-band-interpolation-for-daily-reference-rates">Limited band interpolation for daily reference rates<a class="anchor-link" href="#Limited-band-interpolation-for-daily-reference-rates">&#182;</a></h1><p>By <a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a>, Mar 2015</p>
-<hr>
+<h1 id="Limited-band-interpolation-for-daily-reference-rate">Limited band interpolation for daily reference rate<a class="anchor-link" href="#Limited-band-interpolation-for-daily-reference-rate">&#182;</a></h1><p>By <a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a>, Mar 2015</p>
 <h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>In this <em>ipython notebook</em> we'll use data from daily reference rates, such as the London interbank interest rate (LIBOR) or the dollar exchange rate in Costa Rica offered monthly by the Central Bank of Costa Rica (BCCR), to explain linear and band-limited interpolation techniques.</p>
 
 </div>

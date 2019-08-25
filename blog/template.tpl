@@ -42,4 +42,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 </script>
 
+<!--script src="dist/jquery.progressScroll.min.js"></script-->
+<!--link rel="stylesheet" href="dist/custom.css"-->
+<script src="dist/VerLim.min.js"></script>
+<link rel="stylesheet" href="dist/themeNUIwithCounter.css">
+<script>
+	jQuery(document).ready(function () {
+	$(window).VerLim(
+		{
+			autoHide: "on",
+			autoHideTime: "2",
+			theme: "off",
+			position: "top",
+			thickness: "10px",
+			shadow: "on"
+		});
+	})
+</script>
+
 {% endblock header %}
