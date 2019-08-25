@@ -42,7 +42,4 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 </script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
-<script src="https://github.com/jedfoster/Readmore.js/blob/master/readmore.js"></script>
-
 {% endblock header %}
