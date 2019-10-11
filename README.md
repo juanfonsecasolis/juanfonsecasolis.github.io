@@ -74,7 +74,6 @@ Mathematical signal processing, audio processing and digital acoustics, pattern 
 
 I'm always happy to hear from people who are interested in my work. You can connect with me through these links:
 <ul>
-<li><b>Email:</b> juanma2268 [at] gmail [dot] com</li>
 <li><b>Github:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
 <li><b>Linkedin:</b> <a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
 <li><b>Academia Edu:</b> http://itcr.academia.edu/JuanFonsecaSol%C3%ADs</li>
