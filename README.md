@@ -66,6 +66,7 @@ Mathematical signal processing, audio processing and digital acoustics, pattern 
 * Author. *Automatic pitch recognition in a computer game interface.* Ingeniería 25 (1): 13-33, ISSN: 2215-2652; 2015. San José, CR. 2015. [https://doi.org/10.15517/ri.v25i1.11751](https://doi.org/10.15517/ri.v25i1.11751).
 
 ## Talks
+* Avantica Technologies, Los Yoses. An introduction to A/B testing using a Google Optimize example. [jFonseca_abTesting_2019.pdf](https://github.com/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/slides/jFonseca_abTesting_2019.pdf)
 * Centro Académico de Alajuela, TEC. Quick start on webtesting on 2019. [jfonseca_quickstartTesting2019.pdf](slides/jfonseca_quickstartTesting2019.pdf) 
 * Centro de las Artes TEC. Reconocimiento automático de señales peatonales accesibles de semáforo en dispositivos móviles (_automatic recognition of accessible pedestrian signals to be used in mobile devices_). JoCICI 2017. August 24th, 2017. [https://youtu.be/POIF7RVtp0c?t=43](https://youtu.be/POIF7RVtp0c?t=43)
 * Canal de transferencia del conocimiento. Detección de voces y otros ruidos en ambientes de trabajo y estudio (_Voice and noise detection in work and study environments_). JoCICI 2015. March 6th, 2015. [https://youtu.be/6o-dmx2vQSA](https://youtu.be/6o-dmx2vQSA)
