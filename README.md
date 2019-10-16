@@ -71,6 +71,9 @@ Mathematical signal processing, audio processing and digital acoustics, pattern 
 * Centro de las Artes TEC. Reconocimiento automático de señales peatonales accesibles de semáforo en dispositivos móviles (_automatic recognition of accessible pedestrian signals to be used in mobile devices_). JoCICI 2017. August 24th, 2017. [https://youtu.be/POIF7RVtp0c?t=43](https://youtu.be/POIF7RVtp0c?t=43)
 * Canal de transferencia del conocimiento. Detección de voces y otros ruidos en ambientes de trabajo y estudio (_Voice and noise detection in work and study environments_). JoCICI 2015. March 6th, 2015. [https://youtu.be/6o-dmx2vQSA](https://youtu.be/6o-dmx2vQSA)
 
+# Other
+* Digital signal processing: investment opportunities. [introDSP.pdf](https://juanfonsecasolis.github.io/slides/introDSP.pdf)
+
 ## Contact
 
 I'm always happy to hear from people who are interested in my work. You can connect with me through these links:
