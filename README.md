@@ -41,7 +41,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="column" style='float: left;width: 75%;'>
 Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written and my background. I am interested on mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance.
 
-</br> 
+<br> 
 
 <iframe width="280" height="157" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
