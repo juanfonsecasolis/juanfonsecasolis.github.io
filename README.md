@@ -35,15 +35,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </script>
 
 <div class="row" style='content: "";display: table;clear: both;width=100%'>
-<div class="column" style='float: left;width: 25%;'>
-<img src='blog/img/yop.jpeg'>
-</div>
-<div class="column" style='float: left;width: 75%;'>
-Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written and my background. I am interested on mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance.
-
-<br> 
-
+<div class="column" style='float: left;width: 40%;'>
+<!--img src='blog/img/yop.jpeg'-->
 <iframe width="280" height="157" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="column" style='float: left;width: 60%;'>
+Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written, my background and interests. 
+  
+## Interests
+  
+I am interested on mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance.
 
 </div>
 </div>
