@@ -45,7 +45,7 @@ Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this 
 
 Mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance. 
 
-<iframe width="560" height="315" src="https://youtu.be/L7m8BFLCArM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="280" height="157" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>
 </div>
