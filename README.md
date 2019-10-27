@@ -42,9 +42,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="column" style='float: left;width: 60%;'>
 Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written, my background and interests. 
   
-## Interests
+
+<h2>Interests</h2>
   
-I am interested on mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance.
+Mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance.
 
 </div>
 </div>
