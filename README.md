@@ -14,26 +14,6 @@
 <link rel="stylesheet" type="text/css" href="dist/overhang.min.css" />
 <script type="text/javascript" src="dist/overhang.min.js"></script>
 
-<!-- Anti-flicker snippet (recommended)  -->
-<style>.async-hide { opacity: 0 !important} </style>
-<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-})(window,document.documentElement,'async-hide','dataLayer',4000,
-{'GTM-T3QBCMS':true});</script>
-<!-- Modified Analytics tracking code with Optimize plugin -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-144706135-1', 'auto');
-    ga('require', 'GTM-T3QBCMS');
-    ga('send', 'pageview');
-    
-</script>
-
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written, my background and interests.   
@@ -41,9 +21,6 @@ Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this 
 <h2>Interests</h2>
   
 Mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance.
-
-</div>
-</div>
 
 ## Blog
 * 11 Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
