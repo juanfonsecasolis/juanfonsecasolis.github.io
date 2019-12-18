@@ -16,7 +16,7 @@
 
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written, my background and interests.   
+Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written, my background and interests. Please take a look to [my CV](slides/jfonseca_curriculumVitae_2019.pdf).   
 
 <h2>Interests</h2>
   
