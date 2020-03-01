@@ -44,7 +44,7 @@ Mathematical signal processing, audio processing and digital acoustics, pattern 
 
 ## Slides
 * Avantica Technologies, Los Yoses. [An introduction to A/B testing using a Google Optimize example](https://juanfonsecasolis.github.io/slides/jFonseca_abTesting_2019.pdf). 
-* Centro Académico de Alajuela, TEC. [Quick start on webtesting on 2019](slides/jfonseca_quickstartTesting2019.pdf). 
+* Centro Académico de Alajuela, TEC. [Quick start on webtesting on 2019](slides/jfonseca_quickstartTesting2019_2.pdf). 
 
 ## Contact
 
