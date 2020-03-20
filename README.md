@@ -43,8 +43,8 @@ Mathematical signal processing, audio processing and digital acoustics, pattern 
 * Canal de transferencia del conocimiento. [Detección de voces y otros ruidos en ambientes de trabajo y estudio](https://youtu.be/6o-dmx2vQSA) (_Voice and noise detection in work and study environments_). JoCICI 2015. March 6th, 2015.
 
 ## Slides
-* Avantica Technologies, Los Yoses. [An introduction to A/B testing using a Google Optimize example](https://juanfonsecasolis.github.io/slides/jFonseca_abTesting_2019.pdf). 
-* Centro Académico de Alajuela, TEC. [Quick start on webtesting on 2019](slides/jfonseca_quickstartTesting2019_2.pdf). 
+* [An introduction to A/B testing using a Google Optimize example](https://juanfonsecasolis.github.io/slides/jFonseca_abTesting_2019.pdf). 
+* [Quick start on webtesting on 2019](slides/jfonseca_quickstartTesting2019_2.pdf). 
 
 ## Contact
 
