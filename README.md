@@ -19,7 +19,7 @@
 Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written, my background and interests. Please take a look to [my CV](slides/jfonseca_curriculumVitae_last.pdf).   
 <h2>Interests</h2>
   
-Mathematical signal processing, audio processing and digital acoustics, pattern recognition, human-computer interaction, and quality control/assurance.
+Mathematical signal processing, audio processing and digital acoustics, pattern recognition, and audio/video quality control.
 
 ## Blog
 * 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
