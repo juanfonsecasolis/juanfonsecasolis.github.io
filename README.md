@@ -27,7 +27,7 @@ Mathematical signal processing, audio processing and digital acoustics, pattern 
 * 11 Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
 
 ## Projects
-* Nov 2019 >> [Blood pressure and pulse analyzer](https://bloodpressurepulse.herokuapp.com/)
+* Nov 2019 >> [Blood pressure and pulse analyzer](https://bloodpressurepulse.herokuapp.com/xxyn4pz8yhb0i7n)
 * Nov 2017 >> [Automatic recognition of pedestrian signals - RASP (PlayStore)](https://play.google.com/store/apps/details?id=ucr.citic.rasp&hl=en_US)
 * Apr 2013 >> [ACAI webpage (TCU work)](http://www.acai.cr/)
 * Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
