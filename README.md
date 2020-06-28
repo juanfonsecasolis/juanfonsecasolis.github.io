@@ -20,7 +20,7 @@ Welcome to my portfolio! I'm a software QA engineer and a DSP enthusiast. At thi
 
 ## Interests
   
-Mathematical signal processing, digital audio processing, audio/video QoE, and software quality control and assurance.
+Mathematical signal processing, digital audio processing, software quality control and assurance, audio/video quality of experience (QoE), pattern recognition, and wearables.
 
 ## Blog
 * 07 Jun 2020 >> [Reberveration and echoes](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
