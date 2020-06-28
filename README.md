@@ -55,7 +55,7 @@ I'm always happy to hear from people who are interested in my work. You can conn
 <ul>
 <li><b>Github:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
 <li><b>Linkedin:</b> <a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
-<li><b>Academia Edu:</b> http://itcr.academia.edu/JuanFonsecaSol%C3%ADs</li>
+<li><b>Academia Edu:</b> <a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>http://itcr.academia.edu/JuanFonsecaSol%C3%ADs</a></li>
 </ul>
 
 <a href="https://stackexchange.com/users/1129405/jfonseca"><img src="https://stackexchange.com/users/flair/1129405.png" width="208" height="58" alt="profile for JFonseca on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for JFonseca on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
