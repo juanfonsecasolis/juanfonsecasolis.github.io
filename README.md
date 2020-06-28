@@ -14,10 +14,13 @@
 <link rel="stylesheet" type="text/css" href="dist/overhang.min.css" />
 <script type="text/javascript" src="dist/overhang.min.js"></script>
 
+# Juan Fonseca porfolio
+
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Welcome! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written, my background and interests. Please take a look to [my CV](slides/jfonseca_curriculumVitae_last.pdf).   
-<h2>Interests</h2>
+Welcome to my portfolio! I'm a DSP enthusiast, software developer, speaker, and author. At this site you can get information about the articles I've written, my background and interests. Please take a look to [my CV](slides/jfonseca_curriculumVitae_last.pdf).   
+
+## Interests
   
 Mathematical signal processing, audio processing and digital acoustics, pattern recognition, and audio/video quality control.
 
