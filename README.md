@@ -23,10 +23,10 @@ Welcome to my portfolio! I'm a software QA engineer and a DSP enthusiast. At thi
 Mathematical signal processing, digital audio processing, software quality control and assurance, audio/video quality of experience (QoE), pattern recognition, and wearables.
 
 ## Blog
-* 07 Jun 2020 >> [Reberveration and echoes](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
-* 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
+* 07 Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
 * 08 Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
 * 11 Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
+* 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
 
 ## Projects
 * Nov 2019 >> [Blood pressure and pulse analyzer](https://bloodpressurepulse.herokuapp.com/xxyn4pz8yhb0i7n)
