@@ -1,19 +1,3 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144706135-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-144706135-1');
-</script>
-
-<!--Experiment-->
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="dist/overhang.min.css" />
-<script type="text/javascript" src="dist/overhang.min.js"></script>
-
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Welcome to my portfolio! I'm a software QA engineer and a DSP enthusiast. At this site you can get information about the articles I've written, my background and interests. Please take a look to [my CV](CV/jfonseca_curriculumVitae_last.pdf).   
@@ -59,3 +43,13 @@ I'm always happy to hear from people who are interested in my work. You can conn
 </ul>
 
 <a href="https://stackexchange.com/users/1129405/jfonseca"><img src="https://stackexchange.com/users/flair/1129405.png" width="208" height="58" alt="profile for JFonseca on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for JFonseca on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144706135-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144706135-1');
+</script>
