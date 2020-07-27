@@ -1,4 +1,4 @@
-<iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></hr>
 
 Welcome to my portfolio! I'm a software QA engineer and a DSP enthusiast. At this site you can get information about the articles I've written, my background and interests. Please take a look to [my CV](CV/jfonseca_curriculumVitae_last.pdf).   
 
