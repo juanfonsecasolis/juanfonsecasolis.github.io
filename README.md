@@ -1,19 +1,3 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144706135-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-144706135-1');
-</script>
-
-<!--Experiment-->
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="dist/overhang.min.css" />
-<script type="text/javascript" src="dist/overhang.min.js"></script>
-
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Working all these years as a contractor in the field of quality assurance and control (QAC) has been challenging in the sense that, many, if not all of the disciplines I have been taught on the academy aren't being used. It is a tradition in the industry to pay more attention to the practice than the theory. I want to change that. I want to apply the knowledge in mathematics, algorithms, signal proccessing, and machine learning to QAC as an independent researcher; and offer something else than what you can find in the internet tutorials about how to use JMeter or how to use Cucumber. As my father used to say: for the majority of the mortals, one should have two works, one for earning a living and another for dreaming. Santiago Ramón y Cajal used to say something similar: 
@@ -28,8 +12,8 @@ Mathematical signal processing, digital audio processing, software quality contr
 
 ## Blog
 * 07 Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
-* 08 Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
 * 11 Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
+* 08 Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
 * 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
 
 ## Projects
@@ -63,3 +47,13 @@ I'm always happy to hear from people who are interested in my work. You can conn
 </ul>
 
 <a href="https://stackexchange.com/users/1129405/jfonseca"><img src="https://stackexchange.com/users/flair/1129405.png" width="208" height="58" alt="profile for JFonseca on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for JFonseca on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144706135-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144706135-1');
+</script>
