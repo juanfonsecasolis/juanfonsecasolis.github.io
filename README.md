@@ -4,11 +4,11 @@ Working all these years as a contractor in the field of quality assurance and co
 
 _"Aun aquellos que, amarrados a una ciencia extraña a sus aficiones, viven como desterrados de su patria ideal, podrían redimirse y trabajar con provecho si, levantando el ánimo al cumplimiento de sagrados deberes, procuraran buscar dentro de sus tareas oficiales algún dominio agradable donde laborar hondo y bien. ¿Qué ciencia carece de algún oasis deleitoso donde nuestra inteligencia encuentre útil empleo y plena satisfacción?"._ - Santiago Ramón y Cajal
 
-So, welcome to my portfolio where you can find my personal projects as a software QA engineer and a DSP enthusiast. At this site, you can get information about the articles I've written, my background and interests. Please take a look to [my CV](CV/jfonseca_curriculumVitae_last.pdf).   
+Without further introduction: welcome to my portfolio, where you can find my personal projects as a software QA engineer and a DSP enthusiast. At this site, you can get information about the articles I've written, my background and interests. Please take a look to [my CV](CV/jfonseca_curriculumVitae_last.pdf).   
 
 ## Interests
   
-Mathematical signal processing, digital audio processing, software quality control and assurance, audio/video quality of experience (QoE), pattern recognition, and wearables.
+Mathematical signal processing, digital audio processing, software quality control and assurance, audio/video quality of experience (QoE), pattern recognition, and healthcare wearables.
 
 ## Blog
 * 07 Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
