@@ -16,7 +16,11 @@
 
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Welcome to my portfolio! I'm a software QA engineer and a DSP enthusiast. At this site you can get information about the articles I've written, my background and interests. Please take a look to [my CV](CV/jfonseca_curriculumVitae_last.pdf).   
+Working all these years as a contractor in the field of quality assurance and control (QAC) has been challenging in the sense that, many, if not all of the disciplines I have been taught on the academy aren't being used. It is a tradition in the industry to pay more attention to the practice than the theory. I want to change that. I want to apply the knowledge in mathematics, algorithms, signal proccessing, and machine learning to QAC as an independent researcher; and offer something else than what you can find in the internet tutorials about how to use JMeter or how to use Cucumber. As my father used to say: for the majority of the mortals, one should have two works, one for earning a living and another for dreaming. Santiago Ramón y Cajal used to say something similar: 
+
+_"Aun aquellos que, amarrados a una ciencia extraña a sus aficiones, viven como desterrados de su patria ideal, podrían redimirse y trabajar con provecho si, levantando el ánimo al cumplimiento de sagrados deberes, procuraran buscar dentro de sus tareas oficiales algún dominio agradable donde laborar hondo y bien. ¿Qué ciencia carece de algún oasis deleitoso donde nuestra inteligencia encuentre útil empleo y plena satisfacción?"_
+
+So, welcome to my portfolio where you can find my personal projects as a software QA engineer and a DSP enthusiast. At this site, you can get information about the articles I've written, my background and interests. Please take a look to [my CV](CV/jfonseca_curriculumVitae_last.pdf).   
 
 ## Interests
   
