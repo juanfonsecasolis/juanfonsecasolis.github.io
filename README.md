@@ -1,7 +1,7 @@
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 
-Welcome to my portfolio, where you can find my adventures as a QA engineer and a DSP enthusiast. At this site, you can get information about the articles I've written, my background and interests. Please take a look to [my CV](CV/jfonseca_curriculumVitae_last.pdf).   
+Welcome to my portfolio, I am a QA engineer and a DSP enthusiast. At this site, you can get information about the articles I've written, my background and interests. Please take a look to [my CV](CV/jfonseca_curriculumVitae_last.pdf).   
 
 ## Interests
 Mathematical signal processing, digital audio processing, software quality control and assurance, audio/video quality of experience (QoE), pattern recognition, and healthcare wearables.
