@@ -33,10 +33,6 @@ Mathematical signal processing, digital audio processing, software quality contr
 * [An introduction to A/B testing using a Google Optimize example](https://juanfonsecasolis.github.io/slides/jFonseca_abTesting_2019.pdf). 
 * [Quick start on webtesting on 2019](slides/jfonseca_quickstartTesting2019_2.pdf). 
 
-## Work philosophy
-
-_"Aun aquellos que, amarrados a una ciencia extraña a sus aficiones, viven como desterrados de su patria ideal, podrían redimirse y trabajar con provecho si, levantando el ánimo al cumplimiento de sagrados deberes, procuraran buscar dentro de sus tareas oficiales algún dominio agradable donde laborar hondo y bien. ¿Qué ciencia carece de algún oasis deleitoso donde nuestra inteligencia encuentre útil empleo y plena satisfacción?"_ - Santiago Ramón y Cajal
-
 ## Contact
 
 I'm always happy to hear from people who are interested in my work. You can connect with me through these links:
