@@ -1,7 +1,7 @@
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 
-Welcome to my portfolio, I am a QA software engineer and a DSP enthusiast. At this site, you can get information about the articles I've written, my background and interests. Please take a look to [my CV](CV/jfonseca_curriculumVitae_last.pdf).   
+Welcome to my portfolio. At this site, you can get information about the content I've written.   
 
 ## Interests
 Mathematical signal processing, digital audio processing, software quality control and assurance, audio/video quality of experience (QoE), pattern recognition, and healthcare wearables.
@@ -42,8 +42,6 @@ I'm always happy to hear from people who are interested in my work. You can conn
 <li><b>Linkedin:</b> <a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
 <li><b>Academia Edu:</b> <a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>http://itcr.academia.edu/JuanFonsecaSol%C3%ADs</a></li>
 </ul>
-
-<a href="https://stackexchange.com/users/1129405/jfonseca"><img src="https://stackexchange.com/users/flair/1129405.png" width="208" height="58" alt="profile for JFonseca on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for JFonseca on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144706135-1"></script>
