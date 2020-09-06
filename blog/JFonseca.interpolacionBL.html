@@ -13251,7 +13251,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Band-limited-interpolation-for-daily-reference-rates">Band limited interpolation for daily reference rates<a class="anchor-link" href="#Band-limited-interpolation-for-daily-reference-rates">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · Mar 2015 · 7 min read ★</p>
+<h1 id="Band-limited-interpolation-for-daily-reference-rates">Band limited interpolation for daily reference rates<a class="anchor-link" href="#Band-limited-interpolation-for-daily-reference-rates">&#182;</a></h1><p><br><div style="width: auto">
+    <div style="width: 35%; float: left; display:inline-block;"><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · March 2015 · 7 min read</div>
+    <div style="width: 10%; float: center; display:inline-block"><img src="img/madeincostarica.png"></div>
+    <div style="width: 55%; float: right; display:inline-block;"></div> 
+&lt;/div&gt;</p>
 <hr>
 <h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>In this <em>ipython notebook</em> we'll use data from daily reference rates, such as the London interbank interest rate (LIBOR) or the dollar exchange rate in Costa Rica offered monthly by the Central Bank of Costa Rica (BCCR), to explain linear and band-limited interpolation techniques.</p>
 
@@ -13312,8 +13316,8 @@ $$<p>This is easier to understand with an example:</p>
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">N</span><span class="o">=</span><span class="mi">10</span>
 <span class="n">zt</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">10</span><span class="o">/</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">zt</span><span class="p">)</span>
@@ -13383,7 +13387,7 @@ $$<p>This is easier to understand with an example:</p>
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">signal</span>
 <span class="n">M</span><span class="o">=</span><span class="n">N</span><span class="o">*</span><span class="mi">10</span>
 <span class="n">ztt</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span><span class="o">*</span><span class="n">M</span>
 <span class="n">ztt</span><span class="p">[::</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">zt</span>
@@ -13443,7 +13447,7 @@ $$<p>This is easier to understand with an example:</p>
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">kernel</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">triang</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kernel</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">triang</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
@@ -13493,7 +13497,7 @@ $$<p>This is easier to understand with an example:</p>
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pylab</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pylab</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">ztt</span><span class="p">,</span><span class="s1">&#39;ro-&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -13550,7 +13554,7 @@ $$<p>This is easier to understand with an example:</p>
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">kernel</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">hamming</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kernel</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">hamming</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
@@ -13592,7 +13596,7 @@ $$<p>This is easier to understand with an example:</p>
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pylab</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pylab</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">ztt</span><span class="p">,</span><span class="s1">&#39;ro-&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -13649,7 +13653,7 @@ $$<p>This is easier to understand with an example:</p>
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">wtt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wtt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">M</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">&lt;</span><span class="mf">0.8</span><span class="p">:</span>
                 <span class="n">wtt</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
@@ -13715,7 +13719,7 @@ $$<p>This is easier to understand with an example:</p>
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">indexes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">wtt</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">wtt</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">wtt</span><span class="p">))</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">indexes</span><span class="p">],</span> <span class="n">wtt</span><span class="p">[</span><span class="n">indexes</span><span class="p">])</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">wtt</span><span class="p">,</span><span class="s1">&#39;ro-&#39;</span><span class="p">)</span>
@@ -13798,8 +13802,8 @@ $$<p><strong>Note:</strong> a better explanation of the BLI theory can be found 
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">as</span> <span class="nn">ET</span>  <span class="c1"># librería para leer el xml</span>
-<span class="kn">from</span> <span class="nn">ZSI.ServiceProxy</span> <span class="kn">import</span> <span class="n">ServiceProxy</span>  <span class="c1"># libería para consumir el servicio SOAP</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>  <span class="c1"># librería para leer el xml</span>
+<span class="kn">from</span> <span class="nn">ZSI.ServiceProxy</span> <span class="k">import</span> <span class="n">ServiceProxy</span>  <span class="c1"># libería para consumir el servicio SOAP</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 </pre></div>
@@ -13842,7 +13846,7 @@ $$<p><strong>Note:</strong> a better explanation of the BLI theory can be found 
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># create a proxy of the services provided in the WSDL</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a proxy of the services provided in the WSDL</span>
 <span class="n">URL_WSDL</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;http://indicadoreseconomicos.bccr.fi.cr/</span><span class="se">\</span>
 <span class="s2">IndicadoresEconomicos/WebServices/wsIndicadoresEconomicos.asmx?WSDL&quot;</span><span class="p">)</span>
 <span class="n">servicio</span> <span class="o">=</span> <span class="n">ServiceProxy</span><span class="p">(</span><span class="n">URL_WSDL</span><span class="p">)</span>
@@ -13932,7 +13936,7 @@ $$<p><strong>Note:</strong> a better explanation of the BLI theory can be found 
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>  <span class="c1"># eje de las ordenadas</span>
 <span class="n">xm</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14002,7 +14006,7 @@ $$<p><strong>Note:</strong> a better explanation of the BLI theory can be found 
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">zm1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xm</span><span class="p">,</span> <span class="n">zm</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zm1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xm</span><span class="p">,</span> <span class="n">zm</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="s1">&#39;b--&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">zm1</span><span class="p">,</span><span class="s1">&#39;r-&#39;</span><span class="p">,</span><span class="n">xm</span><span class="p">,</span><span class="n">zm</span><span class="p">,</span><span class="s1">&#39;or&#39;</span><span class="p">)</span> 
 <span class="n">pylab</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Days since </span><span class="si">%s</span><span class="s1"> until </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">fechaInicio</span><span class="p">,</span> <span class="n">fechaFinal</span><span class="p">))</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Dolar exchange rate (colones)&#39;</span><span class="p">)</span>
@@ -14064,7 +14068,7 @@ $$<p><strong>Note:</strong> a better explanation of the BLI theory can be found 
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">BL_interp_1D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">grid_step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">win</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">BL_interp_1D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">grid_step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">win</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Band-limited interpolation of 1D functions (tomado de P.Prandoni y M.Vetterli)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -14072,7 +14076,7 @@ $$<p><strong>Note:</strong> a better explanation of the BLI theory can be found 
     <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">order</span><span class="p">,</span> <span class="n">order</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># construct the Fourier matrix</span>
-    <span class="n">F</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="mi">2j</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 
     <span class="c1"># Least-square projection (alternatively linalg.lstsq can be used)</span>
     <span class="n">C</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">F</span><span class="p">)),</span> <span class="n">F</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">z</span><span class="p">)</span>
@@ -14084,7 +14088,7 @@ $$<p><strong>Note:</strong> a better explanation of the BLI theory can be found 
     <span class="k">if</span> <span class="p">(</span><span class="n">win</span><span class="p">):</span>
         <span class="n">C</span> <span class="o">*=</span> <span class="n">expand_dims</span><span class="p">(</span><span class="n">hanning</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">order</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">zg</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="mi">2j</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">xg</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="n">C</span><span class="p">)</span>
+    <span class="n">zg</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">xg</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="n">C</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">zg</span><span class="p">,</span> <span class="n">xg</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">k</span>
 
@@ -14100,12 +14104,12 @@ $$<p><strong>Note:</strong> a better explanation of the BLI theory can be found 
 <span class="n">O</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ordenes</span><span class="p">)</span>
 <span class="n">errores</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span><span class="o">*</span><span class="n">O</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">O</span><span class="p">):</span>
-    <span class="n">zp1</span><span class="p">,</span> <span class="n">xp1</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="n">BL_interp_1D</span><span class="p">(</span><span class="n">xmp</span><span class="p">,</span> <span class="n">zmp</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">ordenes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">win</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">zp1</span><span class="p">,</span> <span class="n">xp1</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="n">BL_interp_1D</span><span class="p">(</span><span class="n">xmp</span><span class="p">,</span> <span class="n">zmp</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">ordenes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">win</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">errores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">zm1</span><span class="p">)</span><span class="o">-</span><span class="n">numpy</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">zp1</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="n">iOpt</span> <span class="o">=</span> <span class="n">argmin</span><span class="p">(</span><span class="n">errores</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;Optimal order: </span><span class="si">%i</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">ordenes</span><span class="p">[</span><span class="n">iOpt</span><span class="p">]</span>
-<span class="n">zp1</span><span class="p">,</span> <span class="n">xp1</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="n">BL_interp_1D</span><span class="p">(</span><span class="n">xmp</span><span class="p">,</span> <span class="n">zmp</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">ordenes</span><span class="p">[</span><span class="n">iOpt</span><span class="p">],</span> <span class="n">win</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s1">&#39;Optimal order: </span><span class="si">%i</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">ordenes</span><span class="p">[</span><span class="n">iOpt</span><span class="p">]</span>
+<span class="n">zp1</span><span class="p">,</span> <span class="n">xp1</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="n">BL_interp_1D</span><span class="p">(</span><span class="n">xmp</span><span class="p">,</span> <span class="n">zmp</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">ordenes</span><span class="p">[</span><span class="n">iOpt</span><span class="p">],</span> <span class="n">win</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     
 <span class="c1"># plot the result</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">xp1</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">zp1</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="s1">&#39;b--&#39;</span><span class="p">,</span><span class="n">xm</span><span class="p">,</span><span class="n">zm</span><span class="p">,</span><span class="s1">&#39;or&#39;</span><span class="p">)</span>
@@ -14189,11 +14193,11 @@ $$c = \frac{N-M}{N}.$$<p><strong>Note:</strong> the imaginary component of analy
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">ordenes</span><span class="p">[</span><span class="n">iOpt</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">ordenes</span><span class="p">[</span><span class="n">iOpt</span><span class="p">]</span>
 <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">M</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
-<span class="k">print</span> <span class="s1">&#39;Number of samples: </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">N</span>
-<span class="k">print</span> <span class="s1">&#39;Number of coefficients needed to reproduce the signal: </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">M</span>
-<span class="k">print</span> <span class="s1">&#39;Compression achieved: </span><span class="si">%i%%</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s1">&#39;Number of samples: </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">N</span>
+<span class="nb">print</span> <span class="s1">&#39;Number of coefficients needed to reproduce the signal: </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">M</span>
+<span class="nb">print</span> <span class="s1">&#39;Compression achieved: </span><span class="si">%i%%</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="n">stem</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">M</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">C1</span><span class="p">[</span><span class="n">M</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])),</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Logarithmic magnitude of the Fourier coefficients&#39;</span><span class="p">)</span>

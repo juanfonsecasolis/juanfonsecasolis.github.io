@@ -13251,7 +13251,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pruebas-de-estr&#233;s-desde-la-perspectiva-de-los-sistemas-lineales-e-invariantes-en-el-tiempo">Pruebas de estr&#233;s desde la perspectiva de los sistemas lineales e invariantes en el tiempo<a class="anchor-link" href="#Pruebas-de-estr&#233;s-desde-la-perspectiva-de-los-sistemas-lineales-e-invariantes-en-el-tiempo">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · Agosto 2020 · 5 min read</p>
+<h1 id="Pruebas-de-estr&#233;s-desde-la-perspectiva-de-los-sistemas-lineales-e-invariantes-en-el-tiempo">Pruebas de estr&#233;s desde la perspectiva de los sistemas lineales e invariantes en el tiempo<a class="anchor-link" href="#Pruebas-de-estr&#233;s-desde-la-perspectiva-de-los-sistemas-lineales-e-invariantes-en-el-tiempo">&#182;</a></h1><p><br><div style="width: auto">
+    <div style="width: 35%; float: left; display:inline-block;"><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · Agosto 2020 · 5 min read</div>
+    <div style="width: 10%; float: center; display:inline-block"><img src="img/madeincostarica.png"></div>
+    <div style="width: 55%; float: right; display:inline-block;"></div> 
+&lt;/div&gt;</p>
 <hr>
 <h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>Las pruebas de rendimiento de software son útiles para determinar si un sistema es capaz de procesar suficientes cantidades de información sin caerse o realentizarse. Ejemplos de sistemas que requieren hacer este tipo de pruebas son las páginas web de los bancos o de los sitios de comercio electrónico, donde un retraso en el despliegue de la información puede traducirse en pérdida de clientes. En este ipython notebook estudiamos un tipo de prueba de rendimiento llamada "pruebas de estrés" que tiene como objetivo encontrar el punto de quiebre, es decir, el máximo número de transacciones por segundo que el sistema es capaz de procesar antes de caerse. A diferencia del resto de artículos, nuestro enfoque se dedica a la parte del modelado matemático y sistemas lineales e invariantes en el tiempo (LTI, por sus siglas en Inglés), en lugar de explicar las herramientas de software existentes para este tipo de pruebas. Se identificaron dos modelos para simular el procesamiento del sistema ante una entrada en forma de rampa, pero, se determinó que los servidores web no cumplen con la definición de un sistema lineal e invariante en el tiempo.</p>
 
@@ -13652,10 +13656,7 @@ $$<p>Observamos de inmediato que la ecuación 2 no cumple la propiedad de aditiv
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<div style="width: 20%">
-    <div style="width: 50%; float: left;"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a></div>
-    <div style="width: 50%; float: right;"><img src="img/costa_rica_flag.png" width="50" height="50"></div> 
-</div><p><br/><br/>Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional</a>. El sitio <a href="https://juanfonsecasolis.github.io">juanfonsecasolis.github.io</a> es un blog dedicado a la investigación independiente en temas relacionados al procesamiento digital de señales. Para reutilizar este artículo y citar las fuente por favor utilice el siguiente Bibtex:</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br/>Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional</a>. El sitio <a href="https://juanfonsecasolis.github.io">juanfonsecasolis.github.io</a> es un blog dedicado a la investigación independiente en temas relacionados al procesamiento digital de señales. Para reutilizar este artículo y citar las fuente por favor utilice el siguiente Bibtex:</p>
 
 <pre><code>@online{Fonseca2020,
   author = {Juan M. Fonseca-Solís},
