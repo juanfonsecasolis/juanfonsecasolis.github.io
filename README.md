@@ -7,7 +7,7 @@ Welcome to my portfolio. At this site, you can get information about the content
 Mathematical signal processing, digital audio processing, software quality control and assurance, audio/video quality of experience (QoE), pattern recognition, and healthcare wearables.
 
 ## Blog
-* 23 Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/pruebasEstres/jfonseca.pruebasRendimiento.ipynb)
+* 23 Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/jfonseca.pruebasRendimiento.ipynb)
 * 07 Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
 * 11 Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
 * 08 Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
