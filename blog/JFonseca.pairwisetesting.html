@@ -13251,27 +13251,33 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pruebas-por-pares">Pruebas por pares<a class="anchor-link" href="#Pruebas-por-pares">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io">Juan M. Fonseca-Solís</a> · Setiembre 2020 · 5 min read</p>
+<h1 id="Pruebas-por-pares-o-pairwise-testing">Pruebas por pares o <em>pairwise testing</em><a class="anchor-link" href="#Pruebas-por-pares-o-pairwise-testing">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io">Juan M. Fonseca-Solís</a> · Setiembre 2020 · 5 min read</p>
 <hr>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>A diferencia del resto de escritos en este blog, el presente ipython notebook no contiene ningún componente original. Pretendemos simplemente rescatar la descripción matemática de una técnica de estimación de casos de prueba llamada <em>pruebas por pares</em> que, como su nombre lo indica, permite probar pares de parámetros en lugar de hacer una combinación exhaustiva $\prod{n_i}$, lo cual representa un ahorro de tiempo significativo, pues, el órden de duración de las pruebas se vuelve $O(op)$, siendo $o,p \in \{n_i\}$ los dos parámetros con más valores en el sistema.</p>
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Premisas del método:</p>
-<ul>
-<li><strong>Premisa 1:</strong> las pulgas más comunes en un programa son producidas en la mayoría de las veces por un solo parámetro o la interacción entre dos de ellos [1].</li>
-<li><strong>Premisa 2:</strong> las pulgas que involucran tres o más parámetros son progresivamente menos comunes y costozas de encontrar [1]. </li>
-</ul>
-<p>Tenemos que el espacio vectorial generado por un sistema de N parámetros es $\{P_1, P_2, \ldots, P_N\} \subset \mathbb{C}^{\max\{\lvert{R_i}\rvert\}}$, donde $R(P_i) = R_i$ es denominado el rango de un parámetro, es decir, el conjunto de valores que puede tomar, y $\lvert{R_i}\rvert=n_i$ es el número de valores posibles para ese parámetros (la cardinalidad del conjunto) [1]. Un ejemplo sería el parámetro "interruptor $P_0$", donde $R_0 = \{\text{encendido}, \text{apagado}\}$ y $\lvert{R_0}\rvert=2$. Si tuviesemos N interuptores, entonces el conjunto $\{R_1, R_2, \ldots, R_N\}$ sería $\{\text{encendido}, \text{apagado}\, \text{encendido}, \text{apagado}\, \ldots}$, por eso se dice que este es un multiconjunto o <em>multiset</em>, porque permite elementos repetidos [3].</p>
-<p>La combinación exhaustiva de todos los valores del sistema es: $\prod{n_i} = \prod{\lvert{R_i}\rvert}=\prod{\lvert{R(P_i)}\rvert}=\prod{\lvert{R(\{P_1, P_2, \ldots, P_N\})}\rvert}$, si estos parámetros fueran columnas en una matriz, entonces el espacio generado se conocería como el rango o imágen de la matriz, es decir, es el conjunto de todas las posibles combinaciones lineales de los vectores columna [2].</p>
-<p>Haciendo $X=\{n_i\}$, tenemos que el número de casos de prueba $T$ sería [1]:
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>A diferencia del resto de artículos de este blog, el presente ipython notebook no contiene ningún componente original, sino que pretendemos simplemente rescatar la descripción matemática y utilidad de una técnica de estimación de casos de prueba llamada <em>pruebas por pares</em>. Los resultados obtenidos muestran que se puede lograr una buena cobertura en tiempo $O(op)$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Como su nombre lo indica, la técnica de por pares construye escenarios de prueba tomando pares de parámetros en lugar de hacer una combinación exhaustiva de variables. Esto lo realiza asumiendo como verdadera la premisa de Kuhn et. al [1,4]:</p>
+<p><em>"<strong>Regla de interacción:</strong> la mayoría de las fallas son producidas por un solo factor o por la interación entre dos factores, y se observan progresivamente menos fallas producidas por la interacción entre tres o más factores."</em></p>
+<h2 id="Pseudo-formalismo-matem&#225;tico">Pseudo-formalismo matem&#225;tico<a class="anchor-link" href="#Pseudo-formalismo-matem&#225;tico">&#182;</a></h2><p>Matemáticamente la técnica de la prueba por pares se puede expresar como sigue. Sea $\{P_1, P_2, \ldots, P_N\} \subset \mathbb{C}^{\max\{\lvert{R_i}\rvert\}}$ un espacio vectorial generado por un sistema de N parámetros, el conjunto de valores que puede tomar cada parámetro $R(P_i) = R_i$ es denominado el rango de un parámetro [1]. Es decir, que si hicieramos el modelado de un interruptor de la casa, los posibles valores de prueba serían:</p>
+$$
+R_i = \{\text{encendido}, \text{apagado}\},
+$$<p>donde la cardinalidad del conjunto, $\lvert{R_i}\rvert=n_i$, sería igual a 2. Si modelásemos todos los interruptores de la casa y nos interesara el estado de la casa en ese momento, la combinación de los valores posibles sería un producto, es decir, $\prod{n_i}$. Podría suceder, sin embargo, que no todos los encendedores tuvieran dos estados, sino tres, por ejemplo: encendido alto, encendido bajo, apagado; en cuyo caso $2^N &lt; \prod{n_i}$.</p>
+<p>Si en lugar de hacer una combinación exhaustiva usaramos la técnica de prueba por pares tendríamos que definir $X=\{n_i\}$ como el multiconjunto que contiene todos los posibles valores de todos los parámetros, por ejemplo, $X=\{2, 2, 3, \ldots\}$. Se dice que este es un multiconjunto o <em>multiset</em>, porque podemos tener elementos repetidos [2]. Luego tendríamos que el número de casos de prueba $T$ sería [1]:</p>
 $$
 T = \max\{X\} \max\{X/\max\{X\}\},
-$$</p>
-<p>en otras palabras, la combinación de los rangos de los dos parámetros con más valores posibles.</p>
-<p>Con base en este formalizmo matemático, es posible resumir la técnica de pruebas de pares como:</p>
+$$<p>en otras palabras, el producto de los rangos de los dos parámetros con la mayor cantidad de valores posibles.</p>
+<h2 id="Recetario">Recetario<a class="anchor-link" href="#Recetario">&#182;</a></h2><p>Con base en este formalismo matemático es posible resumir la técnica de pruebas de pares como:</p>
 <ol>
-<li>Identificar todos los parámetros del sistema.</li>
-<li>Listar el número posible de valores para cada parámetro.</li>
-<li>Tomar los dos parámetros cuyo $\lvert{R_i}\rvert$ sea el mayor, y realizar una combinación completa de ambos.</li>
-<li>Completar el resto de columnas usando valores de otros parámetros.</li>
+<li>Listar todos los $N$ parámetros del sistema.</li>
+<li>Identificar para cada parámetro, el número posible de valores.</li>
+<li>Tomar los dos parámetros $i,j $ cuyo $\lvert{R(\cdot)}\rvert$ sea mayor al resto.</li>
+<li>Construir una tabla de $n_i n_j$ filas y $N$ columnas.</li>
+<li>Completar las columnas haciendo la combinación de los valores de los parámetros $i,j$ y rellenar el resto de columnas como haciendo una combinatoria completa.</li>
 </ol>
 
 </div>
@@ -13326,13 +13332,10 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<p>Luego, los parámetros con más valores serían $P_3$ y $P_2$, y la multiplicación de las cardinalidades de sus conjunto de valores sería:</p>
-$$
-\max\{X\} \max\{X/\max\{X\}\} = 4 \cdot 3 = 12.
-$$<p>Con esto, podemos armar una tabla de combinaciones truncada como sigue:</p>
+<p>Los parámetros con más valores serían $P_3$ y $P_2$, y el producto de las cardinalidades de los conjuntos de sus valores sería $\max\{X\} \max\{X/\max\{X\}\} = 4 \cdot 3 = 12$. Con base en esto, podemos armar una tabla de combinaciones truncada como sigue:</p>
 <table>
 <thead><tr>
-<th></th>
+<th>CP/P</th>
 <th>$P_1$</th>
 <th>$P_2$</th>
 <th>$P_3$</th>
@@ -13341,84 +13344,84 @@ $$<p>Con esto, podemos armar una tabla de combinaciones truncada como sigue:</p>
 </thead>
 <tbody>
 <tr>
-<td>CP-1</td>
+<td>1</td>
 <td>a</td>
 <td>1</td>
 <td>T</td>
 <td>x</td>
 </tr>
 <tr>
-<td>CP-2</td>
+<td>2</td>
 <td>b</td>
 <td>2</td>
 <td>F</td>
 <td>y</td>
 </tr>
 <tr>
-<td>CP-3</td>
+<td>3</td>
 <td>c</td>
 <td>3</td>
 <td>T</td>
 <td>x</td>
 </tr>
 <tr>
-<td>CP-4</td>
+<td>4</td>
 <td>d</td>
 <td>1</td>
 <td>F</td>
 <td>y</td>
 </tr>
 <tr>
-<td>CP-5</td>
+<td>5</td>
 <td>a</td>
 <td>2</td>
 <td>T</td>
 <td>x</td>
 </tr>
 <tr>
-<td>CP-6</td>
+<td>6</td>
 <td>b</td>
 <td>3</td>
 <td>F</td>
 <td>z</td>
 </tr>
 <tr>
-<td>CP-7</td>
+<td>7</td>
 <td>c</td>
 <td>1</td>
 <td>T</td>
 <td>x</td>
 </tr>
 <tr>
-<td>CP-8</td>
+<td>8</td>
 <td>d</td>
 <td>2</td>
 <td>F</td>
 <td>z</td>
 </tr>
 <tr>
-<td>CP-9</td>
+<td>9</td>
 <td>a</td>
 <td>3</td>
 <td>T</td>
 <td>x</td>
 </tr>
 <tr>
-<td>CP-10</td>
+<td>10</td>
 <td>b</td>
 <td>1</td>
 <td>F</td>
 <td>z</td>
 </tr>
 <tr>
-<td>CP-11</td>
+<td>11</td>
 <td>c</td>
 <td>2</td>
 <td>T</td>
 <td>x</td>
 </tr>
 <tr>
-<td>CP-12</td>
+<td>12</td>
 <td>d</td>
 <td>3</td>
 <td>F</td>
@@ -13426,7 +13429,7 @@ $$<p>Con esto, podemos armar una tabla de combinaciones truncada como sigue:</p>
 </tr>
 </tbody>
 </table>
-<p>Si hubiesemos hecho la combinación completa de todos los valores, esto nos habría tomado $\prod\{n_i\}=4 \cdot 3 \cdot 2 \cdot 3 = 48$ casos de prueba, lo cual representa un esfuerzo considerable de tiempo.</p>
+<p>Si hubiesemos hecho la combinación completa de todos los valores, esto nos habría tomado $\prod\{n_i\}=4 \cdot 3 \cdot 2 \cdot 3 = 48$ casos de prueba, lo cual representa un esfuerzo considerable. Por eso se dice la prueba por pares tomar tiempo $O(op)$, con $o,p \in \{n_i\}$, en lugar de $\prod{n_i}$.</p>
 
 </div>
 </div>
@@ -13434,8 +13437,8 @@ $$<p>Con esto, podemos armar una tabla de combinaciones truncada como sigue:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Evaluaci&#243;n-usando-una-herramienta-automatizada">Evaluaci&#243;n usando una herramienta automatizada<a class="anchor-link" href="#Evaluaci&#243;n-usando-una-herramienta-automatizada">&#182;</a></h1><p>Podemos evaluar la calidad de nuestro razonamiento usando la herramienta PICT, de Microsoft [4], disponible en el sitio <a href="https://pairwise.yuuniworks.com">https://pairwise.yuuniworks.com</a>.</p>
-<p>Entrada:</p>
+<h1 id="Automatizaci&#243;n">Automatizaci&#243;n<a class="anchor-link" href="#Automatizaci&#243;n">&#182;</a></h1><p>Aunque más rápida que una combinatoria completa, las pruebas por pares requieren sentarse con papel y lápiz a escribir la tabla. Podemos obtener el mismo resultado implementando al algoritmo en la computadora, o incluso más rápido todavía, usando una herramienta de Microsoft llamada PICT (disponible gratuitamente en el sitio <a href="https://pairwise.yuuniworks.com">https://pairwise.yuuniworks.com</a>) [3]. El comando para este programa es <code>pict modelo.txt [opciones]</code>.</p>
+<p>modelo.txt:</p>
 
 <pre><code>P1: T,F
 P2: 1,2,3
@@ -13456,7 +13459,7 @@ T   1   a   y
 T   3   d   y
 T   1   d   y
 F   2   b   x</code></pre>
-<p>Lo cual corresponde en efecto, a los 12 CP que calculamos.</p>
+<p>Lo cual corresponde en efecto, a los 12 CP que calculamos a mano.</p>
 
 </div>
 </div>
@@ -13464,7 +13467,7 @@ F   2   b   x</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Conclusiones">Conclusiones<a class="anchor-link" href="#Conclusiones">&#182;</a></h1><p>La técnica de las pruebas por pares permite estimar casos de prueba identificando los dos parámetros del sistema con más valores posibles, generando menos combinaciones que un cruce exhaustivo, pero sin representar una desventaja al respetar el principio de que las pulgas que involucran más de dos parámetros son raras. Existen herramientas como el PICT de Microsoft que permiten automatizar el proceso de generación de casos de prueba, haciendo que esta técnica sea fácil de usar.</p>
+<h1 id="Conclusiones">Conclusiones<a class="anchor-link" href="#Conclusiones">&#182;</a></h1><p>La técnica de las pruebas por pares permite estimar casos de prueba identificando los dos parámetros del sistema con el rango de valores más amplio. Las combinaciones generadas son mucho menores que las del enfoque exhaustivo, pero esto no representa una desventaja en términos de cobertura, pues según el principio de Kuhn et al. la mayoría de pulgas involucran dos parámetros o menos. Existen herramientas como el PICT de Microsoft que permiten automatizar el proceso de generación de casos de prueba, haciendo que esta técnica sea fácil de usar en el corto tiempo que se dispone en el trabajo.</p>
 
 </div>
 </div>
@@ -13474,10 +13477,27 @@ F   2   b   x</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Referencias:">Referencias:<a class="anchor-link" href="#Referencias:">&#182;</a></h1><ol>
 <li>Wikipedia contributors. (2020, July 8). All-pairs testing. In Wikipedia, The Free Encyclopedia. Retrieved 20:09, September 6, 2020, from <a href="https://en.wikipedia.org/w/index.php?title=All-pairs_testing&amp;oldid=966710808">https://en.wikipedia.org/w/index.php?title=All-pairs_testing&amp;oldid=966710808</a>.</li>
-<li>S. Grossman. Algebra Lineal. Mc Graw Hill.</li>
 <li>Multiconjunto. (2019, 11 de octubre). Wikipedia, La enciclopedia libre. Fecha de consulta: 20:31, septiembre 6, 2020 desde <a href="https://es.wikipedia.org/w/index.php?title=Multiconjunto&amp;oldid=120189103">https://es.wikipedia.org/w/index.php?title=Multiconjunto&amp;oldid=120189103</a>. </li>
 <li>J McCaffrey. Test Run - Pairwise Testing with QICT. Volume 24 Number 12. Dec 2009. URL: <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2009/december/test-run-pairwise-testing-with-qict">https://docs.microsoft.com/en-us/archive/msdn-magazine/2009/december/test-run-pairwise-testing-with-qict</a></li>
+<li>D. Richard Kuhn, Raghu N. Kacker, Yu Lei. Practical combinatorial Testing. NIST Special Publication 800-142. Departamento de Comercio de Estados Unidos. URL: <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-142.pdf">https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-142.pdf</a> (consultado por última vez el 09/09/20).</li>
 </ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br/>Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional</a>. El sitio <a href="https://juanfonsecasolis.github.io">juanfonsecasolis.github.io</a> es un blog dedicado a la investigación independiente en temas relacionados al procesamiento digital de señales. Para reutilizar este artículo y citar las fuente por favor utilice el siguiente Bibtex:</p>
+
+<pre><code>@online{Fonseca2020,
+  author = {Juan M. Fonseca-Solís},
+  title = { Pruebas por pares o pairwise testing},
+  year = 2020,
+  url = {https://juanfonsecasolis.github.io/blog/JFonseca.pairwisetesting.html},
+  urldate = {}
+}</code></pre>
 
 </div>
 </div>
