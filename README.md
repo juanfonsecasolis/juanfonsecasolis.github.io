@@ -15,7 +15,7 @@ Mathematical models for software quality control, objective assessment of speech
 * 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
 
 ## Projects
-* Oct 2020 >> [Example of a Selenium-Webdriver and Maven project using POM and Page Factory](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
+* Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
 * Nov 2019 >> [Blood pressure and pulse analyzer](https://bloodpressurepulse.herokuapp.com/xxyn4pz8yhb0i7n)
 * Nov 2017 >> [Automatic recognition of pedestrian signals - RASP (PlayStore)](https://play.google.com/store/apps/details?id=ucr.citic.rasp&hl=en_US)
 * Apr 2013 >> [ACAI webpage (TCU work)](http://www.acai.cr/)
