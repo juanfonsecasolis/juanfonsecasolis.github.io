@@ -4,7 +4,7 @@
 Welcome to my portfolio. At this site, you can get information about the content I've written.   
 
 ## Interests
-Mathematical programming models for software quality control, objective assessment of speech and audio quality, mathematical signal processing, digital audio processing, pattern recognition, and healthcare wearables.
+Mathematical models for software quality control, objective assessment of speech and audio quality, mathematical signal processing, digital audio processing, pattern recognition, and healthcare wearables.
 
 ## Blog
 * 6 Sep 2020 >> [Pairwise testing](blog/JFonseca.pairwisetesting.html)
