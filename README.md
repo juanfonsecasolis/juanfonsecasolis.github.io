@@ -19,7 +19,7 @@ Mathematical models for software quality control, objective assessment of speech
 ## Projects
 * Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
 * Nov 2019 >> [Blood pressure and pulse analyzer](https://bloodpressurepulse.herokuapp.com/xxyn4pz8yhb0i7n)
-* Nov 2017 >> [Automatic recognition of pedestrian signals - RASP (PlayStore)](https://play.google.com/store/apps/details?id=ucr.citic.rasp&hl=en_US)
+* Nov 2017 >> [Automatic recognition of pedestrian signals - RASP](https://vinv.ucr.ac.cr/sigpro/web/projects/B6146)
 * Apr 2013 >> [ACAI webpage (TCU work)](http://www.acai.cr/)
 * Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
 
