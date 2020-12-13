@@ -7,6 +7,7 @@ Welcome to my portfolio. At this site, you can get information about the content
 Mathematical models for software quality control, objective assessment of speech and audio quality, mathematical signal processing, digital audio processing, pattern recognition, and healthcare wearables.
 
 ## Posts
+* 13 Dic 2020 >> [Pruebas sobre especificaciones formales de software](blog/JFonseca.pruebasFormalesSoftware.html)
 * 5 Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
 * 6 Sep 2020 >> [Pairwise testing](blog/JFonseca.pairwisetesting.html)
 * 23 Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](blog/JFonseca.pruebasRendimiento.html)
