@@ -13253,7 +13253,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Pruebas-sobre-especificaciones-formales-de-requerimientos">Pruebas sobre especificaciones formales de requerimientos<a class="anchor-link" href="#Pruebas-sobre-especificaciones-formales-de-requerimientos">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io">Juan M. Fonseca-Solís</a> · Diciembre 2020 · 5 min read</p>
 <hr>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>A diferencia del resto de artículos de este blog, el presente ipython notebook no contiene ningún componente original, sino que pretendemos simplemente rescatar el concepto de pruebas sobre especificaciones formales de requerimientos. Un tipo de pruebas que permite probar software como si fuera una demostración matemática.</p>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>A diferencia del resto de artículos de este blog, el presente ipython notebook no contiene ningún componente original, sino que pretendemos simplemente rescatar el concepto de pruebas sobre especificaciones formales de requerimientos. Un tipo de pruebas que permite probar software como si estuvieramos resolviendo una demostración matemática.</p>
 
 </div>
 </div>
@@ -13261,10 +13261,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Motivaci&#243;n">Motivaci&#243;n<a class="anchor-link" href="#Motivaci&#243;n">&#182;</a></h1><p>En una ocasión nuestro dueño del producto compartió una inquietud como la que sigue:</p>
+<h1 id="Motivaci&#243;n">Motivaci&#243;n<a class="anchor-link" href="#Motivaci&#243;n">&#182;</a></h1><p>En una ocasión, nuestro dueño del producto me compartió una inquietud como la que sigue:</p>
 <blockquote><p>Hey Juan. I understood this problem was also related to a piece of code that failed previously while moving data from one container to another, and the team has spent a lot of time recently improving the failing program. Are we completely confident the teams update/changes fixed the root cause of this issue? Can we prove that in any way?</p>
 </blockquote>
-<p>Una primera leída me hizo darme cuenta de que era imposible responder esta pregunta afirmativamente, pues el software que estabamos diseñando no había seguido una especificación formal de requerimientos, y entonces no podíamos probar como si fuese una demostración matemática que el programa estuviera funcionando correctamente. Lo único que podíamos hacer era proveer evidencia de que sí, tal cual se hace con una prueba estadística: "con un grado de certeza del 90%, podemos decir que el programa hace lo que debería". ¿Pero, qué esto de especificaciones formales de requerimientos?</p>
+<p>Una primera leída me hizo darme cuenta de que era imposible responder esta pregunta afirmativamente, pues el software que estabamos diseñando no había seguido una especificación formal de requerimientos; y entonces no podíamos probar, como si fuese una demostración matemática, que el programa estaba funcionando correctamente. Lo único que podíamos hacer era proveer evidencia para afirmar que con un grado de certeza del X%, el programa hace lo que debería (tal cual se hace con las pruebas estadísticas).</p>
 
 </div>
 </div>
