@@ -9,6 +9,7 @@ Mathematical models for software quality control, objective assessment of speech
 ## Posts
 <!--* 19 Dic 2020 >> [Quality of service for audio and video streaming over Internet](blog/JFonseca.audioVideoQualityStreaming.html)
 * 13 Dic 2020 >> [Pruebas sobre especificaciones formales de software](blog/JFonseca.pruebasFormalesSoftware.html)-->
+* 5 Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/JFonseca.wavelets.html)
 * 5 Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
 * 6 Sep 2020 >> [Pairwise testing](blog/JFonseca.pairwisetesting.html)
 * 23 Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](blog/JFonseca.pruebasRendimiento.html)
