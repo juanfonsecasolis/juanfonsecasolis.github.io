@@ -4,6 +4,9 @@
 Welcome to my portfolio. At this site, you can get information about the content I've written.   
 
 ## Interests
+I love applied mathematics. I like to use models to represent real life phenomena and to facilitate decision making. Decomposing a signal, interpolating, filtering or making predictions, that for me is like doing magic. It also sad to me to see how little the industry uses all the math a student learns throughout their career. Having some training in computer science, quality control and digital audio signal processing, I would like to change that.
+
+## Areas of research
 Mathematical models for software quality control, objective assessment of speech and audio quality, mathematical signal processing, digital audio processing, pattern recognition, and healthcare wearables.
 
 ## Posts
