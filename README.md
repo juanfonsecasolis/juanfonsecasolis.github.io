@@ -7,7 +7,7 @@ Welcome to my portfolio. At this site, you can get information about the content
 I love applied mathematics. I enjoy creating models to represent real life phenomenas and facilitate decision making. For me, decomposing a signal, interpolating it, compressing it, filtering it or making predictions, is like magic. Having some knowledge in computer science, quality control and digital signal processing, I would like to help to close the gap between what academy and industry do.
 
 ## Interests and areas of research
-Mathematical models for software quality control, objective assessment of speech and audio quality, mathematical signal processing, digital audio processing, automatic recognition of accessible pedestrian signals, pattern recognition, and healthcare.
+Mathematical models for software quality control, objective assessment of speech and audio quality, mathematical signal processing, digital audio processing, automatic recognition of accessible pedestrian signals, pattern recognition, and embedded devices.
 
 ## Posts
 <!--* 19 Dic 2020 >> [Quality of service for audio and video streaming over Internet](blog/JFonseca.audioVideoQualityStreaming.html)
