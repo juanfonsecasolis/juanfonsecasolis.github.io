@@ -4,7 +4,7 @@
 Welcome to my portfolio. At this site, you can get information about the content I've written, my interests and areas of reasearch.   
 
 ## About me
-I love applied mathematics. I enjoy creating models to represent real life phenomenas and facilitate decision making. For me, decomposing a signal, interpolating it, compressing it, filtering it or making predictions, is like magic. Having some knowledge in computer science, quality control and digital signal processing, I would like to help to close the gap between academy and industry.
+I love applied mathematics. I enjoy creating models for representing real life phenomenas and facilitating decision making. For me, decomposing a signal, interpolating it, compressing it, filtering it or making predictions, is an art. Having some knowledge and experience in computer science, quality control and digital signal processing, I am looking forward to close the gap between academy and industry.
 
 ## Interests and areas of research
 Mathematical models for software quality control, objective assessment of speech and audio quality, mathematical signal processing, digital audio processing, automatic recognition of accessible pedestrian signals, pattern recognition, and embedded devices.
