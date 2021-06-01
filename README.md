@@ -3,11 +3,10 @@
 
 Welcome to my portfolio. At this site, you can get information about the content I've written, my interests and areas of reasearch.   
 
-## About me
-I love applied mathematics. I enjoy creating models for representing real life phenomenas and facilitating decision making. For me, decomposing a signal, interpolating it, compressing it, filtering it or making predictions, is an art. Having some knowledge and experience in computer science, quality control and digital signal processing, I am looking forward to close the gap between academy and industry.
-
 ## Interests and areas of research
 Objective assessment of speech and audio quality (audio fingerprinting, quality of service on VoIP, remote auscultation, and virtual voice assistants), mathematical models for software quality control, mathematical signal processing, audio signal processing, automatic recognition of accessible pedestrian signals, and pattern recognition.
+
+I love applied mathematics. I enjoy creating models for representing real life phenomenas and facilitating decision making. For me, decomposing a signal, interpolating it, compressing it, filtering it or making predictions, is an art. Having some knowledge and experience in computer science, quality control and digital signal processing, I am looking forward to close the gap between academy and industry.
 
 ## Posts
 <!--* 19 Dic 2020 >> [Quality of service for audio and video streaming over Internet](blog/JFonseca.audioVideoQualityStreaming.html)
@@ -48,7 +47,7 @@ Objective assessment of speech and audio quality (audio fingerprinting, quality 
 I'm always happy to hear from people who are interested in my work. You can connect with me through these links:
 <ul>
 <li><b>Github 1:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
-<li><b>Github 2:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis-gl</a></li>  
+<li><b>Github 2:</b> <a href='https://github.com/juanfonsecasolis-gl'>https://github.com/juanfonsecasolis-gl</a></li>  
 <li><b>Linkedin:</b> <a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
 <li><b>Academia Edu:</b> <a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>http://itcr.academia.edu/JuanFonsecaSol%C3%ADs</a></li>
 </ul>
