@@ -1,7 +1,7 @@
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 
-Welcome to my portfolio. At this site, you can get information about the content I've written, my interests and areas of reasearch.   
+Welcome to my portfolio. At this site, you can get information about the content I've written, my interests and areas of research.   
 
 ## Interests and areas of research
 Objective assessment of speech and audio quality (audio fingerprinting, quality of service on VoIP, remote auscultation, and virtual voice assistants), mathematical models for software quality control, mathematical signal processing, audio signal processing, automatic recognition of accessible pedestrian signals, and pattern recognition.
