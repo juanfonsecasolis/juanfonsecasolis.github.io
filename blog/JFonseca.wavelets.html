@@ -13253,7 +13253,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Desmistificando-la-transformada-de-ondeletas">Desmistificando la transformada de ondeletas<a class="anchor-link" href="#Desmistificando-la-transformada-de-ondeletas">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · Febrero 2021 · lecturad de 7 min</p>
 <hr>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este ipython notebook estudiamos la transformada de ondeletas (o <em>wavelets</em> como se conoce en inglés). La misma es un tema interesante de estudiar porque constituye una alternativa a la transformada de Fourier de corto plazo (STFT, por sus siglas en Inglés) al atenuar el problema del principio de incertidumbre de Heinserberg, que dicta que a mayor resolución frecuencial menor resolución temporal, y viceversa. En la literatura es posible encontrar la transformada de ondeletas continua (CWT, por sus siglas en Inglés), su versión discreta o <em>discrete time wavelet transform</em> (DTWT), y el banco de filtros que la define, asociado a un fenómeno llamado distribución diádica. Además, es posible encontrar librerías que implementan la DTWT para el análisis de frecuencias. Aunque este notebook no tiene componentes originales, explicamos la teoría básica de los wavelets y varios ejemplos de librerías académicas disponibles gratuitamente.</p>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este ipython notebook estudiamos la transformada de ondeletas (o <em>wavelets</em> como se conoce en inglés). La misma es un tema interesante de estudiar porque constituye una alternativa a la transformada de Fourier de corto plazo (STFT, por sus siglas en Inglés) al atenuar el problema del principio de incertidumbre de Heinserberg, que dicta que a mayor resolución frecuencial menor resolución temporal, y viceversa. En la literatura es posible encontrar la transformada de ondeletas continua (CWT, por sus siglas en Inglés), su versión discreta o <em>discrete time wavelet transform</em> (DTWT), y el banco de filtros que la define, asociado a un fenómeno llamado distribución diádica. Además, es posible encontrar librerías que implementan la DTWT para el análisis de frecuencias. Aunque este notebook no tiene componentes originales, explicamos la teoría básica de las ondeletas y varios ejemplos de librerías académicas disponibles gratuitamente.</p>
 
 </div>
 </div>
@@ -13267,7 +13267,7 @@ $$
 $$<p>y la segunda, requiere calcular la transformada de Fourier de la ondeleta, o $\Psi(\omega)=\mathscr{F}\{\psi(t)\}(f)$, para integrar sobre un cociente de la forma:</p>
 $$
 C_{\psi} = \int_{-\infty}^{\infty}{\frac{|\Psi(\omega)|^2}{|\omega|}d\omega} &lt; \infty,
-$$<p>donde $t \in \mathbb{R}$ representa el tiempo continuo, $\omega=2\pi f$ es la frecuencia expresada en radianes por segundoy $f \in \mathbb{R}$ es la frecuencia en hercios. Un ejemplo de una ondeleta es la función Morlet, que se define como sigue [1]:</p>
+$$<p>donde $t \in \mathbb{R}$ representa el tiempo continuo, $\omega=2\pi f$ es la frecuencia expresada en radianes por segundo y $f \in \mathbb{R}$ es la frecuencia en hercios. Un ejemplo de una ondeleta es la función Morlet, que se define como sigue [1]:</p>
 $$
 \psi(t) = \cos(5t) e^{\frac{-t^2}{2}}.
 $$
