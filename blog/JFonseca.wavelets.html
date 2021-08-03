@@ -13253,7 +13253,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Desmistificando-la-transformada-de-ondeletas">Desmistificando la transformada de ondeletas<a class="anchor-link" href="#Desmistificando-la-transformada-de-ondeletas">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · Febrero 2021 · lecturad de 7 min</p>
 <hr>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este ipython notebook estudiamos la transformada de ondeletas (o <em>wavelets</em> como se conoce en inglés). La misma es un tema interesante de estudiar porque constituye una alternativa a la transformada de Fourier de corto plazo (STFT, por sus siglas en Inglés) al atenuar el problema del principio de incertidumbre de Heinserberg, que dicta que a mayor resolución frecuencial menor resolución temporal, y viceversa. En la literatura es posible encontrar la transformada de ondeletas continua (CWT, por sus siglas en Inglés), su versión discreta o <em>discrete time wavelet transform</em> (DTWT), y el banco de filtros que la define, asociado a un fenómeno llamado distribución diádica. Además, es posible encontrar librerías que implementan la DTWT para el análisis de frecuencias. Aunque este notebook no tiene componentes originales, explicamos la teoría básica de las ondeletas y varios ejemplos de librerías académicas disponibles gratuitamente.</p>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este ipython notebook estudiamos la transformada de ondeletas (o <em>wavelets</em>, como se conoce en inglés), que ha constituido un tema importante para el campo del procesamiento digital de señales en los últimos 20 años. Un ejemplo es la creación del formato de compresión de imagenes JPEG 2000 que ofrece un radio de compresión de 56 a 1. La transformada de ondeletas es una alternativa a la transformada de Fourier de corto plazo (STFT, por sus siglas en Inglés) para resolver el principio de incertidumbre de Heinserberg, que dicta que a mayor resolución frecuencial menor resolución temporal, y viceversa. En la literatura es posible encontrar varias versiones de la transformada de ondeletas, entre ellas, la transformada continua (CWT, por sus siglas en inglés) y la transaformada discreta o (DTWT, por sus siglas en inglés); así como implementaciones en librerías científicas que facilitan su uso. Este notebook no tiene componentes originales, pero explicamos la teoría básica para entender  las ondeletas y varios ejemplos de análisis de frecuencias.</p>
 
 </div>
 </div>
@@ -13261,13 +13261,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Definici&#243;n-de-ondeleta">Definici&#243;n de ondeleta<a class="anchor-link" href="#Definici&#243;n-de-ondeleta">&#182;</a></h1><p>Una ondeleta $\psi(t)$ se define como una señal de energía finita y corta duración, que debe cumplir dos condiciones: tener media cero y tener energía finita (principio de admisibilidad). La primer condición puede expresarse como sigue [2]:</p>
+<h1 id="Definici&#243;n-de-ondeleta">Definici&#243;n de ondeleta<a class="anchor-link" href="#Definici&#243;n-de-ondeleta">&#182;</a></h1><p>Una ondeleta $\psi(t)$ se define como una señal de energía finita y corta duración, que cumple dos condiciones: tener media cero y energía finita. Esta última condición se conoce como el principio de admisibilidad. Para la primer condición la suma de todos los componentes de la señal deben cancelarse entre sí [2]:</p>
 $$
 \int_{-\infty}^{\infty}{\psi(t)dt} = 0,
-$$<p>y la segunda, requiere calcular la transformada de Fourier de la ondeleta, o $\Psi(\omega)=\mathscr{F}\{\psi(t)\}(f)$, para integrar sobre un cociente de la forma:</p>
+$$<p>y para la segunda condición, la suma del cuadrado de todos los componentes de la señal entre cada frecuencia deber ser finita:</p>
 $$
 C_{\psi} = \int_{-\infty}^{\infty}{\frac{|\Psi(\omega)|^2}{|\omega|}d\omega} &lt; \infty,
-$$<p>donde $t \in \mathbb{R}$ representa el tiempo continuo, $\omega=2\pi f$ es la frecuencia expresada en radianes por segundo y $f \in \mathbb{R}$ es la frecuencia en hercios. Un ejemplo de una ondeleta es la función Morlet, que se define como sigue [1]:</p>
+$$<p>donde $t \in \mathbb{R}$ representa el tiempo continuo, $\omega=2\pi f$ es la frecuencia expresada en radianes por segundo, $f \in \mathbb{R}$ es la frecuencia en hercios y $\Psi(\omega)=\mathscr{F}\{\psi(t)\}(f)$ es la transformada de Fourier de la ondeleta $\psi(t)$.</p>
+<p>Existen tantos tipos de ondeletas como funciones, y un ejemplo, es la ondeleta Morlet, que se utiliza para analizar sumas de senoidales [1]:</p>
 $$
 \psi(t) = \cos(5t) e^{\frac{-t^2}{2}}.
 $$
@@ -13335,10 +13336,11 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A partir de una función como esta (llamada <em>ondeleta madre</em>) se pueden derivar otras ondeletas de la misma forma pero que sufren una serie de escalamientos y desplazamientos definidos según los parámetros $a$ y $b$, respectivamente:</p>
+<p>Como regla general, se debe escoger una ondeleta que se asemeje a la señal que se quiere analizar, por ejemplo, la ondeleta Haar, cuya función es $-1$ en el rango $[0,0.5]$, $1$ en el rango $[0.5,1]$ y cero en el resto; es usada para detectar bordes en imágenes por su buena resolución temporal [5,6].</p>
+<h1 id="Ondeleta-madre">Ondeleta madre<a class="anchor-link" href="#Ondeleta-madre">&#182;</a></h1><p>A partir de una función como la descrita anteriormente (llamada <em>ondeleta madre</em>) se pueden derivar otras ondeletas mediante una serie de escalamientos y desplazamientos definidos según los parámetros $a$ y $b$, respectivamente, como sigue:</p>
 $$
 \psi_{a,b}(t) = \frac{1}{\sqrt{a}}\,\psi\left(\frac{t-b}{a}\right).
-$$<p>Por ejemplo, al realizar un escalamiento por $0.5$s y un desplazamiento por $4$s sobre la ondeleta madre morlet obtenemos la siguiente curva:</p>
+$$<p>Para la ondeleta Morlet, que dibujamos arriba, al realizar un escalamiento por $0.5$s y un desplazamiento por $4$s se obtiene la siguiente curva:</p>
 
 </div>
 </div>
@@ -13387,25 +13389,17 @@ $$<p>Por ejemplo, al realizar un escalamiento por $0.5$s y un desplazamiento por
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Es una práctica recomendada escoger una ondeleta que siga la misma forma de la señal que queremos analizar, y como más adelante vamos a analizar un tono puro implementado con un senoidal, la ondeleta Morlet es una buena elección. Otras ondeletas conocidas son la ondeleta sombrero (Ricker) o la ondeleta Haar. Como dato curioso la ondeleta Haar, propuesta en 1909 por el matemático húngaro Alfréd Haar, es definida por una función cuyo soporte es $-1$ en el rango $[0,0.5]$, $1$ en el rango $[0.5,1]$ y cero en el resto; y es usada para detectar bordes en imágenes por su buena resolución temporal [5,6].</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Transformada-continua-de-ondeleta">Transformada continua de ondeleta<a class="anchor-link" href="#Transformada-continua-de-ondeleta">&#182;</a></h1><p>La ondeleta madre permite definir otro concepto llamado <em>transformada de ondeleta continua</em> (CWT, por sus siglas en inglés) que permite obtener coeficientes de análisis con esta ecuación [2]:</p>
+<h1 id="Transformada-continua-de-ondeleta">Transformada continua de ondeleta<a class="anchor-link" href="#Transformada-continua-de-ondeleta">&#182;</a></h1><p>La ondeleta madre permite definir otro concepto llamado <em>transformada de ondeleta continua</em> (CWT, por sus siglas en inglés) que, al igual que la transformada de Fourier, permite obtener coeficientes de análisis con la ecuación de abajo [2]:</p>
 $$
 \text{CWT}_f(a,b) = \int_{-\infty}^{\infty}{x(t)\,\psi^{*}_{a,b}(t)dt},  
-$$<p>donde el operador $\cdot^{*}$ representa el conjugado complejo (definido como $(a+bi)^{*}=a-bi$, para recordar). Al igual que pasa con la transformada de Fourier, esta ecuación es también una correlación entre la función ondeleta (escalada y trasladada por $a$ y $b$) y la función analizada $x$. Abajo vemos un ejemplo de un escalograma definido por la CWT:</p>
+$$<p>donde el operador $\cdot^{*}$ representa el conjugado complejo (definido como $(a+bi)^{*}=a-bi$, cabe recordar). Al igual que pasa con la transformada de Fourier, esta ecuación es también una correlación entre la función ondeleta (escalada y trasladada por $a$ y $b$) y la función analizada $x$. Abajo vemos un ejemplo de un escalograma definido por la CWT:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">CWT</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">ondeleta</span><span class="o">=</span><span class="n">morlet</span><span class="p">):</span>    
@@ -13432,15 +13426,6 @@ $$<p>donde el operador $\cdot^{*}$ representa el conjugado complejo (definido co
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Fs</span><span class="p">,</span> <span class="n">B</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Fs</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;a Escala (s)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;b Desplazamiento (s)&#39;</span><span class="p">)</span>
-<span class="n">show</span><span class="p">()</span>
-
-<span class="n">figure</span><span class="p">()</span>
-<span class="n">t</span><span class="o">=</span><span class="n">n</span><span class="o">/</span><span class="n">Fs</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">ondeletaMadre</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mf">0.008</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ondeletaFunc</span><span class="o">=</span><span class="n">morlet</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo (s)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitud&#39;</span><span class="p">)</span>
 <span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -13478,6 +13463,41 @@ $$<p>donde el operador $\cdot^{*}$ representa el conjugado complejo (definido co
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En este escalograma es posible ubicar un pico de energía en $0.008$s, el cual es precisamente el periodo que permite obtener la mejor correspondencia con la señal analizada:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">figure</span><span class="p">()</span>
+<span class="n">t</span><span class="o">=</span><span class="n">n</span><span class="o">/</span><span class="n">Fs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">ondeletaMadre</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mf">0.008</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ondeletaFunc</span><span class="o">=</span><span class="n">morlet</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitud&#39;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
     <div class="prompt"></div>
@@ -13496,14 +13516,6 @@ $$<p>donde el operador $\cdot^{*}$ representa el conjugado complejo (definido co
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Al observar el escalograma es posible ubicar un pico de energía en $0.008$s, y con este periodo precisamente es posible obtener la mejor correspondencia con la señal analizada.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
