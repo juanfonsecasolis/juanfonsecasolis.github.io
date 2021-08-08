@@ -1,7 +1,7 @@
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 
-Welcome to my portfolio. At this site, you can get information about the content I've written, my interests and areas of research.   
+Welcome to my portfolio. At this site, you can get information about the content I've written, my interests, and areas of research.   
 
 ## Interests and areas of research
 Objective assessment of speech and audio quality (audio fingerprinting, quality of service on VoIP, remote auscultation, and virtual voice assistants), mathematical models for software quality control, mathematical signal processing, audio signal processing, automatic recognition of accessible pedestrian signals, and pattern recognition.
@@ -22,7 +22,7 @@ I love applied mathematics. I enjoy creating models for representing real life p
 
 ## Projects
 * Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
-* Nov 2019 >> [Blood pressure and pulse analyzer](https://bloodpressurepulse.herokuapp.com/xxyn4pz8yhb0i7n)
+* Nov 2019 >> [Blood pressure and pulse analyzer](https://bloodpressurepulse.herokuapp.com/demo)
 * Nov 2017 >> [Automatic recognition of pedestrian signals - RASP](https://vinv.ucr.ac.cr/sigpro/web/projects/B6146)
 * Apr 2013 >> [ACAI webpage (TCU work)](http://www.acai.cr/)
 * Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
