@@ -13253,7 +13253,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Desmistificando-la-transformada-de-ondeletas">Desmistificando la transformada de ondeletas<a class="anchor-link" href="#Desmistificando-la-transformada-de-ondeletas">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · Febrero 2021 · lecturad de 7 min</p>
 <hr>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este ipython notebook estudiamos la transformada de ondeletas (o <em>wavelets</em>, como se conoce en inglés), un concepto que ha revolucionado la forma de analizar señales en el dominio de la frecuencia. A diferencia de la transformada de Fourier de corto plazo (STFT, por sus siglas en Inglés), la transformada de ondeletas no sufre del principio de incertidumbre de Heinserberg, que dicta que a mayor resolución frecuencial menor resolución temporal, y viceversa; lo cual permite analizar señales que varían rápidamente en frecuencia con mayor facilidad. Este notebook no tiene componentes originales, pero explicamos la teoría básica para entender la transformada continua de ondeletas (CWT, por sus siglas en inglés), la transformada discreta de ondeletas (DTWT, por sus siglas en inglés) y librerías científicas que facilitan su uso.</p>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este ipython notebook estudiamos la transformada de ondeletas (o <em>wavelets</em>, como se conoce en inglés), un concepto que ha revolucionado la forma de analizar señales en el dominio de la frecuencia. A diferencia de la transformada de Fourier de corto plazo (STFT, por sus siglas en Inglés), la transformada de ondeletas no sufre del principio de incertidumbre de Heinserberg, que dicta que a mayor resolución frecuencial menor resolución temporal, y viceversa; lo cual permite analizar señales que varían rápidamente en frecuencia. Este notebook no tiene componentes originales, pero explicamos la teoría básica para entender la transformada continua de ondeletas (CWT, por sus siglas en inglés), la transformada discreta de ondeletas (DTWT, por sus siglas en inglés) y librerías científicas que facilitan su uso.</p>
 
 </div>
 </div>
@@ -13470,7 +13470,7 @@ $$<p>donde el operador $\cdot^{*}$ representa el conjugado complejo (definido co
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Obsevando este <em>escalograma</em> (otro término análogo al espectrograma de Fourier) es posible ubicar varis picos de energía, pero el que se ubica en $0.008$s nos interesa en particular porque permite obtener la mejor correspondencia con la señal analizada:</p>
+<p>Obsevando este <em>escalograma</em> (otro término análogo al espectrograma de Fourier) es posible ubicar varios picos de energía, pero el que se ubica en $0.008$s nos interesa en particular porque permite obtener la mejor correspondencia con la señal analizada:</p>
 
 </div>
 </div>
@@ -13531,7 +13531,7 @@ $$<p>donde:</p>
 <li>$j \in \mathbb{N}$ es el índice de escalamiento,</li>
 <li>$K \in \mathbb{N}$ es el índice de la ondeleta.</li>
 </ul>
-<p>Como $a$ y $b$ son potencias de dos, se dice que la transformada DTWT es diádica; esto además define un banco de filtros que se traslapan de la siguiente forma:</p>
+<p>Como $a$ y $b$ son potencias de dos, se dice que la transformada DTWT es diádica; esto además define un banco de filtros como el que se muestra abajo:</p>
 
 </div>
 </div>
@@ -13647,7 +13647,7 @@ $$<p>donde:</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Este análisis por el banco de filtros está relacionado con la <a href="https://en.wikipedia.org/wiki/Multiresolution_analysis">propiedad de multiresolución</a>, que constituye el atractivo principal de la transformada de ondeletas, pues aplicando una ventana de análisis más larga para frecuencia bajas y más corta para frecuencias altas logra atenuar el problema del principio de Incertidumbre de Heisenberg. Este principio afecta a la STFT pues en ella las ventanas de análisis son fijas, y por lo tanto a mayor resolución temporal se obtiene menor resolución frecuencial y viceversa [6].</p>
 <p><img src="img/multiresolution.jpg" width="50%"></img></p>
-<p>A nivel computacional, este análisis se visualiza usando una estructura como la siguiente [6]:</p>
+<p>A nivel computacional, este análisis se visualiza usando una estructura como la siguiente DWT de índice 1 (usando niveles más altos es posible obtener coeficientes más detallados) [6]:</p>
 <p><img src="img/bancoFiltros2.png" width="60%"></img></p>
 
 </div>
@@ -13656,7 +13656,7 @@ $$<p>donde:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>donde la señal es analizada por un filtro pasa-bajas L y pasa-altas H para definir los coeficientes de análisis cD1 y cA1, respectivamente. Luego, en la etapa de síntesis, estos coeficientes son procesados por filtros inversos H' y L' para reconstruir la señal [6]. En la figura de arriba, usamos una DWT de nivel-1, que es la más sencilla, pero usando niveles más altos es posible obtener coeficientes más detallados.</p>
+<p>donde la señal es analizada por un filtro pasa-bajas L y pasa-altas H para definir los coeficientes de análisis cD1 y cA1, respectivamente. Luego, en la etapa de síntesis, estos coeficientes son procesados por filtros inversos H' y L' para reconstruir la señal [6].</p>
 
 </div>
 </div>
@@ -13832,7 +13832,7 @@ $$<p>donde:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Transformada-wavelet-vs.-STFT">Transformada wavelet vs. STFT<a class="anchor-link" href="#Transformada-wavelet-vs.-STFT">&#182;</a></h1><p>Ahora analizamos un barrido lineal en frecuencia en el rango de los 20 Hz a 20 kHz para estudiar si la transformada de ondeletas ofrece a simple vista una mejor resolución temporal-frecuencial, como se anuncia:</p>
+<h1 id="Transformada-wavelet-vs.-STFT">Transformada wavelet vs. STFT<a class="anchor-link" href="#Transformada-wavelet-vs.-STFT">&#182;</a></h1><p>Ahora analizamos un barrido lineal en frecuencia en el rango de los 20 Hz a 20 kHz para estudiar si la transformada de ondeletas ofrece, en efecto, una mejor resolución temporal-frecuencial:</p>
 
 </div>
 </div>
@@ -14091,7 +14091,7 @@ $$<p>donde:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Se observa que todas las frecuencias tienen la misma resolución, y, al hacer un acercamiento, la resolución de las frecuencias bajas es mala y borrosa, confirmando la idea de que la transformada de ondeletas funciona como una "lupa" dándole a cada frecuencia la resolución necesaria. Para mejorar la visualización del espectrograma, un truco que se usa es aplicar la raíz cuadrada de la magnitud espectral para atenuar las magnitudes bajas y conservar las altas, pero el resultado es igualmente borroso, mostrando evidencia de la conveniencia de usar la transformada de ondeletas.</p>
+<p>Se observa que todas las frecuencias tienen la misma resolución, y, al hacer un acercamiento, la resolución de las frecuencias bajas es mala y borrosa, confirmando la idea de que la transformada de ondeletas funciona como una "lupa" dándole a cada frecuencia la resolución necesaria. Para mejorar la visualización del espectrograma se podría aplicar la raíz cuadrada de la magnitud espectral (lo que logra atenuar las magnitudes bajas y conservar las altas) pero el resultado es igualmente borroso, confirmando que sigue siendo más conveniente usar la transformada de ondeletas.</p>
 
 </div>
 </div>
