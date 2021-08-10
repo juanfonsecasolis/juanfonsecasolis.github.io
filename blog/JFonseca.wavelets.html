@@ -13336,8 +13336,8 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Como regla general, se debe recomienda escoger una ondeleta que se asemeje a la señal que se quiere analizar, por ejemplo, la ondeleta Morlet se parece a los tonos puros que generamos más adelante. Por mencionar otro tipo de ondeleta, podemos decir que la ondeleta Haar, cuya función es $-1$ en el rango $[0,0.5]$, $1$ en el rango $[0.5,1]$ y cero en el resto; es usada para detectar bordes en imágenes por su buena resolución temporal [5,6].</p>
-<h1 id="Ondeleta-madre">Ondeleta madre<a class="anchor-link" href="#Ondeleta-madre">&#182;</a></h1><p>Cuando se habla de una ondeleta normalmente se omite mencionar que es una <em>ondeleta madre</em>, es decir, que a partir de ella se pueden derivar otras ondeletas escaladas y desplazas según los parámetros $a$ y $b$, como sigue:</p>
+<p>Otro ejemplo es la ondeleta Haar, cuya función es $-1$ en el rango $[0,0.5]$, $1$ en el rango $[0.5,1]$ y cero en el resto; es usada para detectar bordes en imágenes por su buena resolución temporal [5,6]. Como regla general, se recomienda escoger una ondeleta que se asemeje a la señal que se quiere analizar, por ejemplo, la ondeleta Morlet se parece a los tonos puros que generamos más adelante.</p>
+<h1 id="Ondeleta-madre">Ondeleta madre<a class="anchor-link" href="#Ondeleta-madre">&#182;</a></h1><p>Una <em>ondeleta madre</em> es una ondeleta centrada en cero y que no tiene ningún tipo de escalamiento o desplazamiento y es usada para derivar otras ondeletas mediante parámetros $a$ y $b$, como sigue:</p>
 $$
 \psi_{a,b}(t) = \frac{1}{\sqrt{a}}\,\psi\left(\frac{t-b}{a}\right).
 $$<p>Para la ondeleta Morlet que dibujamos arriba, al realizar un escalamiento por $0.5$s y un desplazamiento por $4$s se obtiene la siguiente curva:</p>
