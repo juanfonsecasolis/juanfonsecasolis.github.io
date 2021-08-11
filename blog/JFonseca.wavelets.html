@@ -13337,10 +13337,10 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Otro ejemplo es la ondeleta Haar, cuya función es $-1$ en el rango $[0,0.5]$, $1$ en el rango $[0.5,1]$ y cero en el resto; es usada para detectar bordes en imágenes por su buena resolución temporal [5,6]. Como regla general, se recomienda escoger una ondeleta que se asemeje a la señal que se quiere analizar, por ejemplo, la ondeleta Morlet se parece a los tonos puros que generamos más adelante.</p>
-<h1 id="Ondeleta-madre">Ondeleta madre<a class="anchor-link" href="#Ondeleta-madre">&#182;</a></h1><p>Una <em>ondeleta madre</em> es una ondeleta centrada en cero y que no tiene ningún tipo de escalamiento o desplazamiento y es usada para derivar otras ondeletas mediante parámetros $a$ y $b$, como sigue:</p>
+<h1 id="Ondeleta-madre">Ondeleta madre<a class="anchor-link" href="#Ondeleta-madre">&#182;</a></h1><p>Una <em>ondeleta madre</em> es una ondeleta centrada en cero y que no tiene ningún tipo de escalamiento o desplazamiento. La ondeleta madre es usada para derivar otras ondeletas "hijas" mediante parámetros $a$ y $b$, como sigue:</p>
 $$
 \psi_{a,b}(t) = \frac{1}{\sqrt{a}}\,\psi\left(\frac{t-b}{a}\right).
-$$<p>Para la ondeleta Morlet que dibujamos arriba, al realizar un escalamiento por $0.5$s y un desplazamiento por $4$s se obtiene la siguiente curva:</p>
+$$<p>por ejemplo, para la ondeleta Morlet que dibujamos arriba, al realizar un escalamiento por $0.5$s y un desplazamiento por $4$s se obtiene la siguiente curva:</p>
 
 </div>
 </div>
@@ -13389,10 +13389,10 @@ $$<p>Para la ondeleta Morlet que dibujamos arriba, al realizar un escalamiento p
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Transformada-continua-de-ondeleta">Transformada continua de ondeleta<a class="anchor-link" href="#Transformada-continua-de-ondeleta">&#182;</a></h1><p>La ondeleta madre permite definir otro concepto llamado <em>transformada de ondeleta continua</em> (CWT, por sus siglas en inglés) que, al igual que la transformada de Fourier, permite obtener coeficientes de análisis usando la ecuación de abajo [2]:</p>
+<h1 id="Transformada-continua-de-ondeleta">Transformada continua de ondeleta<a class="anchor-link" href="#Transformada-continua-de-ondeleta">&#182;</a></h1><p>La ondeleta madre permite definir otro concepto llamado <em>transformada de ondeleta continua</em> (CWT, por sus siglas en inglés) que, al igual que la transformada de Fourier, permite obtener coeficientes de análisis, que indican la correlación entre la función ondeleta (escalada y trasladada por $a$ y $b$) y la función analizada $x$ [2]:</p>
 $$
 \text{CWT}_f(a,b) = \int_{-\infty}^{\infty}{x(t)\,\psi^{*}_{a,b}(t)dt},  
-$$<p>donde el operador $\cdot^{*}$ representa el conjugado complejo (definido como $(a+bi)^{*}=a-bi$). Al igual que pasa con la transformada de Fourier, esta integral también representa una correlación entre la función ondeleta (escalada y trasladada por $a$ y $b$) y la función analizada $x$. Abajo vemos un ejemplo de un escalograma definido por la CWT para un tono de frecuencia 100 Hz:</p>
+$$<p>donde el operador $\cdot^{*}$ representa el conjugado complejo, es decir, $(a+bi)^{*}=a-bi$. Abajo vemos un ejemplo de un escalograma definido por la CWT para un tono de frecuencia 100 Hz:</p>
 
 </div>
 </div>
@@ -13470,7 +13470,7 @@ $$<p>donde el operador $\cdot^{*}$ representa el conjugado complejo (definido co
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Obsevando este <em>escalograma</em> (otro término análogo al espectrograma de Fourier) es posible ubicar varios picos de energía, entre estos picos hay uno ubicado en $0.008$s que nos interesa, pues permite obtener la mejor correspondencia con la señal analizada:</p>
+<p>El gráfico de ariba se llama <em>escalograma</em> y es el análogo al espectrograma de la STFT. Usando el escalograma es posible ubicar los picos de energía donde hay mejor correlación, por ejemplo, el pico ubicado en $0.008$s nos permite obtener la mejor correspondencia con la señal analizada:</p>
 
 </div>
 </div>
@@ -13647,7 +13647,7 @@ $$<p>donde:</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Este análisis por el banco de filtros está relacionado con la <a href="https://en.wikipedia.org/wiki/Multiresolution_analysis">propiedad de multiresolución</a>, que constituye el atractivo principal de la transformada de ondeletas, pues aplicando una ventana de análisis más larga para frecuencia bajas y más corta para frecuencias altas logra atenuar el problema del principio de Incertidumbre de Heisenberg. Este principio afecta a la STFT pues en ella las ventanas de análisis son fijas, y por lo tanto a mayor resolución temporal se obtiene menor resolución frecuencial y viceversa [6].</p>
 <p><img src="img/multiresolution.jpg" width="50%"></img></p>
-<p>A nivel computacional, este análisis se visualiza usando una estructura como la siguiente DWT de índice 1 (usando niveles más altos es posible obtener coeficientes más detallados) [6]:</p>
+<p>A nivel computacional, este análisis se visualiza usando una estructura como la siguiente [6]:</p>
 <p><img src="img/bancoFiltros2.png" width="60%"></img></p>
 
 </div>
@@ -13656,7 +13656,7 @@ $$<p>donde:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>En el diagrama se observa que la señal, $s$, es analizada por un filtro pasa-bajas L y pasa-altas H para definir los coeficientes de análisis cD1 y cA1, respectivamente. Luego, en la etapa de síntesis, estos coeficientes son procesados por filtros inversos H' y L' para reconstruir la señal $s'$ [6].</p>
+<p>En el diagrama se observa que la señal $s$ es analizada por un filtro pasa-bajas $L$ para definir el coeficiente de análisis $cA1$, también se observa que el filtro pasa-altas $H$ produce el coeficiente $cD1$. Con un filtro de mayor índice es posible obtener más coeficientes, para ello el filtro $L$ se divide en más filtros pasa-bajas y pasa-altas a modo de cascada.Luego, en la etapa de síntesis, estos coeficientes son procesados por filtros inversos $H'$ y $L'$ para reconstruir la señal $s'$ [6].</p>
 
 </div>
 </div>
@@ -13664,7 +13664,7 @@ $$<p>donde:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Librerias-existentes">Librerias existentes<a class="anchor-link" href="#Librerias-existentes">&#182;</a></h1><p>Algunas implementaciones para la CWT y la DTWT se encuentran implementadas en las librerías Scipy (<code>signal.CWT</code>) y Obspy (<code>obspy.signal.tf_misfit.CWT</code>) de Python. Abajo se proponen dos ejemplos usando cada librería para calcular los escalogramas del tono puro que usamos anteriormente.</p>
+<h1 id="Librerias-existentes">Librerias existentes<a class="anchor-link" href="#Librerias-existentes">&#182;</a></h1><p>Algunas implementaciones para la CWT y la DTWT se encuentran implementadas en las librerías Scipy (<code>signal.CWT</code>) y Obspy (<code>obspy.signal.tf_misfit.CWT</code>) de Python. Abajo se proponen dos ejemplos usando cada librería para calcular los escalogramas del tono puro que construimos anteriormente.</p>
 
 </div>
 </div>
@@ -13740,7 +13740,7 @@ $$<p>donde:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Tiempo transcurrido: 0.17s
+<pre>Tiempo transcurrido: 0.14s
 </pre>
 </div>
 </div>
@@ -13752,7 +13752,7 @@ $$<p>donde:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vemos que la librería Signal.CWT arroja resultados similares a nuestra implementación, donde es necesario interpretar la escala y el desplazamiento para encontrar la frecuencia del tono construido.</p>
+<p>Vemos que la librería Signal.CWT arroja resultados similares a nuestra implementación, donde es necesario interpretar la escala y el desplazamiento para encontrar la frecuencia del tono construido, lo cual nos lleva a seguir buscando otra solución más sencilla.</p>
 
 </div>
 </div>
@@ -13812,7 +13812,7 @@ $$<p>donde:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Tiempo transcurrido: 0.15s
+<pre>Tiempo transcurrido: 0.14s
 </pre>
 </div>
 </div>
@@ -13824,7 +13824,7 @@ $$<p>donde:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Apreciamos que obspy.signal ofrece una interpretación más sencilla porque ya expresa el eje de la escala en términos de la pseudofrecuencia, y además, el tiempo de procesamiento es similar. Cabe mencionar que no analizamos más señales para obtener mejores estimados del tiempo porque ese no es el propósito de este notebook.</p>
+<p>La librería obspy.signal parece ofrecer lo que andamos buscando, una interpretación más sencilla que expresa el eje de la escala en términos de la pseudofrecuencia y con un tiempo de procesamiento igual de bueno. Cabe mencionar que no analizamos más señales para obtener mejores estimados del tiempo porque ese no es el propósito de este notebook.</p>
 
 </div>
 </div>
@@ -13833,13 +13833,14 @@ $$<p>donde:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Transformada-wavelet-vs.-STFT">Transformada wavelet vs. STFT<a class="anchor-link" href="#Transformada-wavelet-vs.-STFT">&#182;</a></h1><p>Ahora analizamos un barrido lineal en frecuencia en el rango de los 20 Hz a 20 kHz para estudiar si la transformada de ondeletas ofrece, en efecto, una mejor resolución temporal-frecuencial:</p>
+<p><strong>Nota: se recomienda bajar el volumen del parlante en este punto pues el barrido es bastante fuerte.</strong></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># construimos un barrido de frecuencias</span>
@@ -13863,7 +13864,7 @@ $$<p>donde:</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -13892,7 +13893,7 @@ $$<p>donde:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">benchmark2</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Fs</span><span class="p">,</span> <span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -13946,7 +13947,7 @@ $$<p>donde:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Tiempo transcurrido: 5.26s
+<pre>Tiempo transcurrido: 5.41s
 </pre>
 </div>
 </div>
@@ -13985,7 +13986,7 @@ $$<p>donde:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Tiempo transcurrido: 4.94s
+<pre>Tiempo transcurrido: 5.07s
 </pre>
 </div>
 </div>
@@ -14004,7 +14005,7 @@ $$<p>donde:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">STFT</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">Fs</span><span class="p">,</span><span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -14098,7 +14099,7 @@ $$<p>donde:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Zxx</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">Fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
