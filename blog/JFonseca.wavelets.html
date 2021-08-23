@@ -13253,7 +13253,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Desmistificando-la-transformada-de-ondeletas">Desmistificando la transformada de ondeletas<a class="anchor-link" href="#Desmistificando-la-transformada-de-ondeletas">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · Febrero 2021 · lectura de 7 min</p>
 <hr>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este ipython notebook estudiamos la transformada de ondeletas (o <em>wavelets</em>, como se conoce en inglés), un concepto que ha revolucionado la forma de analizar señales en el dominio de la frecuencia. A diferencia de la transformada de Fourier de corto plazo (STFT, por sus siglas en Inglés), la transformada de ondeletas no sufre del principio de incertidumbre de Heinserberg, que dicta que a mayor resolución frecuencial menor resolución temporal, y viceversa; lo cual permite analizar señales que varían rápidamente en frecuencia. Este notebook no tiene componentes originales, pero explicamos la teoría básica para entender la transformada continua de ondeletas (CWT, por sus siglas en inglés), la transformada discreta de ondeletas (DTWT, por sus siglas en inglés) y librerías científicas que facilitan su uso.</p>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">&#182;</a></h2><p>En este ipython notebook estudiamos la transformada de ondeletas (o <em>wavelets</em>, como se conoce en inglés), un concepto que revolucionó en los 70s la forma de analizar señales en el dominio de la frecuencia. A diferencia de la transformada de Fourier de corto plazo (STFT, por sus siglas en Inglés), la transformada de ondeletas no sufre del principio de incertidumbre de Heinserberg, que dicta que a mayor resolución frecuencial menor resolución temporal, y viceversa; lo cual permite analizar señales que varían rápidamente en frecuencia. Este notebook no tiene componentes originales, pero explicamos la teoría básica para entender la transformada continua de ondeletas (CWT, por sus siglas en inglés), la transformada discreta de ondeletas (DTWT, por sus siglas en inglés) y algunas librerías científicas que facilitan su uso.</p>
 
 </div>
 </div>
@@ -13261,10 +13261,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Definici&#243;n-de-ondeleta">Definici&#243;n de ondeleta<a class="anchor-link" href="#Definici&#243;n-de-ondeleta">&#182;</a></h1><p>Una ondeleta $\psi(t)$ se define como una señal de energía finita y corta duración, que cumple dos condiciones: tener media cero y energía finita. Para la primer condición es necesario verificar que la suma de todos los componentes de la señal se cancelen entre sí [2]:</p>
+<h1 id="Definici&#243;n-de-ondeleta">Definici&#243;n de ondeleta<a class="anchor-link" href="#Definici&#243;n-de-ondeleta">&#182;</a></h1><p>Una ondeleta $\psi(t)$ se define como una señal de energía finita y corta duración, que cumple dos condiciones: tener media cero y energía finita. Para la primer condición es necesario satisfacer que la suma de todos los componentes de la señal se sea cero [2]:</p>
 $$
 \int_{-\infty}^{\infty}{\psi(t)dt} = 0,
-$$<p>y para la segunda condición, también llamada principio de admisibilidad, se debe verificar que la suma del cuadrado de todos los componentes de la señal entre cada frecuencia sea finita:</p>
+$$<p>y para la segunda condición, también llamada principio de admisibilidad, se debe satisfacer que la suma del cuadrado de todos los componentes de la señal entre cada frecuencia sea finita:</p>
 $$
 C_{\psi} = \int_{-\infty}^{\infty}{\frac{|\Psi(\omega)|^2}{|\omega|}d\omega} &lt; \infty,
 $$<p>donde $t \in \mathbb{R}$ representa el tiempo continuo, $\omega=2\pi f$ es la frecuencia expresada en radianes por segundo, $f \in \mathbb{R}$ es la frecuencia en hercios y $\Psi(\omega)=\mathscr{F}\{\psi(t)\}(f)$ es la transformada de Fourier de la ondeleta $\psi(t)$.</p>
@@ -13336,7 +13336,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Otro ejemplo es la ondeleta Haar, cuya función es $-1$ en el rango $[0,0.5]$, $1$ en el rango $[0.5,1]$ y cero en el resto; es usada para detectar bordes en imágenes por su buena resolución temporal [5,6]. Como regla general, se recomienda escoger una ondeleta que se asemeje a la señal que se quiere analizar, por ejemplo, la ondeleta Morlet se parece a los tonos puros que generamos más adelante.</p>
+<p>Otro ejemplo es la ondeleta Haar, cuyo soporte es $[1,-1]$ y es usada para detectar bordes en imágenes por su buena resolución temporal [5,6]. Como regla general, se recomienda escoger una ondeleta que se asemeje a la señal que se quiere analizar, por ejemplo, la ondeleta Morlet se parece a los tonos puros que generamos más adelante.</p>
 <h1 id="Ondeleta-madre">Ondeleta madre<a class="anchor-link" href="#Ondeleta-madre">&#182;</a></h1><p>Una <em>ondeleta madre</em> es una ondeleta centrada en cero y que no tiene ningún tipo de escalamiento o desplazamiento. La ondeleta madre es usada para derivar otras ondeletas "hijas" mediante parámetros $a$ y $b$, como sigue:</p>
 $$
 \psi_{a,b}(t) = \frac{1}{\sqrt{a}}\,\psi\left(\frac{t-b}{a}\right).
