@@ -10,7 +10,6 @@ I love applied mathematics. I enjoy creating models for representing real life p
 
 ## Posts
 * 9 Oct 2022 >> [Consejos para iniciar un rol de automatizador de pruebas](blog/JFonseca.consejosIniciarRolAutomatizadorPruebas.html)
-<!--* 19 Dic 2020 >> [Quality of service for audio and video streaming over Internet](blog/JFonseca.audioVideoQualityStreaming.html)
 * 13 Dic 2020 >> [Pruebas sobre especificaciones formales de software](blog/JFonseca.pruebasFormalesSoftware.html)-->
 * 5 Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/JFonseca.wavelets.html)
 * 5 Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
