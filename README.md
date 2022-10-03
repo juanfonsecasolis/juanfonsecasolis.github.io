@@ -9,7 +9,6 @@ Objective assessment of speech and audio quality (audio fingerprinting, quality 
 I love applied mathematics. I enjoy creating models for representing real life phenomenas and facilitating decision making. Modeling can also mean automating a test suite. For me, decomposing a signal, interpolating it, compressing it, filtering it or making predictions, is an art. Having some knowledge and experience in computer science, quality control and digital signal processing, I am looking forward to close the gap between academy and industry.
 
 ## Posts
-* 9 Oct 2022 >> [Consejos para iniciar un rol de automatizador de pruebas](blog/JFonseca.consejosIniciarRolAutomatizadorPruebas.html)
 * 5 Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/JFonseca.wavelets.html)
 * 5 Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
 * 6 Sep 2020 >> [Pairwise testing](blog/JFonseca.pairwisetesting.html)
