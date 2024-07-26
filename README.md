@@ -21,7 +21,7 @@ I love applied mathematics. I enjoy creating models for representing real life p
 ## Projects
 * Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
 * Nov 2017 >> [Automatic recognition of pedestrian signals - RASP](https://vinv.ucr.ac.cr/sigpro/web/projects/B6146)
-* Apr 2013 >> [ACAI webpage (TCU work)](img/acai.html)
+* Apr 2013 >> [ACAI webpage (TCU work)](https://www.acai.cr/sitioweb/) ([snapshots](img/acai.html))
 * Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
 
 ## Publications
