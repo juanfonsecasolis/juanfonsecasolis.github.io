@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +32,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
         .snapshot-item img {
             width: 100%;
@@ -44,6 +44,36 @@
             margin: 0;
             text-align: center;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            width: 90%;
+            max-width: 1000px;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -52,40 +82,58 @@
     </header>
     <div class="container">
         <div class="snapshot-grid">
-            <div class="snapshot-item">
+            <div class="snapshot-item" onclick="openModal('Screenshot 2024-07-26 172826.png')">
                 <img src="Screenshot 2024-07-26 172826.png" alt="Snapshot 1">
                 <p>Snapshot 1</p>
             </div>
-            <div class="snapshot-item">
+            <div class="snapshot-item" onclick="openModal('Screenshot 2024-07-26 172837.png')">
                 <img src="Screenshot 2024-07-26 172837.png" alt="Snapshot 2">
                 <p>Snapshot 2</p>
             </div>
-            <div class="snapshot-item">
+            <div class="snapshot-item" onclick="openModal('Screenshot 2024-07-26 173047.png')">
                 <img src="Screenshot 2024-07-26 173047.png" alt="Snapshot 3">
                 <p>Snapshot 3</p>
             </div>
-            <div class="snapshot-item">
+            <div class="snapshot-item" onclick="openModal('Screenshot 2024-07-26 172845.png')">
                 <img src="Screenshot 2024-07-26 172845.png" alt="Snapshot 4">
                 <p>Snapshot 4</p>
             </div>
-            <div class="snapshot-item">
+            <div class="snapshot-item" onclick="openModal('Screenshot 2024-07-26 172919.png')">
                 <img src="Screenshot 2024-07-26 172919.png" alt="Snapshot 5">
                 <p>Snapshot 5</p>
             </div>
-            <div class="snapshot-item">
+            <div class="snapshot-item" onclick="openModal('Screenshot 2024-07-26 172930.png')">
                 <img src="Screenshot 2024-07-26 172930.png" alt="Snapshot 6">
                 <p>Snapshot 6</p>
             </div>
-            <div class="snapshot-item">
+            <div class="snapshot-item" onclick="openModal('Screenshot 2024-07-26 173008.png')">
                 <img src="Screenshot 2024-07-26 173008.png" alt="Snapshot 7">
                 <p>Snapshot 7</p>
             </div>
-            <div class="snapshot-item">
+            <div class="snapshot-item" onclick="openModal('Screenshot 2024-07-26 172944.png')">
                 <img src="Screenshot 2024-07-26 172944.png" alt="Snapshot 8">
                 <p>Snapshot 8</p>
             </div>
             <!-- Add more snapshot items as needed -->
         </div>
     </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="">
+        </div>
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
 </body>
 </html>
