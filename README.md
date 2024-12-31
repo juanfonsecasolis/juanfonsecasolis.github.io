@@ -16,7 +16,7 @@ I like applied mathematics. I enjoy creating models for representing real life p
 * 07 Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
 * 11 Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
 * 08 Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
-* 21 Mar 2015 >> [Band-limited interpolation applied to a BCCR signal](blog/JFonseca.interpolacionBL.html)
+* 21 Mar 2015 >> [Interpolation applied to a BCCR signal](blog/JFonseca.interpolacion.html)
 
 ## Projects
 * Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)

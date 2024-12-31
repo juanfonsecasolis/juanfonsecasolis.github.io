@@ -113,3 +113,6 @@ zipp==1.0.0
 
 # wavelets
 PyWavelets
+
+# BCCR notebook
+zeep
