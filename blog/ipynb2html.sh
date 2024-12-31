@@ -1,13 +1,23 @@
 #!/bin/bash
-jupyter nbconvert JFonseca.suavizadoTraficoServidorWeb.ipynb --to html --template template.tpl
-jupyter nbconvert JFonseca.interpolacionBL.ipynb --to html --template template.tpl
-jupyter nbconvert JFonseca.pruebasRendimiento.ipynb --to html --template template.tpl
-jupyter nbconvert JFonseca.pairwisetesting.ipynb --to html --template template.tpl
-jupyter nbconvert JFonseca.evaluacionPerdidaCalidadAudioOpus.ipynb --to html --template template.tpl
-jupyter nbconvert JFonseca.pruebasFormalesSoftware.ipynb --to html --template template.tpl
-jupyter nbconvert JFonseca.audioVideoQualityStreaming.ipynb --to html --template template.tpl
-jupyter nbconvert JFonseca.wavelets.ipynb --to html --template template.tpl
-jupyter nbconvert JFonseca.consejosIniciarRolAutomatizadorPruebas.ipynb to html --template template.tpl
+#jupyter nbconvert JFonseca.suavizadoTraficoServidorWeb.ipynb --to html --template template.tpl
+#jupyter nbconvert JFonseca.interpolacionBL.ipynb --to html --template template.tpl
+#jupyter nbconvert JFonseca.pruebasRendimiento.ipynb --to html --template template.tpl
+#jupyter nbconvert JFonseca.pairwisetesting.ipynb --to html --template template.tpl
+#jupyter nbconvert JFonseca.evaluacionPerdidaCalidadAudioOpus.ipynb --to html --template template.tpl
+#jupyter nbconvert JFonseca.pruebasFormalesSoftware.ipynb --to html --template template.tpl
+#jupyter nbconvert JFonseca.audioVideoQualityStreaming.ipynb --to html --template template.tpl
+#jupyter nbconvert JFonseca.wavelets.ipynb --to html --template template.tpl
+#jupyter nbconvert JFonseca.consejosIniciarRolAutomatizadorPruebas.ipynb to html --template template.tpl
+
+jupyter nbconvert JFonseca.suavizadoTraficoServidorWeb.ipynb --to html
+jupyter nbconvert JFonseca.interpolacionBL.ipynb --to html
+jupyter nbconvert JFonseca.pruebasRendimiento.ipynb --to html
+jupyter nbconvert JFonseca.pairwisetesting.ipynb --to html
+jupyter nbconvert JFonseca.evaluacionPerdidaCalidadAudioOpus.ipynb --to html
+jupyter nbconvert JFonseca.pruebasFormalesSoftware.ipynb --to html
+jupyter nbconvert JFonseca.audioVideoQualityStreaming.ipynb --to html
+jupyter nbconvert JFonseca.wavelets.ipynb --to html
+jupyter nbconvert JFonseca.consejosIniciarRolAutomatizadorPruebas.ipynb --to html
 
 sed 's/max-width: calc(100% - 14ex);/max-width: 100%;/g' JFonseca.interpolacionBL.html > JFonseca.interpolacionBL2.html
 sed 's/max-width: calc(100% - 14ex);/max-width: 100%;/g' JFonseca.suavizadoTraficoServidorWeb.html > JFonseca.suavizadoTraficoServidorWeb2.html
