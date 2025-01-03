@@ -1,9 +1,11 @@
 Welcome to my portfolio. At this site, you can get information about the content I've written, my interests, and areas of research.   
 
 ## Software Test Automation
-You can take a look at my automation projects at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation).
+You can take a look at my automation projects at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
 
-After reading some author's advice and following my own experience in the industry, I am looking forward to work with Selenium WebDriver, Pytest and Python for end-to-end (E2E) test automation in web apps; and with Appium and Python for E2E test automation on mobile applications. I'm still open to other languages or tools, like Selenium WebDriver on DotNet (for which I've worked at least five years), Playwright, Java, or even Javascript; but I have chosen Python with Selenium WebDriver to improve the maintenability of the project and promote the participation of non-programmers. You can read more about this preference on [this post](https://github.com/juanfonsecasolis-automation/javascript-playwright?tab=readme-ov-file#disclaimer). I'm a ISTQB CFL 4.0 Certified Tester too.
+After reading some author's advice and following my own experience in the industry, I am looking forward to work with Selenium WebDriver, Pytest and Python for end-to-end (E2E) test automation in web apps; and with Appium and Python for E2E test automation on mobile applications. I'm still open to other languages or tools, like Selenium WebDriver on DotNet (for which I've worked at least five years), Playwright, Java, or even Javascript; but I have chosen Python with Selenium WebDriver to improve the maintenability of the project and promote the participation of non-programmers. You can read more about this preference on [this post](https://github.com/juanfonsecasolis-automation/javascript-playwright?tab=readme-ov-file#disclaimer).
+
+Certifications: ISTQB Certified Tester, Foundation Level (4.0). No. 24-CTFL 4-241938-12. 03/09/24.
 
 ## Digital Signal Processing (DSP)
 You can take a look at my DSP projects at [https://github.com/juanfonsecasolis](https://github.com/juanfonsecasolis).
