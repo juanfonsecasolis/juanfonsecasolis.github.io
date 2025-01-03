@@ -43,8 +43,8 @@ https://www.academia.edu/126777405/Reconocimiento_Vocales_AIU_usando_Clasificado
 * Author. [Automatic pitch recognition in a computer game interface](https://doi.org/10.15517/ri.v25i1.11751). Ingeniería 25 (1): 13-33, ISSN: 2215-2652; 2015. San José, CR. 2015.
 
 ## Talks 
-* Centro de las Artes TEC. [Reconocimiento automático de señales peatonales accesibles de semáforo en dispositivos móviles](https://youtu.be/POIF7RVtp0c?t=43) (_automatic recognition of accessible pedestrian signals to be used in mobile devices_). JoCICI 2017. August 24th, 2017. 
-* Canal de transferencia del conocimiento. [Detección de voces y otros ruidos en ambientes de trabajo y estudio](https://youtu.be/6o-dmx2vQSA) (_Voice and noise detection in work and study environments_). JoCICI 2015. March 6th, 2015.
+* Centro de las Artes TEC. [Reconocimiento automático de señales peatonales accesibles de semáforo en dispositivos móviles](https://youtu.be/POIF7RVtp0c?t=43). JoCICI 2017. August 24th, 2017. 
+* Canal de transferencia del conocimiento. [Detección de voces y otros ruidos en ambientes de trabajo y estudio](https://youtu.be/6o-dmx2vQSA). JoCICI 2015. March 6th, 2015.
 
 ## Slides
 * [An introduction to A/B testing using a Google Optimize example](https://juanfonsecasolis.github.io/slides/jFonseca_abTesting_2019.pdf). 
