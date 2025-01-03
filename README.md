@@ -1,14 +1,19 @@
+Welcome to my portfolio. At this site, you can get information about the content I've written, my interests, and areas of research.   
+
+## Software Test Automation
+You can take a look at my automation projects at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation).
+
+Considering some author's advice and following my own experience in the industry, I am looking forward to work with Selenium WebDriver, Pytest and Python for end-to-end (E2E) test automation on web apps, and, Appium and Python for E2E test automation on mobile applications. I'm still open to other languages or tools, like Selenium WebDriver on DotNet (for which I've worked at least five years) or Playwright, but I choose this combination to improve the maintenability of the project and promote the participation of non-programmers in automation. You can read the reasons I have for this decision in [this post](https://github.com/juanfonsecasolis-automation/javascript-playwright?tab=readme-ov-file#disclaimer).
+
+## Digital Signal Processing (DSP)
+You can take a look at my DSP projects at [https://github.com/juanfonsecasolis](https://github.com/juanfonsecasolis).
+
+Think on DSP as data science for embedded systems. I am specialized in analysis and transforming one-dimensional signals, in particular, audio (music and voice recognition). My master thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about audio testing of audio in web pages (audio fingerprinting), wavelets and the Fourier transform, compression codecs, signals in stress testing, and financial signals.
+
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 
-Welcome to my portfolio. At this site, you can get information about the content I've written, my interests, and areas of research.   
-
-## Interests and areas of research
-Objective assessment of speech and audio quality (audio fingerprinting, quality of service on VoIP, remote auscultation, and virtual voice assistants), mathematical models for software quality control, mathematical signal processing, audio signal processing, automatic recognition of accessible pedestrian signals, and pattern recognition.
-
-I like applied mathematics. I enjoy creating models for representing real life phenomenas and facilitating decision making. Modeling can also mean automating a test suite. For me, decomposing a signal, interpolating it, compressing it, filtering it or making predictions, is an art. Having some knowledge and experience in computer science, quality control and digital signal processing, I am looking forward to close the gap between academy and industry.
-
-## Posts
+## Blog posts
 * 5 Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/JFonseca.wavelets.html)
 * 5 Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
 * 6 Sep 2020 >> [Pairwise testing](blog/JFonseca.pairwisetesting.html)
@@ -18,7 +23,7 @@ I like applied mathematics. I enjoy creating models for representing real life p
 * 08 Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
 * 21 Mar 2015 >> [Interpolation applied to a BCCR signal](blog/JFonseca.interpolacion.html)
 
-## Projects
+## Other projects
 * Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
 * Nov 2017 >> [Automatic recognition of pedestrian signals - RASP](https://vinv.ucr.ac.cr/sigpro/web/projects/B6146)
 * Apr 2013 >> [ACAI webpage (TCU work)](https://www.acai.cr/sitioweb/)
@@ -40,11 +45,8 @@ I like applied mathematics. I enjoy creating models for representing real life p
 * [Quick start on webtesting on 2019](slides/jfonseca_quickstartTesting2019_2.pdf). 
 
 ## Contact
-
 I'm always happy to hear from people who are interested in my work. You can connect with me through these links:
 <ul>
-<li><b>Github 1:</b> <a href='https://github.com/juanfonsecasolis'>https://github.com/juanfonsecasolis</a></li>
-<li><b>Github 2:</b> <a href='https://github.com/juanfonsecasolis-automation'>https://github.com/juanfonsecasolis-automation</a></li> (all the things related to automation and software quality control)
 <li><b>Linkedin:</b> <a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
 <li><b>Academia Edu:</b> <a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>http://itcr.academia.edu/JuanFonsecaSol%C3%ADs</a></li>
 </ul>
