@@ -35,6 +35,10 @@ Think on DSP as data science for embedded systems. I am specialized in analysis 
 * Co-author. [*Automatic recognition of accessible pedestrian signals*](https://www.academia.edu/39100068/Reconocimiento_automatico_de_se%C3%B1ales_accesibles_de_semaforo_en_dispositivos_m%C3%B3viles). JoCICI17 (2). Cartago, Costa Rica. 2017. 
 * Author. [*Detección de voces y otros ruidos en ambientes de trabajo y estudio*](https://www.academia.edu/39038694/Detecci%C3%B3n_de_voces_y_otros_ruidos_en_ambientes_de_trabajo_y_estudio) JoCICI15 (1): 68-71. CITIC-PCI. San José, CR. 2015.
 * Author. [*Automatic pitch recognition in a computer game interface*](https://doi.org/10.15517/ri.v25i1.11751). Ingeniería 25 (1): 13-33, ISSN: 2215-2652; 2015. San José, CR. 2015.
+* Co-author. [Reconocimiento de dígitos escritos a mano usando aprendizaje profundo](
+https://www.academia.edu/40196440/Reconocimiento_de_d%C3%ADgitos_escritos_a_mano_usando_aprendizaje_profundo?source=swp_share) (draft). Instituto Tecnológico de Costa Rica, Visión por Computadora, prof. P. Alvarado-Moya. 2017
+* Author. [Reconocimiento de Vocales usando un Clasificador Bayesiano](
+https://www.academia.edu/126777405/Reconocimiento_Vocales_AIU_usando_Clasificador_Bayesiano?source=swp_share) (draft). Instituto Tecnológico de Costa Rica, Reconocimiento de Patrones, prof. J. Crespo-Mariño. 2017
 
 ## Talks 
 * Centro de las Artes TEC. [Reconocimiento automático de señales peatonales accesibles de semáforo en dispositivos móviles](https://youtu.be/POIF7RVtp0c?t=43) (_automatic recognition of accessible pedestrian signals to be used in mobile devices_). JoCICI 2017. August 24th, 2017. 
