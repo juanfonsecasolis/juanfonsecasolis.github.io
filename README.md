@@ -8,7 +8,7 @@ By some author's advice and following my own experience in the industry, for end
 ## Digital Signal Processing (DSP)
 You can take a look at my DSP projects at [https://github.com/juanfonsecasolis](https://github.com/juanfonsecasolis).
 
-Think on DSP as data science for embedded systems. I am specialized in analysis and transforming one-dimensional signals, in particular, audio (music and voice recognition). My master thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about audio testing of audio in web pages (audio fingerprinting), wavelets and the Fourier transform, compression codecs, signals in stress testing, and financial signals.
+Think on DSP as data science for embedded systems. I am specialized in analysis and transforming one-dimensional signals, in particular, audio (music and voice recognition). My master thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about audio testing in web pages (through audio fingerprinting), wavelets and Fourier transform, audio compression codecs, signals in web stress testing, and financial signals.
 
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
