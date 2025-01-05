@@ -5,7 +5,7 @@ Please take a look at my automation projects at [https://github.com/juanfonsecas
 
 As a consultant, I have worked in software end-to-end (E2E) test automation for US-based clients. My expertise has been focused in DotNet, Selenium WebDriver, and nUnit for testing web pages and web services. On the manual side, I have performed functional and non-functional testing, like accessibility and load testing with JMeter. I am certified tester since 2024 (ISTQB Certified Tester Foundation Level 4.0).
 
-**Note:** to improve the maintainability of the automation projects and promote the participation of non-programmers I am switching to automation using Python/PyTest with Selenium WebDriver, for web apps, and Appium for mobile applications. I'm still open to other languages and tools, like Java, DotNet, Playwright or even Javascript. Please read more details [here](https://github.com/juanfonsecasolis-automation/javascript-playwright?tab=readme-ov-file#disclaimer).
+**Note:** to improve the maintainability of the automation projects and promote the participation of non-programmers I am looking forward to write automatation on Python/PyTest with Selenium WebDriver (for web), and Appium (for mobile applications). However, I'm still open to other languages and tools, like Java, DotNet, Playwright or even Javascript. Please read more details of this recommendation [here](https://github.com/juanfonsecasolis-automation/javascript-playwright?tab=readme-ov-file#disclaimer).
 
 ## Digital Signal Processing (DSP)
 Please take a look at my DSP projects at [https://github.com/juanfonsecasolis](https://github.com/juanfonsecasolis).
