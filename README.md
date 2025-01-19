@@ -1,16 +1,12 @@
-Welcome to my portfolio. At this site, you can get information about the content I've written, my interests, and areas of research.   
+Welcome to my portfolio. At this site, you can get information about the content I've written, my interests, and my areas of research.   
 
 ## Software Test Automation
-Please take a look at my automation projects at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
+As a consultant, I have worked in software end-to-end (E2E) test automation for US-based clients. My expertise has been focused on DotNet, Selenium WebDriver, and nUnit for testing web pages and web services. On the manual side, I have performed functional and non-functional testing (accessibility and load testing). I have been a certified tester since 2024 (ISTQB Certified Tester Foundation Level 4.0). Take a look at my automation projects at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
 
-As a consultant, I have worked in software end-to-end (E2E) test automation for US-based clients. My expertise has been focused in DotNet, Selenium WebDriver, and nUnit for testing web pages and web services. On the manual side, I have performed functional and non-functional testing, like accessibility and load testing with JMeter. I am certified tester since 2024 (ISTQB Certified Tester Foundation Level 4.0).
-
-**Note:** to improve the maintainability of the automation projects and promote the participation of non-programmers I am looking forward to write automatation on Python/PyTest with Selenium WebDriver (for web), and Appium (for mobile applications). However, I'm still open to other languages and tools, like Java, DotNet, Playwright or even Javascript. Please read more details of this recommendation [here](https://github.com/juanfonsecasolis-automation/javascript-playwright?tab=readme-ov-file#disclaimer).
+**Note:** rephrasing Sarah Jeffery's advice, you can automate any test in any language you want, but what would sound nice? I found that Python/PyTest with Selenium WebDriver (for web), and Appium (for mobile applications) can improve the automation projects' maintainability and promote non-programmers' participation. I'm still open to other languages and tools, like Java, DotNet, Playwright, or even Javascript. Please read more details of this reasoning [here](https://github.com/juanfonsecasolis-automation/javascript-playwright?tab=readme-ov-file#disclaimer).
 
 ## Digital Signal Processing (DSP)
-Please take a look at my DSP projects at [https://github.com/juanfonsecasolis](https://github.com/juanfonsecasolis).
-
-Think of DSP as data science for embedded systems. I have specialized in analysis and transforming one-dimensional signals, in particular, audio (music and voice recognition). My master thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about audio testing in web pages (through audio fingerprinting), wavelets and Fourier transform, audio compression codecs, signals in web stress testing, and financial signals.
+Think of DSP as data science for embedded systems, where system resources are limited (for instance, memory, electrical power, or CPU). I have specialized in analyzing and transforming one-dimensional signals, particularly, audio (music and voice recognition). My master thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about audio testing on webpages using audio fingerprinting, wavelets and Fourier transform, audio compression codecs, signals in web stress testing, and financial signals. Take a look at my DSP projects at [https://github.com/juanfonsecasolis](https://github.com/juanfonsecasolis).
 
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
