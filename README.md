@@ -6,20 +6,20 @@ As a consultant, I have worked in software end-to-end (E2E) test automation for 
 **Note:** rephrasing Sarah Jeffery's advice, you can automate any test in any language you want, but what would sound nice? Experts say that Python/PyTest with Selenium WebDriver (for web), and Appium (for mobile applications) is a better alternative to improve automation's maintainability and promote non-programmers' participation. I'm also open to other languages and tools, like Java, DotNet, Playwright, or Javascript. Please read more details of this reasoning [here](https://github.com/juanfonsecasolis-automation/javascript-playwright?tab=readme-ov-file#disclaimer).
 
 ## Digital Signal Processing (DSP)
-Think of DSP as data science for embedded systems, where system resources are limited (for instance, memory, electrical power, or CPU). I have specialized in analyzing and transforming one-dimensional signals, particularly, audio (music and voice recognition). My master thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about audio testing on webpages using audio fingerprinting, wavelets and Fourier transform, audio compression codecs, signals in web stress testing, and financial signals. Look at my DSP projects at [https://github.com/juanfonsecasolis](https://github.com/juanfonsecasolis) or the blog posts below.
+Think of DSP as data science for embedded systems (sensor unstructured and raw data), where system resources are limited, for instance: memory, electrical power, or CPU. I have specialized in analyzing and transforming one-dimensional signals, particularly, audio (music and voice recognition). My master thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about audio testing on webpages using audio fingerprinting, wavelets and Fourier transform, audio compression codecs, signals in web stress testing, and financial signals. Look at my DSP projects at [https://github.com/juanfonsecasolis](https://github.com/juanfonsecasolis) or the blog posts below.
 
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 
-## Blog posts
-* 5 Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/JFonseca.wavelets.html)
-* 5 Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
-* 6 Sep 2020 >> [Pairwise testing](blog/JFonseca.pairwisetesting.html)
-* 23 Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](blog/JFonseca.pruebasRendimiento.html)
-* 07 Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
-* 11 Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
-* 08 Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
-* 21 Mar 2015 >> [Interpolation applied to a BCCR signal](blog/JFonseca.interpolacion.html)
+## Jupyter notebooks
+* Mar 2015 / Feb 2025 >> [Interpolation applied to a BCCR signal](blog/JFonseca.interpolacion.html)
+* Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/JFonseca.wavelets.html)
+* Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
+* Sep 2020 >> [Pairwise testing](blog/JFonseca.pairwisetesting.html)
+* Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](blog/JFonseca.pruebasRendimiento.html)
+* Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
+* Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
+* Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
 
 ## Other projects
 * Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
