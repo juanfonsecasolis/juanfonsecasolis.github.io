@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7553,11 +7554,11 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="k">def</span> <span class="nf">morlet</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">morlet</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
@@ -7615,7 +7616,7 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ondeletaMadre</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">ondeletaFunc</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ondeletaMadre</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">ondeletaFunc</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">ondeletaFunc</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">ondeletaMadre</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">ondeletaFunc</span><span class="o">=</span><span class="n">morlet</span><span class="p">))</span> <span class="c1"># retrasar 2 segundos y cambiar ancho a la mitad</span>
@@ -7663,7 +7664,7 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">CWT</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">ondeleta</span><span class="o">=</span><span class="n">morlet</span><span class="p">):</span>    
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">CWT</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">ondeleta</span><span class="o">=</span><span class="n">morlet</span><span class="p">):</span>    
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">ondeletaMadre</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)),</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">ondeleta</span><span class="p">),</span> <span class="n">f</span><span class="p">)</span>
 
 <span class="n">F0</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># frec. fundamental (Hz) or 0.001s of period</span>
@@ -7789,7 +7790,7 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">triangulo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">triangulo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&lt;=</span><span class="mf">0.5</span> <span class="k">else</span> <span class="mi">0</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -7901,10 +7902,10 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Audio</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Audio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
-<span class="k">def</span> <span class="nf">signalCWT</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">Fs</span><span class="p">,</span><span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">signalCWT</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">Fs</span><span class="p">,</span><span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">widths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
     <span class="n">cwtmatr</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">cwt</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">wavelet</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">ricker</span><span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="n">widths</span><span class="p">)</span>
 
@@ -7919,7 +7920,7 @@ $$</p>
         <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">yRange</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">benchmark</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Fs</span><span class="p">,</span> <span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">benchmark</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Fs</span><span class="p">,</span> <span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">function</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">Fs</span><span class="p">,</span> <span class="n">xRange</span><span class="p">,</span> <span class="n">yRange</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Tiempo transcurrido: </span><span class="si">%.2f</span><span class="s1">s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
@@ -7976,11 +7977,11 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">obspy</span> <span class="c1"># pip3 install obspy</span>
-<span class="kn">from</span> <span class="nn">obspy.imaging.cm</span> <span class="kn">import</span> <span class="n">obspy_sequential</span>
-<span class="kn">from</span> <span class="nn">obspy.signal.tf_misfit</span> <span class="kn">import</span> <span class="n">cwt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">obspy</span> <span class="c1"># pip3 install obspy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">obspy.imaging.cm</span><span class="w"> </span><span class="kn">import</span> <span class="n">obspy_sequential</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">obspy.signal.tf_misfit</span><span class="w"> </span><span class="kn">import</span> <span class="n">cwt</span>
 
-<span class="k">def</span> <span class="nf">obspyCWT</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">Fs</span><span class="p">,</span><span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">obspyCWT</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">Fs</span><span class="p">,</span><span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">scalogram</span> <span class="o">=</span> <span class="n">cwt</span><span class="p">(</span><span class="n">st</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1.0</span><span class="o">/</span><span class="n">Fs</span><span class="p">,</span> <span class="n">w0</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">fmin</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="n">Fs</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># morlet</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
@@ -8099,7 +8100,7 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">benchmark2</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Fs</span><span class="p">,</span> <span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">benchmark2</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Fs</span><span class="p">,</span> <span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">figure</span><span class="p">()</span>
     <span class="n">benchmark</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Fs</span><span class="p">)</span>
     <span class="n">figure</span><span class="p">()</span>
@@ -8176,7 +8177,7 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">STFT</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">Fs</span><span class="p">,</span><span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">STFT</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">Fs</span><span class="p">,</span><span class="n">xRange</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yRange</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Tomada de https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html</span>
 <span class="sd">    '''</span>
