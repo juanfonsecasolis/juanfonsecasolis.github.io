@@ -12,7 +12,8 @@ I have specialized in analyzing and transforming one-dimensional signals (time s
 <br>
 
 ## Jupyter notebooks
-* Mar 2015 / Feb 2025 >> [Interpolation applied to a BCCR signal](blog/JFonseca.interpolacion.html)
+* Apr 2025 >> [Principios SOLID](blog/JFonseca.solid.html)
+* Mar 2015 >> [Interpolation applied to a BCCR signal](blog/JFonseca.interpolacion.html)
 * Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/JFonseca.wavelets.html)
 * Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
 * Sep 2020 >> [Pairwise testing](blog/JFonseca.pairwisetesting.html)
