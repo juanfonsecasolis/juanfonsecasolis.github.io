@@ -7517,7 +7517,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Principios-SOLID">Principios SOLID<a class="anchor-link" href="#Principios-SOLID">¶</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · March/April 2025 · 10 min read</p>
+<h1 id="Relaci%C3%B3n-de-los-patrones-SOLID-y-los-principios-de-POO">Relación de los patrones SOLID y los principios de POO<a class="anchor-link" href="#Relaci%C3%B3n-de-los-patrones-SOLID-y-los-principios-de-POO">¶</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · March/April 2025 · 10 min read</p>
 <hr/>
 <h2 id="Introducci%C3%B3n">Introducción<a class="anchor-link" href="#Introducci%C3%B3n">¶</a></h2><p>En la metodología de trabajo SCRUM, el equipo de desarrollo de software incorpora funcionalidades nueva al sistema de forma incremental (cada dos semanas, por ejemplo), luego el equipo de pruebas y el cliente proveen retroalimentación para asegurarse que los requerimientos fueron satisfechos correctamente. Durante este proceso, los cambios realizados por los desarrolladores pueden afectar la funcionalidad pre-existente, por lo que es necesario correr pruebas de regresión, es decir, repetir las pruebas realizadas en las iteraciones pasadas. Como la ejecución de estas pruebas resulta costozo (a veces imposible, por limitaciones de tiempo), se recurre a la automatización; sin embargo, puede ocurrir también que los scripts de automatización pasados dejen de funcionar, entre otras razones, por un mal diseño. Para evitar esto se utilizan cuatro patrones de diseño, llamados "SOLID", que permiten que lograr que la solución de pruebas sea mantenible y escalable en el tiempo, procurando una "alta cohesión y bajo acoplamiento" entre sus componentes (GRASP) [1, 2]:</p>
 <ul>
@@ -7538,7 +7538,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Responsabilidad-%C3%BAnica">Responsabilidad única<a class="anchor-link" href="#Responsabilidad-%C3%BAnica">¶</a></h2><p>Cada componente de software (clase, método o función) es diseñado para ejecutar una sola función. Responsabilidad-única es una condición necesaria para implementar el principio de encapsulamiento y lograr alta cohesión entre los componentes.</p>
+<h2 id="Responsabilidad-%C3%BAnica-(encapsulamiento)">Responsabilidad única (encapsulamiento)<a class="anchor-link" href="#Responsabilidad-%C3%BAnica-(encapsulamiento)">¶</a></h2><p>En este diseño cada componente de software (clase o método) desempeña o "encapsula" una sola tarea y está relacionado con el diseño de segregación de la interfaz.</p>
 </div>
 </div>
 </div>
@@ -7549,7 +7549,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Abierto-cerrado">Abierto-cerrado<a class="anchor-link" href="#Abierto-cerrado">¶</a></h2><p>Cada componente de software está abierto para extender su funcionalidad pero cerrado para su modificación. Esto se cumple en el principio de polimorfismo, donde la funcionalidad de una clase padre (por ejemplo, TestBase o PageBase) se escribe idealmente una sola vez y las clases hijas agregan atributos y rutinas nuevas.</p>
+<h2 id="Abierto-cerrado-(polimorfismo)">Abierto-cerrado (polimorfismo)<a class="anchor-link" href="#Abierto-cerrado-(polimorfismo)">¶</a></h2><p>En el diseño abierto-cerrado los componente de software están abiertos para extender su funcionalidad pero cerrados para su modificarla; esto se cumple en el principio de polimorfismo, donde la funcionalidad de una clase padre (por ejemplo, TestBase o PageBase) se escribe una sola vez y son las clases hijas las encargadas de agregar atributos y métodos nuevos.</p>
 </div>
 </div>
 </div>
@@ -7560,7 +7560,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sustituci%C3%B3n-de-Liskov">Sustitución de Liskov<a class="anchor-link" href="#Sustituci%C3%B3n-de-Liskov">¶</a></h2><p>...</p>
+<h2 id="Sustituci%C3%B3n-de-Liskov-(herencia)">Sustitución de Liskov (herencia)<a class="anchor-link" href="#Sustituci%C3%B3n-de-Liskov-(herencia)">¶</a></h2><p>En este diseño los atributos y métodos de la clase padre también están presentes en sus clases hijas, y pueden ser invocados sin necesidad de realizar conversión explícita de datos; lo que se relaciona al principio de herencia.</p>
 </div>
 </div>
 </div>
@@ -7571,7 +7571,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Segregaci%C3%B3n-de-la-interfaz">Segregación de la interfaz<a class="anchor-link" href="#Segregaci%C3%B3n-de-la-interfaz">¶</a></h2><p>...</p>
+<h2 id="Segregaci%C3%B3n-de-la-interfaz-(encapsulamiento)">Segregación de la interfaz (encapsulamiento)<a class="anchor-link" href="#Segregaci%C3%B3n-de-la-interfaz-(encapsulamiento)">¶</a></h2><p>En el diseño de segregación de la interfaz los componentes implementan roles documentados o "encapsulados" en una interfaz (por ejemplo, ejecutar operaciones de lectura, escritura y borrado en un repositorio). Es mejor tener "muchas interfaces de cliente específicas que una interfaz de propósito general).</p>
 </div>
 </div>
 </div>
@@ -7582,7 +7582,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Inversi%C3%B3n-de-la-dependencia">Inversión de la dependencia<a class="anchor-link" href="#Inversi%C3%B3n-de-la-dependencia">¶</a></h2><p>...</p>
+<h2 id="Inversi%C3%B3n-de-la-dependencia-(abstracci%C3%B3n)">Inversión de la dependencia (abstracción)<a class="anchor-link" href="#Inversi%C3%B3n-de-la-dependencia-(abstracci%C3%B3n)">¶</a></h2><p>Este diseño propone que "se debe depender de abstracciones, no de implementaciones", es decir, que primero se piensa en la "abstracción" de los métodos (firma, retorno y parámetros) en los componentes "subordinados" a componentes "maestros", y luego se crea su implementación.</p>
 </div>
 </div>
 </div>
