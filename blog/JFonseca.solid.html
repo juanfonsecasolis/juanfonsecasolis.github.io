@@ -14031,9 +14031,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Relaci%C3%B3n-de-los-patrones-SOLID-y-los-principios-de-POO">Relaci&#243;n de los patrones SOLID y los principios de POO<a class="anchor-link" href="#Relaci%C3%B3n-de-los-patrones-SOLID-y-los-principios-de-POO">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · March/April 2025 · 10 min read</p>
+<h1 id="Relaci%C3%B3n-de-los-patrones-SOLID-y-los-principios-de-programaci%C3%B3n-orientada-a-objetos">Relaci&#243;n de los patrones SOLID y los principios de programaci&#243;n orientada a objetos<a class="anchor-link" href="#Relaci%C3%B3n-de-los-patrones-SOLID-y-los-principios-de-programaci%C3%B3n-orientada-a-objetos">&#182;</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · March/April 2025 · 10 min read</p>
 <hr>
-<h2 id="Introducci%C3%B3n">Introducci&#243;n<a class="anchor-link" href="#Introducci%C3%B3n">&#182;</a></h2><p>En la metodología de trabajo SCRUM, el equipo de desarrollo de software incorpora funcionalidad nueva al sistema de forma incremental (cada dos semanas, por ejemplo) que el equipo de pruebas y el cliente toman para evaluar si los requerimientos fueron satisfechos correctamente. Durante este proceso, los cambios realizados pueden afectar la funcionalidad pre-existente, por lo que es necesario correr pruebas de regresión, es decir, repetir las pruebas realizadas en las iteraciones pasadas. Como la ejecución de estas pruebas resulta costozo, se recurre a la automatización; sin embargo, puede ocurrir también que los scripts de automatización pasados dejen de funcionar, entre otras razones, por un mal diseño de los mismos. Para evitar esto se utilizan cuatro patrones de diseño, llamados "SOLID", que permiten que lograr que la solución de pruebas sea mantenible y escalable en el tiempo, procurando una "alta cohesión y bajo acoplamiento" entre sus componentes (GRASP) [1, 2]:</p>
+<h2 id="Introducci%C3%B3n">Introducci&#243;n<a class="anchor-link" href="#Introducci%C3%B3n">&#182;</a></h2><p>En la metodología de trabajo SCRUM, el equipo de desarrollo de software incorpora funcionalidad nueva al sistema de forma incremental (cada dos semanas, por ejemplo) que posteriormente el equipo de pruebas y el cliente evalua para determinar si los requerimientos fueron satisfechos correctamente. Durante este proceso, los cambios realizados pueden afectar la funcionalidad pre-existente, por lo que es necesario correr pruebas de regresión, es decir, repetir las pruebas realizadas en las iteraciones pasadas. Como la ejecución de estas pruebas resulta costozo, se recurre a la automatización; sin embargo, puede ocurrir también que los scripts de automatización pasados dejen de funcionar, entre otras razones, por un mal diseño de los mismos. Para evitar esto se utilizan cuatro patrones de diseño, llamados "SOLID", que permiten que lograr que la solución de pruebas sea mantenible y escalable en el tiempo, procurando una "alta cohesión y bajo acoplamiento" entre sus componentes (GRASP) [1, 2]. El acrónimo SOLID se define como sigue:</p>
 <ul>
 <li>S - Responsabilidad única (<em>single responsibility</em>).</li>
 <li>O - Abierto-cerrado (<em>Open-closed</em>).</li>
@@ -14041,7 +14041,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li>I - Segregación de la interfaz (<em>Interface segregation</em>).</li>
 <li>D - Inversión de la dependencia (<em>Dependency inversion</em>).</li>
 </ul>
-<p>Estos cuatro patrones de diseño SOLID ya son ampliamente explicados en la literatura y en este ipython notebook no pretendemos hacer lo mismo, sino que más bien nos enfocamos en describir su relación con los cuatro principios básicos de programación orientada a objetos (OOP, por sus siglas en inglés): polimorfismo, abstracción, encapsulamiento y herencia; pues ambos conceptos suelen confundirse.</p>
+<p>Estos cuatro patrones de diseño ya son ampliamente explicados en la literatura y en este ipython notebook no pretendemos hacer lo mismo, sino que más bien nos enfocamos en describir su relación con los cuatro principios básicos de programación orientada a objetos (OOP, por sus siglas en inglés): polimorfismo, abstracción, encapsulamiento y herencia; pues ambos conceptos suelen confundirse.</p>
 
 </div>
 </div>
@@ -14053,7 +14053,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Responsabilidad-%C3%BAnica-(encapsulamiento)">Responsabilidad &#250;nica (encapsulamiento)<a class="anchor-link" href="#Responsabilidad-%C3%BAnica-(encapsulamiento)">&#182;</a></h2><p>En este diseño cada componente de software (clase o método) desempeña o "encapsula" una sola tarea. Este diseño está relacionado con el diseño de segregación de la interfaz.</p>
+<h2 id="Responsabilidad-%C3%BAnica-(encapsulamiento)">Responsabilidad &#250;nica (encapsulamiento)<a class="anchor-link" href="#Responsabilidad-%C3%BAnica-(encapsulamiento)">&#182;</a></h2><p>En este diseño cada componente de software (clase o método) desempeña o "encapsula" una sola tarea, lo que permite reemplazarlo sin tener que modificar otros archivos de código. Este diseño también está relacionado con el diseño de segregación de la interfaz.</p>
 
 </div>
 </div>
