@@ -13,7 +13,6 @@ I have specialized in analyzing and transforming one-dimensional signals (time s
 
 ## Jupyter notebooks
 * Apr 2025 >> [Principios SOLID](blog/JFonseca.solid.html)
-* Mar 2015 >> [Interpolation applied to a BCCR signal](blog/JFonseca.interpolacion.html)
 * Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/JFonseca.wavelets.html)
 * Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
 * Sep 2020 >> [Pairwise testing](blog/JFonseca.pairwisetesting.html)
@@ -21,6 +20,7 @@ I have specialized in analyzing and transforming one-dimensional signals (time s
 * Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/echoCancellationProakisManolakis.ipynb)
 * Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/JFonseca.styling.html)
 * Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/JFonseca.suavizadoTraficoServidorWeb.html)
+* Mar 2015 >> [Interpolation applied to a BCCR signal](blog/JFonseca.interpolacion.html)
 
 ## Other projects
 * Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
