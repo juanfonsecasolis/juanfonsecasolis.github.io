@@ -1,10 +1,10 @@
-Welcome to my portfolio. At this site, you can get information about the content I've written, my interests, and my areas of research.   
+Welcome to my portfolio. At this site, you can get information about the content I've written, interests, andareas of research.   
 
 ## Software Test Automation
 As a consultant, I have worked in end-to-end (E2E) test automation for US-based clients. My working experience has been on .NET, Selenium WebDriver, and NUnit for testing web pages and web services, but I'm familiar with other languages and tools too, like Python with Selenium, Java with Appium, and Playwright with JS/TS, among others. I have been a certified tester since 2024 (ISTQB Certified Tester Foundation Level 4.0). Look at my automation portfolio at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
 
 ## Digital Signal Processing (DSP)
-I have specialized in analyzing and transforming one-dimensional signals (time series), particularly music and voice recognition. My master's thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about audio testing on webpages using audio fingerprinting, wavelets, and the Fourier transform, audio compression codecs, signals in web stress testing, and financial signals. Please take a look at my DSP portfolio below.
+I have specialized in analyzing and transforming one-dimensional signals (time series), particularly music and voice recognition. My master's thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about audio testing on webpages using audio fingerprinting, wavelets, the Fourier transform, audio compression codecs, performance testing, and financial signals. Please take a look at my Jupyter notebooks below.
 
 **Note:** Think of Digital Signal Processing as Data Science for embedded systems, where you need to process massive raw unstructured data (like temperature or images) using limited memory, power, and CPU. Some highly efficient numerical tools, like the Fast Fourier Transform, sampling, and pattern recognition classifiers (neural networks or adaptive filters), are used. 
 
