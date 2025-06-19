@@ -1,4 +1,4 @@
-Welcome to my portfolio. At this site, you can get information about the content I've written, interests, andareas of research.   
+Welcome to my portfolio. At this site, you can get information about the content I've written, interests, and areas of research.   
 
 ## Software Test Automation
 As a consultant, I have worked in end-to-end (E2E) test automation for US-based clients. My working experience has been on .NET, Selenium WebDriver, and NUnit for testing web pages and web services, but I'm familiar with other languages and tools too, like Python with Selenium, Java with Appium, and Playwright with JS/TS, among others. I have been a certified tester since 2024 (ISTQB Certified Tester Foundation Level 4.0). Look at my automation portfolio at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
