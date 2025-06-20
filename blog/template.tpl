@@ -1,17 +1,7 @@
 {%- extends 'classic/index.html.j2' -%}
 
-{% block header %}
+{%- block header -%}
 {{ super() }}
-
-<!-- 
-Workaround to make nbconvert works with tpl templates: https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/1533#issuecomment-1195067419
--->
-
-<!--link rel="stylesheet" type="text/css" href="https://my.cdn.org/toc2/main.css"-->
-<!--script src="https://my.cdn.org/toc2/toc2.js"></script-->
-
-<!-- Mobile design -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- MathJax.js -->
 <!-- https://stackoverflow.com/questions/26275645/how-to-support-latex-in-github-pages/46765337#46765337 -->
@@ -23,9 +13,8 @@ Workaround to make nbconvert works with tpl templates: https://github.com/ipytho
       }
     });
 </script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<!--script src="dist/VerLim.min.js"></script-->
-<!--link rel="stylesheet" href="dist/themeNUIwithCounter.css"-->
+<link rel="stylesheet" type="text/css" href="./main.css">
 
-{% endblock header %}
+{%- endblock header -%}

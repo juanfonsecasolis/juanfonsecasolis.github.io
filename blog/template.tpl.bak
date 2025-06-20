@@ -1,0 +1,43 @@
+{%- extends 'classic/index.html.j2' -%}
+
+{% block header %}
+{{ super() }}
+
+<!-- 
+Workaround to make nbconvert works with tpl templates: https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/1533#issuecomment-1195067419
+-->
+
+<!--link rel="stylesheet" type="text/css" href="https://my.cdn.org/toc2/main.css"-->
+<!--script src="https://my.cdn.org/toc2/toc2.js"></script-->
+
+<!-- Mobile design -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- MathJax.js -->
+<!-- https://stackoverflow.com/questions/26275645/how-to-support-latex-in-github-pages/46765337#46765337 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+<link rel="stylesheet" type="text/css" href="https://my.cdn.org/toc2/main.css">
+<script src="https://my.cdn.org/toc2/toc2.js"></script>
+
+<!--script src="dist/VerLim.min.js"></script-->
+<!--link rel="stylesheet" href="dist/themeNUIwithCounter.css"-->
+
+{% endblock header %}
+
+{%- block html_head_js -%}
+{%- block html_head_js_requirejs -%}
+<script src="{{ resources.require_js_url }}"></script>
+{%- endblock html_head_js_requirejs -%}
+{%- block html_head_js_jquery -%}
+<script src="{{ resources.jquery_url }}"></script>
+{%- endblock html_head_js_jquery -%}
+{%- endblock html_head_js -%}
