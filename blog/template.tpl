@@ -17,7 +17,7 @@
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <!-- Mobile design -->
-<!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+<!--meta name="viewport" content="width=device-width, initial-scale=1"-->
 <style>
 @media only screen and (max-width: 500px) {
     .jp-InputPrompt.jp-InputArea-prompt{
