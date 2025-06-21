@@ -3,6 +3,9 @@
 {% block header %}
 {{ super() }}
 
+<!-- Mobile design -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!-- MathJax.js -->
 <!-- https://stackoverflow.com/questions/26275645/how-to-support-latex-in-github-pages/46765337#46765337 -->
 <script type="text/x-mathjax-config">
