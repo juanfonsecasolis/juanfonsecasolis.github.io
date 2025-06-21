@@ -23,6 +23,9 @@
     .jp-InputPrompt.jp-InputArea-prompt{
         display: none;
     }
+    .jp-OutputPrompt.jp-OutputArea-prompt{
+        display: none;
+    }
 }
 </style>
 
