@@ -1,3 +1,5 @@
+obspy
+PyWavelets
 attrs==19.3.0
 backcall==0.1.0
 bcrypt==3.1.7
