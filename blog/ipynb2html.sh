@@ -12,5 +12,4 @@ $NB_CONVERT JFonseca.pruebasFormalesSoftware.ipynb $FLAGS
 $NB_CONVERT JFonseca.audioVideoQualityStreaming.ipynb $FLAGS
 $NB_CONVERT JFonseca.wavelets.ipynb $FLAGS
 $NB_CONVERT JFonseca.solid.ipynb $FLAGS
-$NB_CONVERT JFonseca.consejosIniciarRolAutomatizadorPruebas.ipynb $FLAGS
 $NB_CONVERT JFonseca.solid.ipynb $FLAGS

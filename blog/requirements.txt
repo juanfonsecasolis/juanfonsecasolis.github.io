@@ -1,0 +1,22 @@
+# general
+matplotlib
+nbconvert
+nbformat
+notebook
+numpy
+scipy
+
+# wavelets
+obspy
+PyWavelets
+
+# interpolation
+requests
+zeep
+
+# opus
+ffmpeg
+opustools
+# sudo apt install texlive-latex-base
+# sudo apt-get install dvipng texlive-latex-extra texlive-fonts-recommended cm-super
+
