@@ -8,7 +8,7 @@ scipy
 
 # wavelets
 obspy
-PyWavelets
+PyWavelets==1.8.0
 
 # interpolation
 requests
