@@ -7572,7 +7572,7 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">60</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">'VU generados'</span><span class="p">)</span>
@@ -7759,7 +7759,7 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="2-Probando-un-sitio-web">2 Probando un sitio web<a class="anchor-link" href="#2-Probando-un-sitio-web">¶</a></h1><p>Teniendo una idea de qué es una prueba de estrés, podemos estudiar el comportamiento de un sistema real a modo de ejemplo. Para ello escogimos una página web llamada <a href="https://bloodpressurepulse.herokuapp.com/xxyn4pz8yhb0i7n">bloodpressurepulse.herokuapp.com</a> dedicada a la visualización de datos. El sitio web toma archivos CSV almacenados en la nube y genera gráficos interactivos usando Python Dash. Un vistazo de la interfaz principal se observa en la figura 2.</p>
-<p><img alt="imagen.png" src="img/sitioWeb.png">
+<p><img alt="imagen.png" src="../img/sitioWeb.png">
 Figura 2. Pantallazo del sitio web.</img></p>
 </div>
 </div>
@@ -7778,12 +7778,12 @@ Figura 2. Pantallazo del sitio web.</img></p>
 <li><strong>Total de usuarios:</strong> 30 (i.e. el acumulado de usuarios o $\sum_{n=0}^{\text{TR}}{x[n]}$).</li>
 </ul>
 <p>El tiempo de rampa es equivalente a nuestro parámetro $N$ de la sección 1, y esta medida, junto con el total de usuarios define la pendiente de la curva de usuarios por segundo. Ambos parámetros se introducen a la herramienta JMeter para iniciar la prueba. Esta aplicación fue escogida por ser gratuita y de amplio uso en la industria, aunque hay otras aplicaciones pagas, como Blaze Meter o Load Ninja, con mejores interfaces gráficas. El código de la solución puede encontrarse en <a href="https://github.com/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/src/bloodpressurepulse.jmx">este enlace</a> y las figuras 3-5 muestran los resultados obtenidos.</p>
-<p><img alt="" src="img/rampa/bytesThroughputOverTime.png">
-Figura 3. Ancho de banda para una señal de entrada en forma de rampa.</img></p>
-<p><img alt="" src="img/rampa/responseTimesOverTime.png">
-Figura 4. Tiempos de respuesta para una señal de entrada en forma de rampa.</img></p>
-<p><img alt="" src="img/rampa/resultsInTable.png"/>
-Figura 5. Solicitudes exitosas vs. fallidas para una señal de entrada en forma de rampa.</p>
+<p><img alt="" src="../img/rampa/bytesThroughputOverTime.png"/></p>
+<p>Figura 3. Ancho de banda para una señal de entrada en forma de rampa.</p>
+<p><img alt="" src="../img/rampa/responseTimesOverTime.png"/></p>
+<p>Figura 4. Tiempos de respuesta para una señal de entrada en forma de rampa.</p>
+<p><img alt="" src="../img/rampa/resultsInTable.png"/></p>
+<p>Figura 5. Solicitudes exitosas vs. fallidas para una señal de entrada en forma de rampa.</p>
 </div>
 </div>
 </div>

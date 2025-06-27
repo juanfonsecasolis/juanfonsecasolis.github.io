@@ -15,8 +15,7 @@ requests
 zeep
 
 # opus
+# sudo apt-get install opus-tools ffmpeg
 ffmpeg
 opustools
-# sudo apt install texlive-latex-base
-# sudo apt-get install dvipng texlive-latex-extra texlive-fonts-recommended cm-super
 
