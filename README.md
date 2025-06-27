@@ -6,7 +6,7 @@ As a consultant, I have worked in end-to-end (E2E) test automation for US-based 
 ## Digital Signal Processing (DSP)
 I have specialized in analyzing and transforming one-dimensional signals (time series), particularly music and voice recognition. My master's thesis was about recognizing the sound of accessible pedestrian signals, an idea started by Mario Monge and Sharon Bejarano in 2013. I have also published some work about webpages testing using audio fingerprinting, wavelets, Fourier transform, audio compression codecs, performance testing, and financial signals. Please take a look at my [Jupyter notebooks](https://juanfonsecasolis.github.io/#jupyter-notebooks).
 
-**Note:** Think of Digital Signal Processing as Data Science for embedded systems, where you need to process massive raw unstructured data (like temperature or images) with limited memory, power, and CPU. Highly efficient numerical tools are used (vs. slow AI models), like the Fast Fourier Transform, sampling and interpolation, pattern recognition, neural networks and adaptive filters. 
+**Note:** Think of Digital Signal Processing as Data Science for embedded systems, where you need to process massive raw unstructured data (like temperature or images) with limited memory, power, and CPU. Highly efficient numerical tools are used (vs. slow AI models), like the Fast Fourier Transform, sampling and interpolation, pattern recognition, neural networks, and adaptive filters. 
 
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
