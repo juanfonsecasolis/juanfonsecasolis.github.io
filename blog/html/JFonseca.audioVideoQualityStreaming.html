@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>JFonseca.pairwisetesting</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>JFonseca.audioVideoQualityStreaming</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7540,9 +7540,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Pruebas-por-pares-o-pairwise-testing">Pruebas por pares o <em>pairwise testing</em><a class="anchor-link" href="#Pruebas-por-pares-o-pairwise-testing">¶</a></h1><p><a href="https://juanfonsecasolis.github.io">Juan M. Fonseca-Solís</a> · Setiembre 2020 · 5 min read</p>
+<h1 id="Quality-of-service-for-audio-and-video-streaming-over-Internet">Quality of service for audio and video streaming over Internet<a class="anchor-link" href="#Quality-of-service-for-audio-and-video-streaming-over-Internet">¶</a></h1><p><a href="https://juanfonsecasolis.github.io/">Juan M. Fonseca-Solís</a> · December 2020 · 5 min read</p>
 <hr/>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">¶</a></h2><p>A diferencia del resto de artículos de este blog, el presente ipython notebook no contiene ningún componente original, sino que pretendemos simplemente rescatar la descripción matemática y utilidad de una técnica de estimación de casos de prueba llamada <em>pruebas por pares</em>. Los resultados obtenidos muestran que se puede lograr una buena cobertura en tiempo $O(op)$.</p>
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h2><p>Nowadays communication would be unimaginable without the help of streaming platforms like Zoom, MSTeams or Skype, which allow to transmit audio and video over the Internet at convenient low bitrates. However, no software is yet able to fix transmissions corrupted from the source; that is, when the device that is capturing the audio or video is sending the information at lower bitrates than the minimum supported by the compressing algorithm. In this case, it doesn't matter if your are Pavaroti, your friends over the phone will hear your voice like being performed inside a bottle with a mixture of noise and delays. This can happen, for instance, when you are broadcasting your christmas concert from home using two devices connected to the same ADSL line. Luckily there are commercial tools that allow to catch this kind of issues, and we have for instance the POLQA algorithm for audio or the SIMM algorithm for video. In this iPython notebook we will explore how these two algorithm allow to compute the <em>quality of service</em> (QoS) of a transmission using a scale called <em>Mean Opinion Score</em> (MOS) and how customers can benefit of this information to improve their service.</p>
 </div>
 </div>
 </div>
@@ -7553,262 +7553,25 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Introducci%C3%B3n">Introducción<a class="anchor-link" href="#Introducci%C3%B3n">¶</a></h2><p>Como su nombre lo indica, la técnica de por pares construye escenarios de prueba tomando pares de parámetros en lugar de hacer una combinación exhaustiva de variables. Esto lo realiza asumiendo como verdadera la premisa de Kuhn et. al [1,4]:</p>
-<p><em>"<strong>Regla de interacción:</strong> la mayoría de las fallas son producidas por un solo factor o por la interación entre dos factores, y se observan progresivamente menos fallas producidas por la interacción entre tres o más factores."</em></p>
-<h2 id="Pseudo-formalismo-matem%C3%A1tico">Pseudo-formalismo matemático<a class="anchor-link" href="#Pseudo-formalismo-matem%C3%A1tico">¶</a></h2><p>Matemáticamente la técnica de la prueba por pares se puede expresar como sigue. Sea $\{P_1, P_2, \ldots, P_N\} \subset \mathbb{C}^{\max\{\lvert{R_i}\rvert\}}$ un espacio vectorial generado por un sistema de N parámetros, el conjunto de valores que puede tomar cada parámetro $R(P_i) = R_i$ es denominado el rango de un parámetro [1]. Es decir, que si hicieramos el modelado de un interruptor de la casa, los posibles valores de prueba serían:</p>
-<p>$$
-R_i = \{\text{encendido}, \text{apagado}\},
-$$</p>
-<p>donde la cardinalidad del conjunto, $\lvert{R_i}\rvert=n_i$, sería igual a 2. Si modelásemos todos los interruptores de la casa y nos interesara el estado de la casa en ese momento, la combinación de los valores posibles sería un producto, es decir, $\prod{n_i}$. Podría suceder, sin embargo, que no todos los encendedores tuvieran dos estados, sino tres, por ejemplo: encendido alto, encendido bajo, apagado; en cuyo caso $2^N &lt; \prod{n_i}$.</p>
-<p>Si en lugar de hacer una combinación exhaustiva usaramos la técnica de prueba por pares tendríamos que definir $X=\{n_i\}$ como el multiconjunto que contiene todos los posibles valores de todos los parámetros, por ejemplo, $X=\{2, 2, 3, \ldots\}$. Se dice que este es un multiconjunto o <em>multiset</em>, porque podemos tener elementos repetidos [2]. Luego tendríamos que el número de casos de prueba $T$ sería [1]:</p>
-<p>$$
-T = \max\{X\} \max\{X/\max\{X\}\},
-$$</p>
-<p>en otras palabras, el producto de los rangos de los dos parámetros con la mayor cantidad de valores posibles.</p>
-<h2 id="Recetario">Recetario<a class="anchor-link" href="#Recetario">¶</a></h2><p>Con base en este formalismo matemático es posible resumir la técnica de pruebas de pares como:</p>
-<ol>
-<li>Listar todos los $N$ parámetros del sistema.</li>
-<li>Identificar para cada parámetro, el número posible de valores.</li>
-<li>Tomar los dos parámetros $i,j $ cuyo $\lvert{R(\cdot)}\rvert$ sea mayor al resto.</li>
-<li>Construir una tabla de $n_i n_j$ filas y $N$ columnas.</li>
-<li>Completar las columnas haciendo la combinación de los valores de los parámetros $i,j$ y rellenar el resto de columnas como haciendo una combinatoria completa.</li>
+<p>To be defined...</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="References">References<a class="anchor-link" href="#References">¶</a></h2><ol>
+<li><a href="https://www.ssimwave.com/careers/">https://www.ssimwave.com/careers/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Structural_similarity">https://en.wikipedia.org/wiki/Structural_similarity</a></li>
+<li><a href="https://videoclarity.com/videoqualityanalysis/">https://videoclarity.com/videoqualityanalysis/</a></li>
+<li><a href="https://link.springer.com/chapter/10.1007/978-1-4302-6713-3_4">https://link.springer.com/chapter/10.1007/978-1-4302-6713-3_4</a></li>
+<li><a href="https://aveq.info/solutions/video-quality-measurement/">https://aveq.info/solutions/video-quality-measurement/</a></li>
+<li><a href="https://kafka.apache.org/">https://kafka.apache.org/</a></li>
 </ol>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Ejemplo-pr%C3%A1ctico">Ejemplo práctico<a class="anchor-link" href="#Ejemplo-pr%C3%A1ctico">¶</a></h2><p>Veamos un ejemplo con $P_1 = \{T,F\}$, $P_2 = \{1,2,3\}$, $P_3 = \{a,b,c,d\}$ y $P_4 = \{x,y\}$:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Valor 1</th>
-<th>Valor 2</th>
-<th>Valor 3</th>
-<th>Valor 4</th>
-<th>$\lvert{R_i}\rvert$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$P_1$</td>
-<td>T</td>
-<td>F</td>
-<td>-</td>
-<td>-</td>
-<td>2</td>
-</tr>
-<tr>
-<td>$P_2$</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>-</td>
-<td>3</td>
-</tr>
-<tr>
-<td>$P_3$</td>
-<td>a</td>
-<td>b</td>
-<td>c</td>
-<td>d</td>
-<td>4</td>
-</tr>
-<tr>
-<td>$P_4$</td>
-<td>x</td>
-<td>y</td>
-<td>-</td>
-<td>-</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<p>Los parámetros con más valores serían $P_3$ y $P_2$, y el producto de las cardinalidades de los conjuntos de sus valores sería $\max\{X\} \max\{X/\max\{X\}\} = 4 \cdot 3 = 12$. Con base en esto, podemos armar una tabla de combinaciones truncada como sigue:</p>
-<table>
-<thead>
-<tr>
-<th>CP/P</th>
-<th>$P_1$</th>
-<th>$P_2$</th>
-<th>$P_3$</th>
-<th>$P_4$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>a</td>
-<td>1</td>
-<td>T</td>
-<td>x</td>
-</tr>
-<tr>
-<td>2</td>
-<td>b</td>
-<td>2</td>
-<td>F</td>
-<td>y</td>
-</tr>
-<tr>
-<td>3</td>
-<td>c</td>
-<td>3</td>
-<td>T</td>
-<td>x</td>
-</tr>
-<tr>
-<td>4</td>
-<td>d</td>
-<td>1</td>
-<td>F</td>
-<td>y</td>
-</tr>
-<tr>
-<td>5</td>
-<td>a</td>
-<td>2</td>
-<td>T</td>
-<td>x</td>
-</tr>
-<tr>
-<td>6</td>
-<td>b</td>
-<td>3</td>
-<td>F</td>
-<td>z</td>
-</tr>
-<tr>
-<td>7</td>
-<td>c</td>
-<td>1</td>
-<td>T</td>
-<td>x</td>
-</tr>
-<tr>
-<td>8</td>
-<td>d</td>
-<td>2</td>
-<td>F</td>
-<td>z</td>
-</tr>
-<tr>
-<td>9</td>
-<td>a</td>
-<td>3</td>
-<td>T</td>
-<td>x</td>
-</tr>
-<tr>
-<td>10</td>
-<td>b</td>
-<td>1</td>
-<td>F</td>
-<td>z</td>
-</tr>
-<tr>
-<td>11</td>
-<td>c</td>
-<td>2</td>
-<td>T</td>
-<td>x</td>
-</tr>
-<tr>
-<td>12</td>
-<td>d</td>
-<td>3</td>
-<td>F</td>
-<td>z</td>
-</tr>
-</tbody>
-</table>
-<p>Si hubiesemos hecho la combinación completa de todos los valores, esto nos habría tomado $\prod\{n_i\}=4 \cdot 3 \cdot 2 \cdot 3 = 48$ casos de prueba, lo cual representa un esfuerzo considerable. Por eso se dice la prueba por pares tomar tiempo $O(op)$, con $o,p \in \{n_i\}$, en lugar de $\prod{n_i}$.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Automatizaci%C3%B3n">Automatización<a class="anchor-link" href="#Automatizaci%C3%B3n">¶</a></h1><p>Aunque más rápida que una combinatoria completa, las pruebas por pares requieren sentarse con papel y lápiz a escribir la tabla. Podemos obtener el mismo resultado implementando al algoritmo en la computadora, o incluso más rápido todavía, usando una herramienta de Microsoft llamada PICT (disponible gratuitamente en el sitio <a href="https://pairwise.yuuniworks.com">https://pairwise.yuuniworks.com</a>) [3]. El comando para este programa es <code>pict modelo.txt [opciones]</code>.</p>
-<p>modelo.txt:</p>
-<pre><code>P1: T,F
-P2: 1,2,3
-P3: a,b,c,d
-P4: x,y
-</code></pre>
-<p>Salida:</p>
-<pre><code>P1	P2	P3	P4
-T	2	c	y
-T	3	a	x
-F	1	c	x
-F	2	a	y
-T	1	b	y
-F	3	c	y
-F	3	b	x
-F	2	d	x
-T	1	a	y
-T	3	d	y
-T	1	d	y
-F	2	b	x
-</code></pre>
-<p>Lo cual corresponde en efecto, a los 12 CP que calculamos a mano.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Conclusiones">Conclusiones<a class="anchor-link" href="#Conclusiones">¶</a></h1><p>La técnica de las pruebas por pares permite estimar casos de prueba identificando los dos parámetros del sistema con el rango de valores más amplio. Las combinaciones generadas son mucho menores que las del enfoque exhaustivo, pero esto no representa una desventaja en términos de cobertura, pues según el principio de Kuhn et al. la mayoría de pulgas involucran dos parámetros o menos. Existen herramientas como el PICT de Microsoft que permiten automatizar el proceso de generación de casos de prueba, haciendo que esta técnica sea fácil de usar en el corto tiempo que se dispone en el trabajo.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Referencias:">Referencias:<a class="anchor-link" href="#Referencias:">¶</a></h1><ol>
-<li>Wikipedia contributors. (2020, July 8). All-pairs testing. In Wikipedia, The Free Encyclopedia. Retrieved 20:09, September 6, 2020, from <a href="https://en.wikipedia.org/w/index.php?title=All-pairs_testing&amp;oldid=966710808">https://en.wikipedia.org/w/index.php?title=All-pairs_testing&amp;oldid=966710808</a>.</li>
-<li>Multiconjunto. (2019, 11 de octubre). Wikipedia, La enciclopedia libre. Fecha de consulta: 20:31, septiembre 6, 2020 desde <a href="https://es.wikipedia.org/w/index.php?title=Multiconjunto&amp;oldid=120189103">https://es.wikipedia.org/w/index.php?title=Multiconjunto&amp;oldid=120189103</a>.</li>
-<li>J McCaffrey. Test Run - Pairwise Testing with QICT. Volume 24 Number 12. Dec 2009. URL: <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2009/december/test-run-pairwise-testing-with-qict">https://docs.microsoft.com/en-us/archive/msdn-magazine/2009/december/test-run-pairwise-testing-with-qict</a></li>
-<li>D. Richard Kuhn, Raghu N. Kacker, Yu Lei. Practical combinatorial Testing. NIST Special Publication 800-142. Departamento de Comercio de Estados Unidos. URL: <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-142.pdf">https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-142.pdf</a> (consultado por última vez el 09/09/20).</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<hr/>
-<p><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license"><img alt="Licencia de Creative Commons" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" style="border-width:0"/></a><br/>Este obra está bajo una <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">licencia de Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional</a>. El sitio <a href="https://juanfonsecasolis.github.io">juanfonsecasolis.github.io</a> es un blog dedicado a la investigación independiente en temas relacionados al procesamiento digital de señales. Para reutilizar este artículo y citar las fuente por favor utilice el siguiente Bibtex:</p>
-<pre><code>@online{Fonseca2020,
-  author = {Juan M. Fonseca-Solís},
-  title = { Pruebas por pares o pairwise testing},
-  year = 2020,
-  url = {https://juanfonsecasolis.github.io/blog/JFonseca.pairwisetesting.html},
-  urldate = {}
-}
-</code></pre>
 </div>
 </div>
 </div>

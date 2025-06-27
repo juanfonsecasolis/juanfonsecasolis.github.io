@@ -18,7 +18,6 @@ I have specialized in analyzing and transforming one-dimensional signals (time s
 * Sep 2020 >> [Pairwise testing](blog/html/JFonseca.pairwisetesting.html)
 * Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](blog/html/JFonseca.pruebasRendimiento.html)
 * Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/ipynb/echoCancellationProakisManolakis.ipynb)
-* Nov 2018 >> [Adding style to your equations and code using Mathjax and Prism](blog/html/JFonseca.styling.html)
 * Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/html/JFonseca.suavizadoTraficoServidorWeb.html)
 * Mar 2015 >> [Interpolation applied to a BCCR signal](blog/html/JFonseca.interpolacion.html)
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NB_CONVERT="python3 -m nbconvert"
-FLAGS="--output-dir='./html' --to html --template=./template.tpl"
+FLAGS="--output-dir='../html' --to html --template=./template.tpl"
 
 $NB_CONVERT JFonseca.suavizadoTraficoServidorWeb.ipynb $FLAGS
 $NB_CONVERT JFonseca.interpolacion.ipynb $FLAGS
