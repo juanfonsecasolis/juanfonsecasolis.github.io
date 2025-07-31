@@ -13,13 +13,16 @@ fig, ax = plt.subplots()
 for starName in flamsteed_CrB:
 
     print(f'Downloading data for {starName}...')
+    
     try:
         targetPixelFile = lk.search_targetpixelfile(flamsteed_CrB[starName], radius=0)[0].download()
         print('Plotting...')
         cartesian_coordinates = targetPixelFile.wcs.pixel_to_world(0, 0).cartesian
         plt.scatter(cartesian_coordinates.x, cartesian_coordinates.y)
+
     except Exception as e:
-        print(f'"{repr(e)}" error while downloading data for {starName}. Skipping...')
+        print(f'Error while downloading data for {starName}. Skipping...\n')
+        print(f'{repr(e)}\n')
 
 plt.legend(flamsteed_CrB.keys())
 plt.ylabel('Y')

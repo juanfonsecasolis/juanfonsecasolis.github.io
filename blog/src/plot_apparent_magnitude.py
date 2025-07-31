@@ -24,7 +24,8 @@ for starName in flamsteed_CrB:
         plt.plot(days_of_the_year, apparent_magnitude)
 
     except Exception as e:
-        print(f'{repr(e)} error while downloading data for {starName}. Skipping...')
+        print(f'Error while downloading data for {starName}. Skipping...\n')
+        print(f'{repr(e)}\n')
 
 plt.legend(flamsteed_CrB.keys())
 plt.ylabel('Apparent magnitude')
