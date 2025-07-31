@@ -14,8 +14,13 @@ PyWavelets==1.8.0
 requests
 zeep
 
-# opus
+# evaluación pérdida calidad audio opus
 # sudo apt-get install opus-tools ffmpeg
 ffmpeg
 opustools
+
+# Corona Nuestra Señora Guadalupe
+lightkurve 
+oktopus 
+autograd
 
