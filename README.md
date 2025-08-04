@@ -28,11 +28,11 @@ I have specialized in analyzing and transforming one-dimensional signals (time s
 * Jan 2011 >> [JuanmaHOS](https://juanfonsecasolis.github.io/juanmahos/)
 
 ## Publications
-* Author. [Accessible pedestrian signals recognition using an adaptive approach](https://repositoriotec.tec.ac.cr/handle/2238/11099). Escuela de electrónica. TEC. Cartago, CR. 2018. Master thesis (Github repository [here](https://github.com/juanfonsecasolis/ARAPSUAA)).
+* Author. [Accessible pedestrian signals recognition using an adaptive approach](https://repositoriotec.tec.ac.cr/handle/2238/11099). Escuela de electrónica. TEC. Cartago, CR. 2018. Master thesis (GitHub repository [here](https://github.com/juanfonsecasolis/ARAPSUAA)).
 * Co-author. [Automatic recognition of accessible pedestrian signals](https://doi.org/10.1121/2.0000675). The Journal of the Acoustical Society of America 141. 3913. Boston, USA. 2017.
 * Co-author. [Automatic recognition of accessible pedestrian signals](https://www.academia.edu/39100068/Reconocimiento_automatico_de_se%C3%B1ales_accesibles_de_semaforo_en_dispositivos_m%C3%B3viles). JoCICI17 (2). Cartago, Costa Rica. 2017. 
 * Co-author. [Reconocimiento de dígitos escritos a mano usando aprendizaje profundo](
-https://www.academia.edu/40196440/Reconocimiento_de_d%C3%ADgitos_escritos_a_mano_usando_aprendizaje_profundo?source=swp_share) (draft). Instituto Tecnológico de Costa Rica, Visión por Computadora, prof. P. Alvarado-Moya. 2017.
+https://www.academia.edu/40196440/Reconocimiento_de_d%C3%ADgitos_escritos_a_mano_usando_aprendizaje_profundo?source=swp_share) (draft). Instituto Tecnológico de Costa Rica, Visión por Computadora, prof. P. Alvarado-Moya. 2017 (GitHub repository [here](https://github.com/juanfonsecasolis/reconocimientoDigitosCNN)).
 * Author. [Reconocimiento de Vocales usando un Clasificador Bayesiano](
 https://www.academia.edu/126777405/Reconocimiento_Vocales_AIU_usando_Clasificador_Bayesiano?source=swp_share) (draft). Instituto Tecnológico de Costa Rica, Reconocimiento de Patrones, prof. J. Crespo-Mariño. 2016.
 * Author. [Detección de voces y otros ruidos en ambientes de trabajo y estudio](https://www.academia.edu/39038694/Detecci%C3%B3n_de_voces_y_otros_ruidos_en_ambientes_de_trabajo_y_estudio) JoCICI15 (1): 68-71. CITIC-PCI. San José, CR. 2015.
