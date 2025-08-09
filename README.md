@@ -52,7 +52,3 @@ I'm always happy to hear from people who are interested in my work. You can conn
 <li><b>Linkedin:</b> <a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
 <li><b>Academia Edu:</b> <a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>http://itcr.academia.edu/JuanFonsecaSol%C3%ADs</a></li>
 </ul>
-
----
-
-_"Perseverance is the virtue of the less brilliant."_ - Santiago Ramón y Cajal.
