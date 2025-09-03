@@ -1,4 +1,4 @@
-Welcome to my portfolio. At this site, you can get information about the content I've written and areas of research. Feel free to contact me if you see an oportunity to team up together.
+Welcome to my portfolio. At this site, you can get information about the content I've written and areas of research.
 
 ## Software quality / test automation
 As a consultant, I have worked coding end-to-end (E2E) test automation and also doing functional/non-functional testing for US-based clients. My working experience has been on Selenium WebDriver with nUnit (.NET) for testing web pages and web services. I'm familiar with other languages and tools too, like Selenium with Pytest (Python), Appium with TestNG (Java), and Playwright (JS/TS), among others. I have been a certified tester since 2024 (ISTQB Certified Tester Foundation Level 4.0). Look at my automation portfolio at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
@@ -47,6 +47,7 @@ https://www.academia.edu/126777405/Reconocimiento_Vocales_AIU_usando_Clasificado
 * [Quick start on webtesting on 2019](slides/jfonseca_quickstartTesting2019_2.pdf). 
 
 ## Contact
+I'm always happy to hear from people who are interested in my work. Feel free to contact me if you see an oportunity to team up together.
 <ul>
 <li><b>Linkedin:</b> <a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
 <li><b>Academia Edu:</b> <a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>http://itcr.academia.edu/JuanFonsecaSol%C3%ADs</a></li>
