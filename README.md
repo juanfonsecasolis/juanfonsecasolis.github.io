@@ -1,7 +1,7 @@
-Welcome to my portfolio. At this site, you can get information about the content I've written, interests, and areas of research.   
+Welcome to my portfolio. At this site, you can get information about the content I've written and areas of research. Feel free to contact me if you see an oportunity to team up together.
 
-## Software quality and test automation
-As a consultant, I have worked in end-to-end (E2E) test automation for US-based clients. My working experience has been on Selenium WebDriver with nUnit (.NET) for testing web pages and web services. I'm familiar with other languages and tools too, like Selenium with Pytest (Python), Appium with TestNG (Java), and Playwright (JS/TS), among others. I have been a certified tester since 2024 (ISTQB Certified Tester Foundation Level 4.0). Look at my automation portfolio at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
+## Software quality / test automation
+As a consultant, I have worked coding end-to-end (E2E) test automation and also doing functional/non-functional testing for US-based clients. My working experience has been on Selenium WebDriver with nUnit (.NET) for testing web pages and web services. I'm familiar with other languages and tools too, like Selenium with Pytest (Python), Appium with TestNG (Java), and Playwright (JS/TS), among others. I have been a certified tester since 2024 (ISTQB Certified Tester Foundation Level 4.0). Look at my automation portfolio at [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
 
 ## Digital Signal Processing (DSP)
 I have specialized in analyzing and transforming one-dimensional signals (time series), particularly music and voice recognition. My master's thesis focused on recognizing the sound of accessible pedestrian signals, an idea initiated by Mario Monge and Sharon Bejarano in 2013. I have also published some work about signal processing applied to performance testing in webpages, audio fingerprints, wavelets, the Fourier transform, audio compression codecs, and financial signals. Please take a look at my [Jupyter notebooks](https://juanfonsecasolis.github.io/#jupyter-notebooks) and [publications](https://juanfonsecasolis.github.io/#publications).
@@ -47,7 +47,6 @@ https://www.academia.edu/126777405/Reconocimiento_Vocales_AIU_usando_Clasificado
 * [Quick start on webtesting on 2019](slides/jfonseca_quickstartTesting2019_2.pdf). 
 
 ## Contact
-I'm always happy to hear from people who are interested in my work. You can connect with me through these links:
 <ul>
 <li><b>Linkedin:</b> <a href='https://cr.linkedin.com/in/juan-m-fonseca-solis'>https://cr.linkedin.com/in/juan-m-fonseca-solis</a></li>
 <li><b>Academia Edu:</b> <a href='http://itcr.academia.edu/JuanFonsecaSol%C3%ADs'>http://itcr.academia.edu/JuanFonsecaSol%C3%ADs</a></li>
