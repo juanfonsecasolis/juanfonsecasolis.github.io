@@ -23,4 +23,5 @@ opustools
 lightkurve 
 oktopus 
 autograd
+skyfield
 
