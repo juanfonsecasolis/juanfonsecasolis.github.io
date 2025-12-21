@@ -4,6 +4,7 @@ Estrellas al momento de la impregnación de Nuestra Señora de Guadalupe
 '''
 
 import requests
+import numpy as np
 
 ursa_major_mapping = [
     { 'hr_classification': 'HR-5191', 'flamsteed': '85 Ursae Majoris', 'name': 'Alkaid'},
@@ -16,6 +17,19 @@ ursa_major_mapping = [
     { 'hr_classification': 'HR-3757', 'flamsteed': '23 Ursae Majoris', 'name': '23 UMa'},
     { 'hr_classification': 'HR-3323', 'flamsteed': '01 Ursae Majoris', 'name': 'ο UMa'},
     { 'hr_classification': 'HR-3888', 'flamsteed': '29 Ursae Majoris', 'name': 'υ UMa'}
+]
+
+ursa_pais = [
+    ['HR-5191', 'HR-5054'],
+    ['HR-5054', 'HR-4905'],
+    ['HR-4905', 'HR-4660'],
+    ['HR-4660', 'HR-4554'],
+    ['HR-4554', 'HR-4295'],
+    ['HR-4295', 'HR-4301'],
+    ['HR-4301', 'HR-4660'],
+    ['HR-4301', 'HR-3757'],
+    ['HR-3757', 'HR-3323'],
+    ['HR-3757', 'HR-3888']
 ]
 
 base_url = 'http://localhost:8090'
@@ -41,19 +55,20 @@ def setup_location():
 
 def get_star_information(star_name):
     response = requests.get(f'{base_url}/api/objects/info?name={star_name}&format=json')
-
     if response.status_code == 200:
         data = response.json()
-        ar_hours, ar_minutes, ar_seconds = decimalToDegrees(data['altitude']) # working good
-        dec_hours, dec_minutes, dec_seconds = decimalToDegrees(data['dec']) # working no so good...
-        ar = f'{data['altitude']} ({ar_hours}h {ar_minutes}m {ar_seconds}s)'
-        dec = f'{data['dec']} ({dec_hours}h {dec_minutes}m {dec_seconds}s)'
-        return data['vmag'], ar, dec
-    
+        return data['vmag'], data['altitude'], data['dec']
     else:
         raise Exception(f'Could not find star with name "{star_name}".')
 
     # To-Do: check against logic of https://www.celestialprogramming.com/decimal_degrees_to_components.html
+
+def print_ar_dec(ar, dec):
+    ar_hours, ar_minutes, ar_seconds = decimalToDegrees(ar)
+    dec_hours, dec_minutes, dec_seconds = decimalToDegrees(dec)
+    ar_str = f'{ar} ({ar_hours}h {ar_minutes}m {ar_seconds}s)'
+    dec_str = f'{dec} ({dec_hours}h {dec_minutes}m {dec_seconds}s)'
+    print(f'AR/Dec (en fecha): {ar_str} / {dec_str}\n')
 
 if __name__ == '__main__':
     setup_time()
@@ -66,8 +81,12 @@ if __name__ == '__main__':
             print(f'Estrella: {star_name}')
             print('-----------')
             mag, ar, dec = get_star_information(star_name)
+            ursa_major_mapping[i]['mag'] = mag
+            ursa_major_mapping[i]['ar'] = ar
+            ursa_major_mapping[i]['dec'] = dec
+
             print(f'Magnitud: {mag:.2f}')
-            print(f'AR/Dec (en fecha): {ar} / {dec}\n')
+            print_ar_dec(ar, dec)
 
         except Exception as e:
             print(f'{str(e)}\n')
