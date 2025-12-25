@@ -73,16 +73,14 @@ def print_ar_dec(ar, dec):
     print(f'AR/Dec (en fecha): {ar_str} / {dec_str}\n') 
 
 def fill_with_magnitude_and_ecuatorial_coordinates(stars:list[Star]):
-
+    
     for i in range(0, len(stars)):
-
         try:
             print(f'Estrella: {stars[i].common_name} ({stars[i].hr_name})')
             print('-----------')
             stars[i].magnitude, stars[i].ar, stars[i].dec = get_star_information(stars[i].common_name)
             print(f'Magnitud: {stars[i].magnitude:.2f}')
             print_ar_dec(stars[i].ar, stars[i].dec)
-
         except Exception as e:
             print(f'{str(e)}\n')
 
@@ -90,22 +88,26 @@ def find_first_star_that_matches_hr_name(stars:list[Star], hr_name:str):
     results = [x for x in stars if x.hr_name==hr_name]
     return None if results is None else results[0]
 
-def print_kilometer_distance_between_pairs(pairs:list[list[str]]):
-    for pair in pairs:
+def compute_kilometer_distance_between_stars(star1:Star, star2:Star) -> float:
+    '''
+    Kilometers distance in the celestial sphere.
+    '''
+    dec1_rad = star1.dec * np.pi / 360.0
+    ar1_rad = star1.ar * np.pi / 360.0
 
+    dec2_rad = star2.dec * np.pi / 360.0
+    ar2_rad = star2.ar * np.pi / 360.0
+
+    d_rad = np.arccos(np.sin(dec1_rad)*np.sin(dec2_rad) + np.cos(dec1_rad)*np.cos(dec2_rad)*np.cos(ar1_rad-ar2_rad))
+    return d_rad * 360.0/np.pi *111.23
+
+def print_kilometer_distance_between_pairs(pairs:list[list[str]]):
+    
+    for pair in pairs:
         star1 = find_first_star_that_matches_hr_name(ursa_constellation, pair[0])
         star2 = find_first_star_that_matches_hr_name(ursa_constellation, pair[1])
-
-        if star1.dec is not None and star2.dec is not None:
-            dec1_rad = star1.dec * np.pi / 360.0
-            ar1_rad = star1.ar * np.pi / 360.0
-            dec2_rad = star2.dec * np.pi / 360.0
-            ar2_rad = star2.ar * np.pi / 360.0
-            d_rad = np.arccos(np.sin(dec1_rad)*np.sin(dec2_rad) + np.cos(dec1_rad)*np.cos(dec2_rad)*np.cos(ar1_rad-ar2_rad))
-            d_deg = d_rad * 360.0/np.pi
-            print(f'{star1.hr_name} a {star2.hr_name}: {d_deg*111.23:.2f} km.')
-        else:
-            print(f'{star1.hr_name} a {star2.hr_name}: ?.')
+        d_km = compute_kilometer_distance_between_stars(star1, star2) if star1.dec is not None and star2.dec is not None else np.nan
+        print(f'{star1.hr_name} a {star2.hr_name}: {d_km:.2f} km.')
 
 if __name__ == '__main__':
     setup_time()
