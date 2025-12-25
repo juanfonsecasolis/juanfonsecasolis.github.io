@@ -73,7 +73,7 @@ def print_ar_dec(ar, dec):
     print(f'AR/Dec (en fecha): {ar_str} / {dec_str}\n') 
 
 def fill_with_magnitude_and_ecuatorial_coordinates(stars:list[Star]):
-    
+
     for i in range(0, len(stars)):
         try:
             print(f'Estrella: {stars[i].common_name} ({stars[i].hr_name})')
@@ -92,28 +92,35 @@ def compute_kilometer_distance_between_stars(star1:Star, star2:Star) -> float:
     '''
     Kilometers distance in the celestial sphere.
     '''
-    dec1_rad = star1.dec * np.pi / 360.0
-    ar1_rad = star1.ar * np.pi / 360.0
+    deg_to_rad_coeff = 2.0 * np.pi / 360.0
+    rad_to_deg_coeff = 1.0 / deg_to_rad_coeff
 
-    dec2_rad = star2.dec * np.pi / 360.0
-    ar2_rad = star2.ar * np.pi / 360.0
+    dec1_rad = star1.dec * deg_to_rad_coeff
+    ar1_rad = star1.ar * deg_to_rad_coeff
+
+    dec2_rad = star2.dec * deg_to_rad_coeff
+    ar2_rad = star2.ar * deg_to_rad_coeff
 
     d_rad = np.arccos(np.sin(dec1_rad)*np.sin(dec2_rad) + np.cos(dec1_rad)*np.cos(dec2_rad)*np.cos(ar1_rad-ar2_rad))
-    return d_rad * 360.0/np.pi *111.23
+    return d_rad * rad_to_deg_coeff * 111.23
 
-def print_kilometer_distance_between_pairs(pairs:list[list[str]]):
-    
+def print_kilometer_distance_between_pairs(pairs:list[list[str]]) -> list[float]:
+    distances = []
     for pair in pairs:
         star1 = find_first_star_that_matches_hr_name(ursa_constellation, pair[0])
         star2 = find_first_star_that_matches_hr_name(ursa_constellation, pair[1])
         d_km = compute_kilometer_distance_between_stars(star1, star2) if star1.dec is not None and star2.dec is not None else np.nan
-        print(f'{star1.hr_name} a {star2.hr_name}: {d_km:.2f} km.')
+        distances.append(d_km)
+        print(f'{star1.hr_name} ({star1.common_name}) a {star2.hr_name} ({star2.common_name}): {d_km:.2f} km.')
+    return distances
+
+def computer_pearson_correlation(x:list[float], y:list[float]) -> float:
+    return 100*np.cov(x,y, bias=True)[0][1]/(np.std(x)*np.std(y))
 
 if __name__ == '__main__':
     setup_time()
     setup_location()
     fill_with_magnitude_and_ecuatorial_coordinates(ursa_constellation)
-    print_kilometer_distance_between_pairs(ursa_hr_pairs)
-    
+    ds_sky = print_kilometer_distance_between_pairs(ursa_hr_pairs)
 
     
