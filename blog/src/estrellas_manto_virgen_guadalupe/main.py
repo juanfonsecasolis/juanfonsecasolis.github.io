@@ -4,8 +4,6 @@
   de 1531 a las 6:45 am en la ciudad de México.
 '''
 
-from star import Star
-from constellation import Constellation
 from astronomer import Astronomer
 from constellation_factory import ConstellationFactory
 import pprint
