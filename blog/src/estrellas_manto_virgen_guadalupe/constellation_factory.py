@@ -27,7 +27,7 @@ class ConstellationFactory:
         constellation = None
         if constellation_name=='ursa_majoris':
 
-            constellation = Constellation(constellation_name, [
+            list_of_stars = [
                 Star('HR-5191', '85 Ursae Majoris', 'Alkaid'),
                 Star('HR-5054', '79 Ursae Majoris', 'Mizar'), # Mizar A
                 Star('HR-4905', '77 Ursae Majoris', 'Alioth'),
@@ -38,10 +38,11 @@ class ConstellationFactory:
                 Star('HR-3757', '23 Ursae Majoris', '23 UMa'),
                 Star('HR-3323', '01 Ursae Majoris', 'ο UMa'),
                 Star('HR-3888', '29 Ursae Majoris', 'υ UMa')
-            ])
+            ]
         
         else:
             raise Exception(f'Unknown constellation {constellation_name}.')
         
+        constellation = Constellation(constellation_name, list_of_stars)
         self.fill_constellation_with_magnitude_and_ecuatorial_coordinates(constellation)
         return constellation
