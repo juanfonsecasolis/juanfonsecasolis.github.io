@@ -1,6 +1,7 @@
 '''
-2025-2026 Juan M. Fonseca-Solís
-Estrellas al momento de la impregnación de Nuestra Señora de Guadalupe
+  2025-2026 Juan M. Fonseca-Solís.
+  Estrellas al momento de la impregnación de Nuestra Señora de Guadalupe, un12 de diciembre
+  de 1531 a las 6:45 am en la ciudad de México.
 '''
 
 import requests

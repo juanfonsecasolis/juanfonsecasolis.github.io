@@ -1,6 +1,7 @@
 '''
-2025-2026 Juan M. Fonseca-Solís
-Estrellas al momento de la impregnación de Nuestra Señora de Guadalupe
+  2025-2026 Juan M. Fonseca-Solís.
+  Estrellas al momento de la impregnación de Nuestra Señora de Guadalupe, un12 de diciembre
+  de 1531 a las 6:45 am en la ciudad de México.
 '''
 
 from constellation import Constellation
@@ -9,10 +10,10 @@ from stellarium_dao import StellariumDao
 
 class ConstellationFactory:
 
-    def __init__(self):
+    def __init__(self, time:float, latitude:float, longitude:float, altitude:float):
         self.stellariumDao = StellariumDao()
-        self.stellariumDao.setup_time(time=2280600.9895833335)
-        self.stellariumDao.setup_location(latitude=19.427778244018555, longitude=-99.1177749633789, altitude=0)
+        self.stellariumDao.setup_time(time)
+        self.stellariumDao.setup_location(latitude, longitude, altitude)
 
     def fill_constellation_with_magnitude_and_ecuatorial_coordinates(self, constellation:Constellation):
         for star in constellation.stars:
@@ -26,7 +27,7 @@ class ConstellationFactory:
         constellation = None
         if constellation_name=='ursa_majoris':
 
-            constellation = Constellation([
+            constellation = Constellation(constellation_name, [
                 Star('HR-5191', '85 Ursae Majoris', 'Alkaid'),
                 Star('HR-5054', '79 Ursae Majoris', 'Mizar'), # Mizar A
                 Star('HR-4905', '77 Ursae Majoris', 'Alioth'),
