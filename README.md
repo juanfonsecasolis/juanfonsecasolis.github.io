@@ -1,6 +1,6 @@
 Welcome to my portfolio. At this site, you can get information about the content I've written and areas of research.
 
-## Software quality / test automation
+## Software quality
 I have worked since 2013 as a software quality consultant, performing manual testing and end-to-end functional test automation in web. I am familiar with Selenium Webdriver on DotNet, Python, and Java; also Appium and performance testing. Lately, I have been focused on Playwright automation with Typescript/Javascript. On 2024 I obtained the ISTQB CTFL 4.0 certification. For more information, please take a look at my automation portfolio on [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
 
 ## Digital Signal Processing (DSP)
