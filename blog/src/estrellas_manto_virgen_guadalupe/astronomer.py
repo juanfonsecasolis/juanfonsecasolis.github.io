@@ -32,9 +32,14 @@ class Astronomer:
     def find_kilometers_between_star_pairs(self, pairs:list[list[Star]]) -> dict:
 
         distances = {}
+        
         for [star1, star2] in pairs:
-            d_km = self.find_kilometers_between_star_pair(star1, star2) if star1.dec is not None and star2.dec is not None else np.nan
-            distances[(star1.hr_name, star2.hr_name)] = float(np.round(d_km, 2))
+            if star1.dec is None or star2.dec is None: 
+                distances[(star1.hr_name, star2.hr_name)] = np.nan
+            else:
+                d_km = self.find_kilometers_between_star_pair(star1, star2) 
+                distances[(star1.hr_name, star2.hr_name)] = float(np.round(d_km, 2))
+    
         return distances
 
     def computer_pearson_correlation(self, x:list[float], y:list[float]) -> float:
