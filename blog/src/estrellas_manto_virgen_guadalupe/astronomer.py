@@ -15,17 +15,10 @@ class Astronomer:
         self.rad_to_deg_coeff = 1.0 / self.deg_to_rad_coeff
         pass
 
-    def find_kilometers_between_star_pair(self, star1:Star, star2:Star) -> float:
-        '''
-        Kilometers distance in the celestial sphere.
-        '''
-        
-        dec1_rad = star1.dec * self.deg_to_rad_coeff
-        ar1_rad = star1.ar * self.deg_to_rad_coeff
-
-        dec2_rad = star2.dec * self.deg_to_rad_coeff
-        ar2_rad = star2.ar * self.deg_to_rad_coeff
-
+    def find_celestial_sphere_kilometers_between_stars(self, star1:Star, star2:Star) -> float: 
+             
+        dec1_rad, ar1_rad = star1.dec * self.deg_to_rad_coeff, star1.ar * self.deg_to_rad_coeff
+        dec2_rad, ar2_rad = star2.dec * self.deg_to_rad_coeff, star2.ar * self.deg_to_rad_coeff
         d_rad = np.arccos(np.sin(dec1_rad) * np.sin(dec2_rad) + np.cos(dec1_rad) * np.cos(dec2_rad) * np.cos(ar1_rad-ar2_rad))
         return d_rad * self.rad_to_deg_coeff * 111.23
 
@@ -33,11 +26,8 @@ class Astronomer:
 
         distances = {} 
         for [star1, star2] in pairs:
-            if star1.dec is None or star2.dec is None: 
-                distances[(star1.hr_name, star2.hr_name)] = np.nan
-            else:
-                d_km = self.find_kilometers_between_star_pair(star1, star2) 
-                distances[(star1.hr_name, star2.hr_name)] = float(np.round(d_km, 2))
+            d_km = self.find_celestial_sphere_kilometers_between_stars(star1, star2) 
+            distances[(star1.hr_name, star2.hr_name)] = float(np.round(d_km, 2))
         return distances
 
     def computer_pearson_correlation(self, x:list[float], y:list[float]) -> float:
