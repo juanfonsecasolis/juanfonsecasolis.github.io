@@ -1,12 +1,10 @@
-Welcome to my portfolio. At this site, you can get information about the content I've written and areas of research.
+Welcome. At this site, you can get information about the my portfolio and areas of research.
 
 ## Software quality
-I have worked since 2013 as a software quality consultant, performing manual testing and end-to-end functional test automation in web. I am familiar with Selenium Webdriver on DotNet, Python, and Java; also Appium and performance testing. Lately, I have been focused on Playwright automation with Typescript/Javascript. On 2024 I obtained the ISTQB CTFL 4.0 certification. Take a look at my automation portfolio on [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
+Since 2013, I have been working in software quality, performing end-to-end functional test automation and manual testing in web technologies. I am familiar with Selenium Webdriver (DotNet, Python, Java), Playwright (TS/JS), Appium, and performance testing. On 2024 I obtained the ISTQB CTFL 4.0 certification. Please take a look at my automation portfolio on [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
 
 ## Digital Signal Processing (DSP)
-I have also specialized in the analysis of one-dimensional signals (also known as time series), particularly audio. My master thesis was about recognizing the sound of accessible pedestrian signals (APS), an idea started by Mario Monge and Sharon Bejarano in 2013. Please take a look at my [Jupyter notebooks](https://juanfonsecasolis.github.io/#jupyter-notebooks) and [publications](https://juanfonsecasolis.github.io/#publications) for content related to DSP.
-
-**Note:** signals are raw (unstructured) massive data acquired by sampling real-world phenomena at a specific rate. Digital signal processing means processing signals using digital means, like Frecuency analysis for noise removal, pattern recognition or lossless compression. Digital signals are converted back to the analog domain using interpolation. Fast, deterministic, and lightweight methods are used over slow, inaccurate, and heavy AI models. Think of DSP as data science applied to embedded systems, where real-time and precise responses are needed.
+I have also specialized in the analysis of one-dimensional signals, particularly audio. My master thesis was about recognizing the sound of accessible pedestrian signals (APS), an idea started by Mario Monge and Sharon Bejarano in 2013. I also like analysing other type of signals, like economical indicators and server response times. Please take a look at my [Jupyter notebooks](https://juanfonsecasolis.github.io/#jupyter-notebooks) and [publications](https://juanfonsecasolis.github.io/#publications) for content related to DSP.
 
 <iframe width="369" height="207" src="https://www.youtube.com/embed/L7m8BFLCArM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
