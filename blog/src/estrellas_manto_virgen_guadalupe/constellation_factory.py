@@ -18,7 +18,7 @@ class ConstellationFactory:
     def fill_constellation_with_magnitude_and_ecuatorial_coordinates(self, constellation:Constellation):
         for star in constellation.stars:
             try:
-                star.magnitude, star.ar, star.dec = self.stellariumDao.get_star_information(star.common_name)
+                star.magnitude, star.ar_deg, star.dec_deg = self.stellariumDao.get_star_information(star.common_name)
             except Exception as e:
                 print(f'{str(e)}\n')
 
