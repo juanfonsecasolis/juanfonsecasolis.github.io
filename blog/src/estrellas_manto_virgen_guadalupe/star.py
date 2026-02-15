@@ -14,7 +14,7 @@ class Star:
         self.magnitude = None
         self.ar_deg = None
         self.dec_deg = None
-        self.__deg_to_rad_coeff = 2.0 * np.pi / 360.0
+        self.__deg_to_rad_coeff = np.pi / 180.0
 
     @property
     def ar_rad(self) -> float:
