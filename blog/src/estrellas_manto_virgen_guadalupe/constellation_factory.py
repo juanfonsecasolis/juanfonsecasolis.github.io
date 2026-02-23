@@ -22,12 +22,8 @@ class ConstellationFactory:
             except Exception as e:
                 print(f'{str(e)}\n')
 
-    def get_constellation(self, constellation_name:str) -> Constellation:
-
-        constellation = None
-        if constellation_name=='ursa_majoris':
-
-            list_of_stars = [
+    def ursa_majoris(self) -> list[Star]:
+        return [
                 Star('HR-5191', '85 Ursae Majoris', 'Alkaid'),
                 Star('HR-5054', '79 Ursae Majoris', 'Mizar'), # Mizar A
                 Star('HR-4905', '77 Ursae Majoris', 'Alioth'),
@@ -39,7 +35,21 @@ class ConstellationFactory:
                 Star('HR-3323', '01 Ursae Majoris', 'ο UMa'),
                 Star('HR-3888', '29 Ursae Majoris', 'υ UMa')
             ]
-        
+
+    def cruz_del_sur(self) -> list[Star]:
+        return [
+            Star('HR-4763', 'gamma Cru', 'Gacrux'),
+            Star('ANT 7', 'aplha Cru', 'Acrux'),
+            Star('HR-4656', 'delta Cru', 'Imai'),
+            Star('HR-4853', 'beta Cru', 'Mimosa'),
+        ]
+
+    def get_constellation(self, constellation_name:str) -> Constellation:
+        constellation = None
+        if constellation_name=='ursa_majoris':
+            list_of_stars = self.ursa_majoris() 
+        if constellation_name=='cruz_del_sur':
+            list_of_stars = self.cruz_del_sur()
         else:
             raise Exception(f'Unknown constellation {constellation_name}.')
         
