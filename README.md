@@ -1,4 +1,4 @@
-Welcome. At this site, you can get information about the my portfolio and areas of research.
+Welcome. At this site, you can get information about my portfolio and areas of research.
 
 ## Software quality
 Since 2013, I have been working in software testing, performing end-to-end functional automation and manual verifications in web technologies. I am familiar with Selenium Webdriver (DotNet, Python, Java), Playwright (TS/JS), Appium, and performance. On 2024 I obtained the ISTQB CTFL 4.0 certification. Please take a look at my automation portfolio on [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
