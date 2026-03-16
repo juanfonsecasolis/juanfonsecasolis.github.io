@@ -11,7 +11,7 @@ import pprint
 if __name__ == '__main__':
 
     constellation_factory = ConstellationFactory(time=2280600.9895833335, latitude=19.427778244018555, longitude=-99.1177749633789, altitude=0)
-    ursa_majoris_constellation = constellation_factory.get_constellation('ursa_majoris')
+    ursa_majoris_constellation = constellation_factory.get_constellation('osa_mayor')
     ursa_hr_pairs = ursa_majoris_constellation.get_pairs([
         ['HR-5191', 'HR-5054'],
         ['HR-5054', 'HR-4905'],

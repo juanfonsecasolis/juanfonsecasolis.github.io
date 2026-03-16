@@ -46,12 +46,12 @@ class ConstellationFactory:
 
     def get_constellation(self, constellation_name:str) -> Constellation:
         constellation = None
-        if constellation_name=='ursa_majoris':
+        if constellation_name == 'osa_mayor':
             list_of_stars = self.ursa_majoris() 
-        if constellation_name=='cruz_del_sur':
+        elif constellation_name == 'cruz_del_sur':
             list_of_stars = self.cruz_del_sur()
         else:
-            raise Exception(f'Unknown constellation {constellation_name}.')
+            raise Exception(f'Unknown constellation "{constellation_name}".')
         
         constellation = Constellation(constellation_name, list_of_stars)
         self.fill_constellation_with_magnitude_and_ecuatorial_coordinates(constellation)

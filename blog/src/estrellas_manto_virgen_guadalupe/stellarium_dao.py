@@ -21,13 +21,13 @@ class StellariumDao(RestfulDao):
         if(response.status_code != 200):
             raise Exception('Error setting the location.')
     
-    def get_star_information(self, star_name):
+    def get_star_information(self, star_name) -> list[float, float, float]:
         '''
         To-Do: check against logic of https://www.celestialprogramming.com/decimal_degrees_to_components.html
         '''
         response = self.get(f'{self.base_url}/api/objects/info?name={star_name}&format=json')
         if response.status_code == 200:
             data = response.json()
-            return data['vmag'], data['altitude'], data['dec']
+            return data['vmag'], data['ra'], data['dec']
         else:
             raise Exception(f'Could not find star with name "{star_name}".')
