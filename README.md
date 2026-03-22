@@ -10,14 +10,14 @@ I have also specialized in digital signal processing, particularly audio. My mas
 <br>
 
 ## Jupyter notebooks
-* Apr 2025 >> [Principios SOLID](blog/html/JFonseca.solid.html)
-* Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/html/JFonseca.wavelets.html)
-* Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/html/JFonseca.evaluacionPerdidaCalidadAudioOpus.html)
-* Sep 2020 >> [Pairwise testing](blog/html/JFonseca.pairwisetesting.html)
-* Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](blog/html/JFonseca.pruebasRendimiento.html)
-* Jun 2020 >> [Four exercises for understanting echoes and reverberations](https://nbviewer.jupyter.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/blog/ipynb/echoCancellationProakisManolakis.ipynb)
-* Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/html/JFonseca.suavizadoTraficoServidorWeb.html)
-* Mar 2015 >> [Interpolation applied to a BCCR signal](blog/html/JFonseca.interpolacion.html)
+* Apr 2025 >> [Principios SOLID](blog/html/principiosSolid.html)
+* Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/html/transformadaOndeletas.html)
+* Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/html/evaluacionCodecOpus.html)
+* Sep 2020 >> [Pairwise testing](blog/html/pruebasDePares.html)
+* Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](blog/html/pruebasEstresSistemasLIT.html)
+* Jun 2020 >> [Four exercises for understanting echoes and reverberations](blog/echoesAndReverberations.html)
+* Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/html/movingAverageEarlyAlerts.html)
+* Mar 2015 >> [Interpolation applied to a BCCR signal](blog/html/interpolationAsymetricKernels.html)
 
 ## Other projects
 * Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
