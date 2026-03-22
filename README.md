@@ -15,11 +15,12 @@ I have also specialized in digital signal processing, particularly audio. My mas
 * Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/html/evaluacionCodecOpus.html)
 * Sep 2020 >> [Pairwise testing](blog/html/pruebasDePares.html)
 * Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](blog/html/pruebasEstresSistemasLIT.html)
-* Jun 2020 >> [Four exercises for understanting echoes and reverberations](blog/echoesAndReverberations.html)
+* Jun 2020 >> [Four exercises for understanting echoes and reverberations](blog/html/echoesAndReverberations.html)
 * Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/html/movingAverageEarlyAlerts.html)
 * Mar 2015 >> [Interpolation applied to a BCCR signal](blog/html/interpolationAsymetricKernels.html)
 
 ## Other projects
+* Abril 2017 >> [Reconocimiento de digitos escritos a mano usando aprendizaje profundo](https://github.com/juanfonsecasolis/reconocimientoDigitosCNN)
 * Oct 2020 >> [Selenium-Webdriver on Github Actions using POM, Page Factory, and Gerhkin](https://github.com/juanfonsecasolis/seleniumWebdriverExample)
 * Nov 2017 >> [Automatic recognition of pedestrian signals - RASP](https://vinv.ucr.ac.cr/sigpro/web/projects/B6146)
 * Apr 2013 >> [ACAI webpage (TCU work)](https://www.acai.cr/sitioweb/)
