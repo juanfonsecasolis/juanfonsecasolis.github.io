@@ -10,14 +10,14 @@ I have also specialized in digital signal processing, particularly audio. My mas
 <br>
 
 ## Jupyter notebooks
-* Apr 2025 >> [Principios SOLID](blog/html/principiosSolid.html)
-* Feb 2021 >> [Desmistificando la transformada de ondeletas](blog/html/transformadaOndeletas.html)
-* Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](blog/html/evaluacionCodecOpus.html)
-* Sep 2020 >> [Pairwise testing](blog/html/pruebasDePares.html)
-* Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](blog/html/pruebasEstresSistemasLIT.html)
-* Jun 2020 >> [Four exercises for understanting echoes and reverberations](blog/html/echoesAndReverberations.html)
-* Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](blog/html/movingAverageEarlyAlerts.html)
-* Mar 2015 >> [Interpolation applied to a BCCR signal](blog/html/interpolationAsymetricKernels.html)
+* Apr 2025 >> [Principios SOLID](notebooks/html/principiosSolid.html)
+* Feb 2021 >> [Desmistificando la transformada de ondeletas](notebooks/html/transformadaOndeletas.html)
+* Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](notebooks/html/evaluacionCodecOpus.html)
+* Sep 2020 >> [Pairwise testing](v/html/pruebasDePares.html)
+* Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](notebooks/html/pruebasEstresSistemasLIT.html)
+* Jun 2020 >> [Four exercises for understanting echoes and reverberations](notebooks/html/echoesAndReverberations.html)
+* Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](notebooks/html/movingAverageEarlyAlerts.html)
+* Mar 2015 >> [Interpolation applied to a BCCR signal](notebooks/html/interpolationAsymetricKernels.html)
 
 ## Other projects
 * Abril 2017 >> [Reconocimiento de digitos escritos a mano usando aprendizaje profundo](https://github.com/juanfonsecasolis/reconocimientoDigitosCNN)
