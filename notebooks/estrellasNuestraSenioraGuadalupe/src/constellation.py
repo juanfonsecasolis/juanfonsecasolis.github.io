@@ -13,8 +13,6 @@ class Constellation:
         self.stars = stars
 
     def print(self):
-        print(f'Constellation "{self.name}":')
-        print('-----------')
         for star in self.stars:
             star.print()
 
