@@ -31,10 +31,10 @@ I have also specialized in digital signal processing, particularly audio. My mas
 * Co-author. [Automatic recognition of accessible pedestrian signals](https://doi.org/10.1121/2.0000675). The Journal of the Acoustical Society of America 141. 3913. Boston, USA. 2017.
 * Co-author. [Automatic recognition of accessible pedestrian signals](https://www.academia.edu/39100068/Reconocimiento_automatico_de_se%C3%B1ales_accesibles_de_semaforo_en_dispositivos_m%C3%B3viles). JoCICI17 (2). Cartago, Costa Rica. 2017. 
 * Co-author. [Reconocimiento de dígitos escritos a mano usando aprendizaje profundo](
-https://www.academia.edu/40196440/Reconocimiento_de_d%C3%ADgitos_escritos_a_mano_usando_aprendizaje_profundo?source=swp_share) (draft). Instituto Tecnológico de Costa Rica, Visión por Computadora, prof. P. Alvarado-Moya. 2017 (GitHub repository [here](https://github.com/juanfonsecasolis/reconocimientoDigitosCNN)).
+https://www.academia.edu/40196440/Reconocimiento_de_d%C3%ADgitos_escritos_a_mano_usando_aprendizaje_profundo?source=swp_share) (draft). Instituto Tecnológico de Costa Rica, Visión por Computadora, prof. P. Alvarado-Moya. 2017 (code repository [here](https://github.com/juanfonsecasolis/reconocimientoDigitosCNN)).
 * Author. [Reconocimiento de Vocales usando un Clasificador Bayesiano](
 https://www.academia.edu/126777405/Reconocimiento_Vocales_AIU_usando_Clasificador_Bayesiano?source=swp_share) (draft). Instituto Tecnológico de Costa Rica, Reconocimiento de Patrones, prof. J. Crespo-Mariño. 2016.
-* Author. [Detección de voces y otros ruidos en ambientes de trabajo y estudio](https://www.academia.edu/39038694/Detecci%C3%B3n_de_voces_y_otros_ruidos_en_ambientes_de_trabajo_y_estudio) JoCICI15 (1): 68-71. CITIC-PCI. San José, CR. 2015.
+* Author. [Detección de voces y otros ruidos en ambientes de trabajo y estudio](https://www.academia.edu/39038694/Detecci%C3%B3n_de_voces_y_otros_ruidos_en_ambientes_de_trabajo_y_estudio) JoCICI15 (1): 68-71. CITIC-PCI. San José, CR. 2015 (demo [here](https://juanma2268.bitbucket.io/)).
 * Author. [Automatic pitch recognition in a computer game interface](https://doi.org/10.15517/ri.v25i1.11751). Ingeniería 25 (1): 13-33, ISSN: 2215-2652; 2015. San José, CR. 2015.
 
 ## Talks 
