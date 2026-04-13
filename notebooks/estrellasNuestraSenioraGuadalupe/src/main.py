@@ -10,9 +10,13 @@ import pprint
 
 if __name__ == '__main__':
 
-    constellation_factory = ConstellationFactory(time=2280600.9895833335, latitude=19.427778244018555, longitude=-99.1177749633789, altitude=0)
-    ursa_majoris_constellation = constellation_factory.get_constellation('osa_mayor')
-    ursa_hr_pairs = ursa_majoris_constellation.get_pairs([
+    constellation_factory = ConstellationFactory(time=2280600.9895833335, 
+        latitude=19.427778244018555, longitude=-99.1177749633789, altitude=0)
+    constellation = constellation_factory.get_constellation('osa_mayor')
+    constellation.print()
+    constellation.plot()
+
+    star_pairs = constellation.get_pairs([
         ['HR-5191', 'HR-5054'],
         ['HR-5054', 'HR-4905'],
         ['HR-4905', 'HR-4660'],
@@ -26,6 +30,6 @@ if __name__ == '__main__':
     ])
 
     astronomer = Astronomer()
-    ds_sky = astronomer.find_kilometers_between_star_pairs(ursa_hr_pairs)
+    ds_sky = astronomer.find_kilometers_between_star_pairs(star_pairs)
     print(f'\nKilometers between stars (celestial sphere model):\n-----------')
     pprint.pprint(ds_sky)

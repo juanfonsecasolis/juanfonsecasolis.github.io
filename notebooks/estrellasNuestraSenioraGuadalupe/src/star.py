@@ -14,6 +14,9 @@ class Star:
         self.magnitude = None
         self.ar_deg = None
         self.dec_deg = None
+        self.x_cart = None
+        self.y_cart = None
+        self.z_cart = None
         self.__deg_to_rad_coeff = np.pi / 180.0
 
     @property

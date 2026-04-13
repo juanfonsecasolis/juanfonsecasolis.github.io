@@ -5,12 +5,14 @@
 '''
 
 from star import Star
+import matplotlib.pylab as plt
 
 class Constellation:
 
-    def __init__(self, name, stars:list[Star]): 
+    def __init__(self, name:str, stars:list[Star], asterism:list[list[Star]]): 
         self.name = name
         self.stars = stars
+        self.asterism = asterism
 
     def print(self):
         for star in self.stars:
@@ -27,3 +29,18 @@ class Constellation:
             star_pairs.append(pair)
 
         return star_pairs
+    
+    def plot(self) -> None:
+        fig = plt.figure()
+        ax = fig.add_subplot(projection='3d')
+        
+        # draw stars
+        for star in self.stars:
+            ax.scatter(star.x_cart, star.y_cart, star.z_cart, marker='o')
+
+        # draw asterism
+        for(star1, star2) in self.asterism:
+            ax.plot([star1.x_cart, star2.x_cart], [star1.y_cart, star2.y_cart], [star1.z_cart, star2.z_cart], color='b')
+
+        plt.legend([f'{x.hr_name} - {x.common_name}' for x in self.stars], loc=(1.1, 0.25))
+        plt.show()
