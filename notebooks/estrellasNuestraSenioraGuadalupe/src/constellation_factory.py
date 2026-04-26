@@ -29,16 +29,16 @@ class ConstellationFactory:
 
     def ursa_majoris(self) -> (list[Star], list[list[Star]]):
 
-        HR_5191 = Star('HR-5191', '85 Ursae Majoris', 'Alkaid')
-        HR_5054 = Star('HR-5054', '79 Ursae Majoris', 'Mizar') # Mizar A
-        HR_4905 = Star('HR-4905', '77 Ursae Majoris', 'Alioth')
-        HR_4660 = Star('HR-4660', '69 Ursae Majoris', 'Megrez')
-        HR_4554 = Star('HR-4554', '64 Ursae Majoris', 'Phecda')
-        HR_4295 = Star('HR-4295', '48 Ursae Majoris', 'Merak')
-        HR_4301 = Star('HR-4301', '50 Ursae Majoris', 'Dubhe')
-        HR_3757 = Star('HR-3757', '23 Ursae Majoris', '23 UMa')
-        HR_3323 = Star('HR-3323', '01 Ursae Majoris', 'ο UMa')
-        HR_3888 = Star('HR-3888', '29 Ursae Majoris', 'υ UMa')
+        HR_5191 = Star('HR-5191', '85 Ursae Majoris', 'Alkaid', 10)
+        HR_5054 = Star('HR-5054', '79 Ursae Majoris', 'Mizar', 9) # Mizar A
+        HR_4905 = Star('HR-4905', '77 Ursae Majoris', 'Alioth', 8)
+        HR_4660 = Star('HR-4660', '69 Ursae Majoris', 'Megrez', 7)
+        HR_4554 = Star('HR-4554', '64 Ursae Majoris', 'Phecda', 6)
+        HR_4295 = Star('HR-4295', '48 Ursae Majoris', 'Merak', 5)
+        HR_4301 = Star('HR-4301', '50 Ursae Majoris', 'Dubhe', 4)
+        HR_3757 = Star('HR-3757', '23 Ursae Majoris', '23 UMa', 3)
+        HR_3323 = Star('HR-3323', '01 Ursae Majoris', 'ο UMa', 2)
+        HR_3888 = Star('HR-3888', '29 Ursae Majoris', 'υ UMa', 1)
 
         stars = [HR_5191, HR_5054, HR_4905, HR_4660, HR_4554, HR_4295, HR_4301, HR_3757, HR_3323, HR_3888]
         asterism = [
@@ -58,10 +58,10 @@ class ConstellationFactory:
 
     def cruz_del_sur(self) -> (list[Star], list[list[Star]]):
 
-        HR_4763 = Star('HR-4763', 'gamma Cru', 'Gacrux')
-        ANT_7 = Star('ANT 7', 'aplha Cru', 'Acrux')
-        HR_4656 = Star('HR-4656', 'delta Cru', 'Imai')
-        HR_4853 = Star('HR-4853', 'beta Cru', 'Mimosa')
+        HR_4763 = Star('HR-4763', 'gamma Cru', 'Gacrux', 1)
+        ANT_7 = Star('ANT 7', 'aplha Cru', 'Acrux', 2)
+        HR_4656 = Star('HR-4656', 'delta Cru', 'Imai', 3)
+        HR_4853 = Star('HR-4853', 'beta Cru', 'Mimosa', 4)
 
         stars = [HR_4763, ANT_7, HR_4656, HR_4853]
         asterism = [

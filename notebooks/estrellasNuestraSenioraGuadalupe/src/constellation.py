@@ -36,11 +36,12 @@ class Constellation:
         
         # draw stars
         for star in self.stars:
-            ax.scatter(star.x_cart, star.y_cart, star.z_cart, marker='o')
+            ax.scatter(star.x_cart, star.y_cart, star.z_cart, marker='o', color='b')
+            ax.text(star.x_cart*1.01, star.y_cart*1.01, star.z_cart*1.01, star.number, color='b', fontweight='bold')
 
         # draw asterism
         for(star1, star2) in self.asterism:
-            ax.plot([star1.x_cart, star2.x_cart], [star1.y_cart, star2.y_cart], [star1.z_cart, star2.z_cart], color='b')
+            ax.plot([star1.x_cart, star2.x_cart], [star1.y_cart, star2.y_cart], [star1.z_cart, star2.z_cart], color='blue', linestyle='--', linewidth=1.0)
 
-        plt.legend([f'{x.hr_name} - {x.common_name}' for x in self.stars], loc=(1.1, 0.25))
+        plt.legend([f'{x.number} - {x.hr_name} - {x.common_name}' for x in self.stars], loc=(1.1, 0.25))
         plt.show()

@@ -7,10 +7,11 @@ import numpy as np
 
 class Star:
 
-    def __init__(self, hr_name:str, flamsteed_name:str, common_name:str):
+    def __init__(self, hr_name:str, flamsteed_name:str, common_name:str, number:int):
         self.hr_name = hr_name
         self.flamsteed_name = flamsteed_name
         self.common_name = common_name
+        self.number = number
         self.magnitude = None
         self.ar_deg = None
         self.dec_deg = None
