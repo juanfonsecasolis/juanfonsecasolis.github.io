@@ -8,7 +8,8 @@
 '''
 
 import matplotlib.pyplot as plt
-import matplotlib.image as plt_img 
+import matplotlib.image as plt_img
+import numpy as np
 
 class Coordinate2D:
     
@@ -51,9 +52,12 @@ plt.imshow(img_original)
 
 for star in stars:
     plt.plot(star.x, star.y, 'x', color='white')
-    plt.text(star.x+0.5, star.y+0.5, star.common_name, color='white')
+    plt.text(star.x+10.5, star.y-1.5, star.common_name, color='white')
 
-for line in asterism:
-    plt.plot([line[0].x, line[1].x], [line[0].y, line[1].y], color='white')
+distances = {}
+for (star1, star2) in asterism:
+    plt.plot([star1.x, star2.x], [star1.y, star2.y], color='white')
+    distances[star1.hr_name] = float(np.sqrt(np.power(star2.x-star1.x,2)+np.power(star2.y-star1.y,2)))
 
 plt.show()
+print(distances)
