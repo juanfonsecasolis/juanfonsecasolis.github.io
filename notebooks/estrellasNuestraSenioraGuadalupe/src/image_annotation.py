@@ -9,16 +9,8 @@
 
 import matplotlib.pyplot as plt
 import matplotlib.image as plt_img
+from coordinate_2d import Coordinate2D
 import numpy as np
-
-class Coordinate2D:
-    
-    def __init__(self, hr_name:str, flamsteed_name:str, common_name:str, x:float, y:float):
-        self.hr_name = hr_name
-        self.flamsteed_name = flamsteed_name
-        self.common_name = common_name
-        self.x = x
-        self.y = y
 
 HR_3757 = Coordinate2D('HR-3757', '23 Ursae Majoris', '23 UMa', 51.1, 421.1)
 HR_3323 = Coordinate2D('HR-3323', '01 Ursae Majoris', 'ο UMa', 50.7, 483.4)
