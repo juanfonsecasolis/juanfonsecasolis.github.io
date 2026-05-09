@@ -12,16 +12,16 @@ import matplotlib.image as plt_img
 from coordinate_2d import Coordinate2D
 import numpy as np
 
-HR_3757 = Coordinate2D('HR-3757', '23 Ursae Majoris', '23 UMa', 51.1, 421.1)
-HR_3323 = Coordinate2D('HR-3323', '01 Ursae Majoris', 'ο UMa', 50.7, 483.4)
-HR_4301 = Coordinate2D('HR-4301', '50 Ursae Majoris', 'Dubhe', 45.5, 343.0)
-HR_3888 = Coordinate2D('HR-3888', '29 Ursae Majoris', 'υ UMa', 94.8, 423.1)
-HR_4554 = Coordinate2D('HR-4554', '64 Ursae Majoris', 'Phecda', 111.6, 338.9)
-HR_4660 = Coordinate2D('HR-4660', '69 Ursae Majoris', 'Megrez', 77.6, 303.5)
-HR_4295 = Coordinate2D('HR-4295', '48 Ursae Majoris', 'Merak', 75.5, 373.4)
-HR_5191 = Coordinate2D('HR-5191', '85 Ursae Majoris', 'Alkaid', 62.9, 151.3)
-HR_5054 = Coordinate2D('HR-5054', '79 Ursae Majoris', 'Mizar', 42.2, 199.3) 
-HR_4905 = Coordinate2D('HR-4905', '77 Ursae Majoris', 'Alioth', 57.9, 243.6)
+HR_3323 = Coordinate2D('HR-3323', '01 Ursae Majoris', 'ο UMa', 50.7+126.3, 483.4+181.6)
+HR_3757 = Coordinate2D('HR-3757', '23 Ursae Majoris', '23 UMa', 51.1+126.3, 421.1+181.6)
+HR_4301 = Coordinate2D('HR-4301', '50 Ursae Majoris', 'Dubhe', 45.5+126.3, 343.0+181.6)
+HR_3888 = Coordinate2D('HR-3888', '29 Ursae Majoris', 'υ UMa', 94.8+126.3, 423.1+181.6)
+HR_4554 = Coordinate2D('HR-4554', '64 Ursae Majoris', 'Phecda', 111.6+126.3, 338.9+181.6)
+HR_4660 = Coordinate2D('HR-4660', '69 Ursae Majoris', 'Megrez', 77.6+126.3, 303.5+181.6)
+HR_4295 = Coordinate2D('HR-4295', '48 Ursae Majoris', 'Merak', 75.5+126.3, 373.4+181.6)
+HR_5191 = Coordinate2D('HR-5191', '85 Ursae Majoris', 'Alkaid', 62.9+126.3, 151.3+181.6)
+HR_5054 = Coordinate2D('HR-5054', '79 Ursae Majoris', 'Mizar', 42.2+126.3, 199.3+181.6) 
+HR_4905 = Coordinate2D('HR-4905', '77 Ursae Majoris', 'Alioth', 57.9+126.3, 243.6+181.6)
 
 asterism = [
     [HR_5191, HR_5054],
@@ -39,7 +39,7 @@ asterism = [
 stars = [HR_3757, HR_3323, HR_4301, HR_3888, HR_4554, HR_4660, HR_4295, HR_5191, HR_5054, HR_4905]
 
 plt.figure()
-img_original = plt_img.imread('../Virgen_de_guadalupe1_zoom.jpg')
+img_original = plt_img.imread('../img/Virgen_de_guadalupe1.jpg')
 plt.imshow(img_original)
 
 for star in stars:
