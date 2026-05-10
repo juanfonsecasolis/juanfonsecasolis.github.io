@@ -21,7 +21,7 @@ class ConstellationFactory:
         for star in constellation.stars:
             try:
                 star.magnitude, star.ar_deg, star.dec_deg = self.stellariumDao.get_star_information(star.common_name)
-                star.x_cart = self.r * np.cos(np.pi * 0.5 - star.ar_rad)
+                star.x_cart = self.r * np.cos(star.ar_rad - np.pi * 0.5)
                 star.y_cart = self.r * np.cos(star.ar_rad)
                 star.z_cart = self.r * np.sin(star.dec_rad)
             except Exception as e:
