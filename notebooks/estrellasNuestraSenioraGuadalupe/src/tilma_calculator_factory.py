@@ -3,8 +3,8 @@
   Estrellas al momento de la impregnación de Nuestra Señora de Guadalupe, un12 de diciembre
   de 1531 a las 6:45 am en la ciudad de México.
 '''
-from tilma_calculator_base import TilmaCalculatorBase
-from ursa_major_tilma_calculator import UrsaMajorTilmaCalculator
+from notebooks.estrellasNuestraSenioraGuadalupe.src.tilma_expert_base import TilmaExpertBase
+from notebooks.estrellasNuestraSenioraGuadalupe.src.tilma_expert import TilmaExpert
 
 class TilmaCalculatorFactory():
 
@@ -12,8 +12,8 @@ class TilmaCalculatorFactory():
         self.tilma_image_path = tilma_image_path
         pass
 
-    def get_tilma_calculator(self, constellation_name:str) -> TilmaCalculatorBase:
+    def get_tilma_calculator(self, constellation_name:str) -> TilmaExpertBase:
         if(constellation_name=='osa_mayor'):
-            return UrsaMajorTilmaCalculator(self.tilma_image_path)
+            return TilmaExpert(self.tilma_image_path)
         else:
             raise Exception(f'Unkown constellation {constellation_name}.')

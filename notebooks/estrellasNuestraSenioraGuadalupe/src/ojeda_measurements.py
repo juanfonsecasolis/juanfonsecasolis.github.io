@@ -8,7 +8,7 @@
 '''
 from collections import OrderedDict
 
-class OjedaMeasurements():
+class OjedaMeasurements:
 
     def __init__(self):
         pass

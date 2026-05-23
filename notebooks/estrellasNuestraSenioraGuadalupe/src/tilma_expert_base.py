@@ -14,7 +14,7 @@ from coordinate_2d import Coordinate2D
 from abc import ABC, abstractmethod
 from collections import OrderedDict
 
-class TilmaCalculatorBase(ABC):
+class TilmaExpertBase(ABC):
 
     def __init__(self, tilma_image_path):
         self.tilma_image_path = tilma_image_path
