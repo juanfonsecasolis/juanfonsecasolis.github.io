@@ -9,7 +9,7 @@
 
 import matplotlib.pyplot as plt
 import matplotlib.image as plt_img
-from coordinate_2d import Coordinate2D
+from constellation_doodle.coordinate_2d import Coordinate2D
 import numpy as np
 
 HR_3323 = Coordinate2D('HR-3323', '01 Ursae Majoris', 'ο UMa', 50.7+126.3, 483.4+181.6)

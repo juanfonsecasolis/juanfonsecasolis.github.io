@@ -8,13 +8,13 @@ from astronomer import Astronomer
 from constellation_factory import ConstellationFactory
 import pprint
 import numpy as np
-from collections import OrderedDict
 from ojeda_measurements import OjedaMeasurements
 from tilma_expert import TilmaExpert
+from constellation_doodle.constellation_doodle_factory import ConstellationDoodleFactory
 
 if __name__ == '__main__':
 
-    # Planisferio de Stellarium 
+    # Get planisphere from Stellarium 
     constellation_name = 'osa_mayor'
     constellation_factory = ConstellationFactory(time=2280600.9895833335, 
         latitude=19.427778244018555, longitude=-99.1177749633789, altitude=0)
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     constellation.print()
     constellation.plot()
 
-    # Distancia entre las estrellas del planisferio
+    # Get distance between stars in the planisphere
     star_pairs = constellation.get_pairs([
         ['HR-5191', 'HR-5054'],
         ['HR-5054', 'HR-4905'],
@@ -44,19 +44,17 @@ if __name__ == '__main__':
     distances_planisphere_this_study = list(dict_distances_planisphere_this_study.values()) 
     pprint.pprint(dict_distances_planisphere_this_study)
 
-    # Distancia entre las estrellas del manto
+    # Draw stars in the tilma and calculate the distance between them
     tilma_expert = TilmaExpert('../img/Virgen_de_guadalupe1.jpg')
-    tilma_expert.plot_constellation()
+    constellation_doodle = ConstellationDoodleFactory().get_constellation_doodle(constellation_name)
+    tilma_expert.plot_constellation(constellation_doodle)
 
     # plot asterisms and calculate the distances between pairs of stars
-    dict_distances_tilma_this_study = OrderedDict()
-    for (star1, star2) in tilma_expert.asterism():
-        dict_distances_tilma_this_study[(star1.hr_name, star2.hr_name)] = float(np.sqrt(np.power(star2.x-star1.x,2)+np.power(star2.y-star1.y,2)))
-
+    dict_distances_tilma_this_study = tilma_expert.get_distances_between_stars(constellation_doodle)
     pprint.pprint(dict_distances_tilma_this_study)
     distances_tilma_this_study = list(dict_distances_tilma_this_study.values())
 
-    # Método de correlación de Pearson
+    # Apply the Pearson correlation method
     def pearson_correlation(x:list[float], y:list[float]) -> float:
         return 100.0 * np.cov(x,y, bias=True)[0][1]/(np.std(x)*np.std(y)) # 'bias=True' para normalizar por 1/N
 
