@@ -7,6 +7,8 @@
   - https://stackoverflow.com/a/35287898  
 '''
 
+import sys
+sys.path.append('../')
 import matplotlib.pyplot as plt
 import matplotlib.image as plt_img
 from constellation_doodle.coordinate_2d import Coordinate2D
@@ -39,7 +41,7 @@ asterism = [
 stars = [HR_3757, HR_3323, HR_4301, HR_3888, HR_4554, HR_4660, HR_4295, HR_5191, HR_5054, HR_4905]
 
 plt.figure()
-img_original = plt_img.imread('../img/Virgen_de_guadalupe1.jpg')
+img_original = plt_img.imread('../../img/Virgen_de_guadalupe1.jpg')
 plt.imshow(img_original)
 
 for star in stars:
