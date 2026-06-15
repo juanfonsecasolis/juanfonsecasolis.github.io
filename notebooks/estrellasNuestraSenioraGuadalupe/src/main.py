@@ -7,15 +7,14 @@
 from astronomer import Astronomer
 from constellation_factory import ConstellationFactory
 import pprint
-import numpy as np
 from ojeda_measurements import OjedaMeasurements
 from tilma_expert import TilmaExpert
 from constellation_doodle.constellation_doodle_factory import ConstellationDoodleFactory
+from statistics import pearson_correlation
 
-if __name__ == '__main__':
+def start(constellation_name: str):
 
     # Get planisphere from Stellarium 
-    constellation_name = 'osa_mayor'
     constellation_factory = ConstellationFactory(time=2280600.9895833335, 
         latitude=19.427778244018555, longitude=-99.1177749633789, altitude=0)
     constellation = constellation_factory.get_constellation(constellation_name)
@@ -23,23 +22,10 @@ if __name__ == '__main__':
     constellation.plot()
 
     # Get distance between stars in the planisphere
-    star_pairs = constellation.get_pairs([
-        ['HR-5191', 'HR-5054'],
-        ['HR-5054', 'HR-4905'],
-        ['HR-4905', 'HR-4660'],
-        ['HR-4660', 'HR-4554'],
-        ['HR-4554', 'HR-4295'],
-        ['HR-4295', 'HR-4301'],
-        ['HR-4301', 'HR-4660'],
-        ['HR-4301', 'HR-3757'],
-        ['HR-3757', 'HR-3323'],
-        ['HR-3757', 'HR-3888']
-    ])
-
     astronomer = Astronomer()
-    dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(star_pairs, astronomer.no_transform, None, None, None)
-    #dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(star_pairs, astronomer.mercator, 0, 0, 1)
-    #dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(star_pairs, astronomer.mercator, 99.133209 * np.pi/180.0, 19.432608 * np.pi/180.0, 6.37814 * 10**3)
+    dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(constellation.asterism, astronomer.no_transform, None, None, None)
+    #dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(constellation.asterism, astronomer.mercator, 0, 0, 1)
+    #dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(constellation.asterism, astronomer.mercator, 99.133209 * np.pi/180.0, 19.432608 * np.pi/180.0, 6.37814 * 10**3)
 
     distances_planisphere_this_study = list(dict_distances_planisphere_this_study.values()) 
     pprint.pprint(dict_distances_planisphere_this_study)
@@ -55,9 +41,6 @@ if __name__ == '__main__':
     distances_tilma_this_study = list(dict_distances_tilma_this_study.values())
 
     # Apply the Pearson correlation method
-    def pearson_correlation(x:list[float], y:list[float]) -> float:
-        return 100.0 * np.cov(x,y, bias=True)[0][1]/(np.std(x)*np.std(y)) # 'bias=True' para normalizar por 1/N
-
     ojeda_measurements = OjedaMeasurements()
     distances_tilma_ojeda = list(ojeda_measurements.get_distances_tilma(constellation_name).values())
     distances_planisphere_ojeda = list(ojeda_measurements.get_distances_planisphere(constellation_name).values())
@@ -70,3 +53,6 @@ if __name__ == '__main__':
     print(f'Tilma Ojeda / planisferio Ojeda: {correlation_tilma_ojeda_planisphere_ojeda:.2f}%')
     print(f'Tilma Ojeda / planisferio este estudio: {correlation_tilma_ojeda_planisphere_this_study:.2f}%')
     print(f'Tilma este estudio / planisferio este estudio: {correlation_tilma_planisphere_this_study:.2f}%')
+
+if __name__ == '__main__':
+    start('osa_mayor')

@@ -51,8 +51,7 @@ class ConstellationFactory:
             [HR_4301, HR_4660],
             [HR_4301, HR_3757],
             [HR_3757, HR_3323],
-            [HR_3757, HR_3888],
-            [HR_3888, HR_3323]]
+            [HR_3757, HR_3888]]
 
         return stars, asterism
 
