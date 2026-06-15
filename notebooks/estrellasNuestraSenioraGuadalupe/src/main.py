@@ -24,9 +24,6 @@ def start(constellation_name: str):
     # Get distance between stars in the planisphere
     astronomer = Astronomer()
     dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(constellation.asterism, astronomer.no_transform, None, None, None)
-    #dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(constellation.asterism, astronomer.mercator, 0, 0, 1)
-    #dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(constellation.asterism, astronomer.mercator, 99.133209 * np.pi/180.0, 19.432608 * np.pi/180.0, 6.37814 * 10**3)
-
     distances_planisphere_this_study = list(dict_distances_planisphere_this_study.values()) 
     pprint.pprint(dict_distances_planisphere_this_study)
 
