@@ -11,6 +11,8 @@ from ojeda_measurements import OjedaMeasurements
 from tilma_expert import TilmaExpert
 from constellation_doodle.constellation_doodle_factory import ConstellationDoodleFactory
 from statistics import pearson_correlation
+import matplotlib.pylab as plt
+import numpy as np
 
 def start(constellation_name: str):
 
@@ -24,7 +26,7 @@ def start(constellation_name: str):
     # Get distance between stars in the planisphere
     astronomer = Astronomer()
     dict_distances_planisphere_this_study = astronomer.calculate_distances_between_stair_pairs(constellation.asterism, astronomer.no_transform, None, None, None)
-    distances_planisphere_this_study = list(dict_distances_planisphere_this_study.values()) 
+    distances_planisphere_this_study = np.array(list(dict_distances_planisphere_this_study.values()))
     pprint.pprint(dict_distances_planisphere_this_study)
 
     # Draw stars in the tilma and calculate the distance between them
@@ -35,13 +37,25 @@ def start(constellation_name: str):
     # plot asterisms and calculate the distances between pairs of stars
     dict_distances_tilma_this_study = tilma_expert.get_distances_between_stars(constellation_doodle)
     pprint.pprint(dict_distances_tilma_this_study)
-    distances_tilma_this_study = list(dict_distances_tilma_this_study.values())
+    distances_tilma_this_study = np.array(list(dict_distances_tilma_this_study.values()))
+
+    # plot the normalized distances for comparison purposes
+    ojeda_measurements = OjedaMeasurements()
+    distances_tilma_ojeda = np.array(list(ojeda_measurements.get_distances_tilma(constellation_name).values()))
+    distances_planisphere_ojeda = np.array(list(ojeda_measurements.get_distances_planisphere(constellation_name).values()))
+
+    pairs = [f'{x[0]} a {x[1]}' for x in dict_distances_planisphere_this_study.keys()]
+    plt.figure()
+    plt.plot(pairs, distances_planisphere_this_study/max(distances_planisphere_this_study), '--', color='lightgray')
+    plt.plot(pairs, distances_tilma_ojeda/max(distances_tilma_ojeda))
+    plt.plot(pairs, distances_tilma_this_study/max(distances_tilma_this_study))
+    plt.xticks(rotation=45, ha="right")
+    plt.xlabel('Pares de estrellas')
+    plt.ylabel('Distancias en tilma')
+    plt.legend(['Esfera celeste (km, normalizada)', 'Ojeda et al. (mm, normalizada)', 'Este estudio (px, normalizada)'])
+    plt.show()
 
     # Apply the Pearson correlation method
-    ojeda_measurements = OjedaMeasurements()
-    distances_tilma_ojeda = list(ojeda_measurements.get_distances_tilma(constellation_name).values())
-    distances_planisphere_ojeda = list(ojeda_measurements.get_distances_planisphere(constellation_name).values())
-
     correlation_tilma_ojeda_planisphere_ojeda = pearson_correlation(distances_tilma_ojeda, distances_planisphere_ojeda)
     correlation_tilma_ojeda_planisphere_this_study = pearson_correlation(distances_tilma_ojeda, distances_planisphere_this_study)
     correlation_tilma_planisphere_this_study  = pearson_correlation(distances_tilma_this_study, distances_planisphere_this_study)
