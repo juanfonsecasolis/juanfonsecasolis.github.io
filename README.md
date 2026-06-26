@@ -13,7 +13,7 @@ I have also specialized in digital signal processing, particularly audio. My mas
 * Apr 2025 >> [Principios SOLID](notebooks/html/principiosSolid.html)
 * Feb 2021 >> [Desmistificando la transformada de ondeletas](notebooks/html/transformadaOndeletas.html)
 * Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](notebooks/html/evaluacionCodecOpus.html)
-* Sep 2020 >> [Pairwise testing](v/html/pruebasDePares.html)
+* Sep 2020 >> [Pairwise testing](notebooks/html/pruebasDePares.html)
 * Ago 2020 >> [Pruebas de estrés desde la perspectiva de los sistemas lineales e invariantes en el tiempo](notebooks/html/pruebasEstresSistemasLIT.html)
 * Jun 2020 >> [Four exercises for understanting echoes and reverberations](notebooks/html/echoesAndReverberations.html)
 * Sep 2018 >> [Moving average for sending early alerts: the day when the electronic billing system failed in Costa Rica](notebooks/html/movingAverageEarlyAlerts.html)
