@@ -10,6 +10,7 @@ I have also specialized in digital signal processing, particularly audio. My mas
 <br>
 
 ## Jupyter notebooks
+* Jul 2025 >> [Estrellas en el manto de Nuestra Señora de Guadalupe](https://nbviewer.org/github/juanfonsecasolis/juanfonsecasolis.github.io/blob/master/notebooks/estrellasNuestraSenioraGuadalupe/estrellasMantoNuestraSenioraGuadalupe.ipynb)
 * Apr 2025 >> [Principios SOLID](notebooks/html/principiosSolid.html)
 * Feb 2021 >> [Desmistificando la transformada de ondeletas](notebooks/html/transformadaOndeletas.html)
 * Nov 2020 >> [Evaluación sobre la pérdida de la calidad en el códec OPUS](notebooks/html/evaluacionCodecOpus.html)
