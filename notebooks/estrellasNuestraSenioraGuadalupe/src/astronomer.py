@@ -22,13 +22,16 @@ class Astronomer:
     def computer_pearson_correlation(self, x:list[float], y:list[float]) -> float:
         return 100*np.cov(x,y, bias=True)[0][1]/(np.std(x)*np.std(y))
     
-    def calculate_distances_between_stair_pairs(self, constellation_pairs:list[list[Star]], func_transformacion, ar_0, dec_0, R) -> OrderedDict:
+    def orthodromic_distance(self, x_1:float, x_2:float, y_1:float, y_2:float) -> float:
+        return np.arccos(np.sin(y_1) * np.sin(y_2) + np.cos(y_1) * np.cos(y_2) * np.cos(x_1-x_2))
+
+    def calculate_distances_between_stair_pairs(self, constellation_pairs:list[list[Star]], transformation_func, distance_func, ar_0, dec_0, R) -> OrderedDict:
         km_per_degree = 111.23
         dict_distances_calc = OrderedDict()    # para preservar el orden de inserción empleamos un diccionario especial, en vez de {}
         for [star1, star2] in constellation_pairs:
-            x_1, y_1 = func_transformacion(star1.ar_rad, star1.dec_rad, ar_0, dec_0, R)
-            x_2, y_2 = func_transformacion(star2.ar_rad, star2.dec_rad, ar_0, dec_0, R)
-            d_rad = np.arccos(np.sin(y_1) * np.sin(y_2) + np.cos(y_1) * np.cos(y_2) * np.cos(x_1-x_2))
+            x_1, y_1 = transformation_func(star1.ar_rad, star1.dec_rad, ar_0, dec_0, R)
+            x_2, y_2 = transformation_func(star2.ar_rad, star2.dec_rad, ar_0, dec_0, R)
+            d_rad = distance_func(x_1, x_2, y_1, y_2)
             d_km = d_rad * 180.0/np.pi * km_per_degree
             dict_distances_calc[(star1.hr_name, star2.hr_name)] = float(np.round(d_km, 2))
         return dict_distances_calc
