@@ -5,6 +5,7 @@ nbformat
 notebook
 numpy
 scipy
+jupyterlab-markup
 
 # wavelets
 obspy
