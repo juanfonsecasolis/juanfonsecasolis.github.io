@@ -5,7 +5,14 @@
 NB_CONVERT="python3 -m nbconvert"
 FLAGS="--from markdown+footnotes --output-dir='../html' --to html --template=../template.tpl --config=../conf.json --embed-images"
 
-notebooks=("principiosSolid" "transformadaOndeletas" "evaluacionCodecOpus" "pruebasDePares" "pruebasEstresSistemasLIT" "echoesAndReverberations" "movingAverageEarlyAlerts" "interpolationAsymetricKernels")
+if [[ -z "$1" ]]; then
+    echo "No notebook name received, running script against all notebooks registered..."  
+    notebooks=("principiosSolid" "transformadaOndeletas" "evaluacionCodecOpus" "pruebasDePares" "pruebasEstresSistemasLIT" "echoesAndReverberations" "movingAverageEarlyAlerts" "interpolationAsymetricKernels")
+else
+    echo "Running script against '$1'..."
+    notebooks=("$1")
+fi
+
 for notebook in "${notebooks[@]}"; do
     cd "$notebook"
     $NB_CONVERT "$notebook.ipynb" $FLAGS
