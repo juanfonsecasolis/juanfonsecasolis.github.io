@@ -2,8 +2,9 @@
 # References
 # 1. https://stackoverflow.com/questions/12317483/array-of-arrays-in-bash#:~:text=The%20basis%20of%20this%20answer,it%20was%20an%20n%2Dd%20array.
 
-NB_CONVERT="python3 -m nbconvert"
-FLAGS="--output-dir='../html' --to html --template=../template.tpl --config=../conf.json --embed-images"
+PYTHON="python3"
+NB_CONVERT="${PYTHON} -m nbconvert"
+FLAGS="--output-dir='../html' --to html --template=../template.tpl --config=../conf.json --embed-images -HTMLExporter.sanitizer_options="{'tags': ['sup']}""
 
 if [[ -z "$1" ]]; then
     echo "No notebook name received, running script against all notebooks registered..."  
