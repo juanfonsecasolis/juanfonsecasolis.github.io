@@ -4,7 +4,7 @@
 
 PYTHON="python3"
 NB_CONVERT="${PYTHON} -m nbconvert"
-FLAGS="--output-dir='../html' --to html --template=../template.tpl --config=../conf.json --embed-images -HTMLExporter.sanitizer_options="{'tags': ['sup']}""
+FLAGS="--output-dir='../html' --to html --template=../template.tpl --config=../conf.json --embed-images"
 
 if [[ -z "$1" ]]; then
     echo "No notebook name received, running script against all notebooks registered..."  

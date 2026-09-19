@@ -27,17 +27,19 @@ class Constellation:
         for pair_name in pair_names:
             pair = [self.find_star_by_name(pair_name[0]), self.find_star_by_name(pair_name[1])]
             star_pairs.append(pair)
-
         return star_pairs
     
-    def plot(self) -> None:
+    def plot(self, view_array:list[float]=None) -> None:
         fig = plt.figure()
         ax = fig.add_subplot(projection='3d')
-        
+
         # draw stars
         for star in self.stars:
             ax.scatter(star.x_cart, star.y_cart, star.z_cart, marker='o', color='b')
-            ax.text(star.x_cart*1.01, star.y_cart*1.01, star.z_cart*1.01, star.number, color='b', fontweight='bold')
+            ax.text(star.x_cart*1.01, star.y_cart*1.01, star.z_cart*1.015, star.number, color='r', fontweight='bold')
+
+        if view_array != None:
+            ax.view_init(elev=view_array[0], azim=view_array[1], roll=view_array[2])
 
         # draw asterism
         for(star1, star2) in self.asterism:

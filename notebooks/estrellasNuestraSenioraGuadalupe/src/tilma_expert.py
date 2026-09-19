@@ -30,7 +30,7 @@ class TilmaExpert():
         # zoom
         stars_x = [star.x for star in constellation_doodle.stars]
         stars_y = [star.y for star in constellation_doodle.stars]
-        plt.xlim([min(stars_x)*0.9, max(stars_x)*1.1])
+        plt.xlim([min(stars_x)*0.9, max(stars_x)*1.3])
         plt.ylim([max(stars_y)*1.1, min(stars_y)*0.9])  # reverse order to avoid rotation
 
         # plot asterisms and calculate the distances between pairs of stars

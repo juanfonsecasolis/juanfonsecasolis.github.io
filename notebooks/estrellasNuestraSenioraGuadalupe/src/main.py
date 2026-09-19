@@ -22,6 +22,7 @@ def start(constellation_name: str):
     constellation = constellation_factory.get_constellation(constellation_name)
     constellation.print()
     constellation.plot()
+    constellation.plot([-28, 107, 113])
 
     # Get distance between stars in the planisphere
     astronomer = Astronomer()
