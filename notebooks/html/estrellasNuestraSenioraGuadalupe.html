@@ -7827,7 +7827,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Estrellas-en-el-manto-de-Nuestra-Se%C3%B1ora-de-Guadalupe">Estrellas en el manto de Nuestra Señora de Guadalupe<a class="anchor-link" href="#Estrellas-en-el-manto-de-Nuestra-Se%C3%B1ora-de-Guadalupe">¶</a></h1><p><a href="https://juanfonsecasolis.github.io/"></a>Juan M. Fonseca-Solís · julio 2025 - setiembre 2026</p>
 <hr/>
-<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">¶</a></h2><p>En este ipython notebook estudiamos el problema planteado por varios investigadores de determinar si las cuarenta y seis estrellas del manto celeste de Nuestra Señora de Guadalupe son constelaciones reales y si corresponden con aquellas visibles en el cielo de la Ciudad de México al momento de la impregnación. Este es un problema interesante de abordar, no solo por su dimensión catequética, sino también porque permite aplicar teoría de espacios vectoriales, astronomía, así como conceptos de probabilidad y estadística. En 2022, el Instituto de Estudios Guadalupanos de Mérida (ISEG) determinó que existe una correlación del 91,08% para la constelación Osa Mayor, visible en aquel momento. Aunque no logramos replicar el resultado exacto, proponemos un método alternativo, empleando el plugin "control-remoto" de Stellarium y la distancia euclidiana.</p>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">¶</a></h2><p>En este ipython notebook estudiamos el problema planteado por varios investigadores de determinar si las cuarenta y seis estrellas del manto celeste de Nuestra Señora de Guadalupe son constelaciones reales y si corresponden con aquellas visibles en el cielo de la Ciudad de México al momento de la impregnación. Este es un problema interesante de abordar, no solo por su dimensión catequética, sino también porque permite aplicar teoría de topología, astronomía, así como conceptos de probabilidad y estadística. En 2022, el Instituto de Estudios Guadalupanos de Mérida (ISEG) determinó que existe una correlación del 91,08% para la constelación Osa Mayor, visible en aquel momento. Aunque no logramos replicar el resultado exacto, logramos acercarnos empleando un método alternativo que usa el plugin "control-remoto" de Stellarium y la distancia euclidiana en una imagen rasterizada.</p>
 </div>
 </div>
 </div>
@@ -7851,7 +7851,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="El-estudio-de-Ojeda">El estudio de Ojeda<a class="anchor-link" href="#El-estudio-de-Ojeda">¶</a></h2><p>En 2022, David y Daniel Ojeda determinaron que la posición de las 46 estrellas del manto de Nuestra Señora de Guadalupe corresponde, en un 97,75%, a la posición de doce de las constelaciones visibles en el cielo de la Ciudad de México al momento aproximado de la impregnación (12 de diciembre de 1531 a las 6:45 am). El método empleado se describe abajo y los pasos se repiten para cada planetario (Redshift 7, Redshift 8, Stellarium y World Wide Telescope).</p>
+<h2 id="El-estudio-de-Ojeda">El estudio de Ojeda<a class="anchor-link" href="#El-estudio-de-Ojeda">¶</a></h2><p>En 2022, David y Daniel Ojeda determinaron que la posición de las 46 estrellas del manto de Nuestra Señora de Guadalupe corresponde, en un 97,75%, a la posición de doce de las constelaciones visibles en el cielo de la Ciudad de México al momento aproximado de la impregnación (12 de diciembre de 1531 a las 6:45 am). El método empleado es el siguiente.<sup></sup>2</p>
 <ol>
 <li>Con los parámetros indicados en la tabla 1, obtuvieron un planisferio visible en el cielo de la Ciudad de México.</li>
 </ol>
@@ -7883,15 +7883,15 @@ a.anchor-link {
 </tbody>
 </table>
 <ol start="2">
-<li><p>Del planisferio obtenido extrayeron las coordenadas ecuatoriales (ascensión recta o longitud, denotada por $\lambda$ , y declinación o latitud, denotada por $\varphi$) de las estrellas visibles en el cielo, es decir, aquellas con magnitud aparente menor o igual a 6 unidades.<sup></sup>2</p>
+<li><p>Del planisferio, extrayeron las coordenadas ecuatoriales de las estrellas visibles en el cielo, es decir, aquellas con magnitud aparente menor o igual a 6 unidades. Las coordenadas ecuatoriales se expresan en términos de ascensión recta o longitud, denotada por $\lambda$ , y declinación o latitud, denotada por $\varphi$.<sup></sup>3</p>
 </li>
-<li><p>Usando la transformada de Mercator, proyectaron las coordenadas ecuatoriales sobre la tilma, empezando por la Cruz del Sur. Mediante la proyección pudieron averiguar visualmente cuales constelaciones son contenidas en el manto azul-verde de la Virgen.</p>
+<li><p>Aplicando la transformada de Mercator, proyectaron las coordenadas ecuatoriales de las estrellas sobre la tilma, empezando por la Cruz del Sur. Mediante la proyección pudieron averiguar visualmente cuales constelaciones son contenidas en el manto azul-verde de la Virgen.</p>
 </li>
-<li><p>Para las constelaciones identificadas, calcularon las distancias entre los pares de estrellas adyacentes. En el caso de la tilma, midieron la distancia en milímetros con una regla; y en el caso del planisferio, emplearon la distancia ortodrómica o geodésica, como se muestra abajo [27]<sup></sup>3:
+<li><p>Para las constelaciones identificadas, calcularon las distancias entre los pares de estrellas adyacentes. En el caso de la tilma, midieron la distancia en milímetros con una regla; y en el caso del planisferio, emplearon la distancia ortodrómica o geodésica, como se muestra abajo [27]<sup></sup>4:
 $$
 d = 111{,}23\cos^{-1}\big[\sin(\varphi_1) \sin(\varphi_2) + \cos(\varphi_1) \cos(\varphi_2) \cos(\lambda_1-\lambda_2)\big]\quad [1].
 $$
-En la ecuación, 111,23 km es la distancia que cubre un grado al igualar el radio de la esfera celeste con el terrestre.<sup></sup>4</p>
+En la ecuación, 111,23 km es la distancia que cubre un grado al igualar el radio de la esfera celeste con el terrestre.<sup></sup>5</p>
 </li>
 <li><p>Manteniendo el mismo orden de pares adyacentes, representaron en dos vectores distintos, $\vec{x}, \vec{y}$, las distancias obtenidas y aplicaron el método de <a href="https://es.wikipedia.org/wiki/Coeficiente_de_correlaci%C3%B3n_de_Pearson">correlación de Pearson</a> para obtener una medida de similitud [2]:</p>
 </li>
@@ -8340,7 +8340,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="M%C3%A9todo-de-correlaci%C3%B3n-de-Pearson">Método de correlación de Pearson<a class="anchor-link" href="#M%C3%A9todo-de-correlaci%C3%B3n-de-Pearson">¶</a></h3><p>Para terminar, calculamos la correlación de Pearson entre las distancias del planisferio y las distancias en la tilma. Los datos de Ojeda et al. nos permitieron obtener el mismo porcentaje publicado por ellos (con una desviación de tan solo dos centésimas) [2], pero al usar las distancias calculadas por nosotros (en pixeles sobre la tilma) obtuvimos un porcentaje menor. Lamentablemente, no tenemos el estudio completo de Ojeda et al. para determinar si el porcentaje incrementa usando la transformada de Mercator.<sup></sup>5</p>
+<h3 id="M%C3%A9todo-de-correlaci%C3%B3n-de-Pearson">Método de correlación de Pearson<a class="anchor-link" href="#M%C3%A9todo-de-correlaci%C3%B3n-de-Pearson">¶</a></h3><p>Para terminar, calculamos la correlación de Pearson entre las distancias del planisferio y las distancias en la tilma. Los datos de Ojeda et al. nos permitieron obtener el mismo porcentaje publicado por ellos (con una desviación de tan solo dos centésimas) [2], pero al usar las distancias calculadas por nosotros (en pixeles sobre la tilma) obtuvimos un porcentaje menor. Lamentablemente, no tenemos el estudio completo de Ojeda et al. para determinar si el porcentaje incrementa usando la transformada de Mercator.<sup></sup>6</p>
 </div>
 </div>
 </div>
@@ -8442,17 +8442,28 @@ Además de presentarse en el lugar indígenamente correcto, su manto contiene un
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb2a844a-42d9-4dd9-963b-0b2fb7bc8236">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2e749806">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Notas">Notas<a class="anchor-link" href="#Notas">¶</a></h2><p><sup></sup>1 No podemos estudiar en este cuaderno la veracidad de estas afirmaciones, por lo que nos limitamos a mencionarlas para mostrar el interés que han generado.</p>
-<p><sup></sup>2 La magnitud aparente de una estrella no tiene unidades de medida, pues se toma del logaritmo de una razón entre la iluminancia (en luxes) de la estrella Vega y la estrella medida [28].</p>
-<p><sup></sup>3 La distancia se expresa en grados, minutos y segundos; donde un grado equivale a 60 minutos y un minuto a 60 segundos [29].</p>
-<p><sup></sup>4 La esfera celeste es un modelo imaginario en el que todas las estrellas se sitúan a la misma distancia respecto de la Tierra. Esto es conveniente en este estudio porque nos interesa solo su posición en el cielo (latitud y longitud), no su distancia en años luz respecto de la Tierra.</p>
-<p><sup></sup>5 Sabemos que esta transformada se podría haber usado más bien, a modo preliminar, para sobreponer el planisferio sobre la tilma e identificar visualmente la posición de las constelaciones antes de aplicar la distancia ortodrómica y el coeficiente de correlación de Pearson.</p>
+<p><sup></sup>2 El método propuesto por Ojeda y Ojeda se repite para los planetarios Redshift 7, Redshift 8, Stellarium y World Wide Telescope.</p>
+<p><sup></sup>3 La magnitud aparente de una estrella no tiene unidades de medida, pues se toma del logaritmo de una razón entre la iluminancia (en luxes) de la estrella Vega y la estrella medida [28].</p>
+<p><sup></sup>4 La distancia se expresa en grados, minutos y segundos; donde un grado equivale a 60 minutos y un minuto a 60 segundos [29].</p>
+<p><sup></sup>5 La esfera celeste es un modelo imaginario en el que todas las estrellas se sitúan a la misma distancia respecto de la Tierra. Esto es conveniente en este estudio porque nos interesa solo su posición en el cielo (latitud y longitud), no su distancia en años luz respecto de la Tierra.</p>
+<p><sup></sup>6 Sabemos que esta transformada se podría haber usado más bien, a modo preliminar, para sobreponer el planisferio sobre la tilma e identificar visualmente la posición de las constelaciones antes de aplicar la distancia ortodrómica y el coeficiente de correlación de Pearson.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb2a844a-42d9-4dd9-963b-0b2fb7bc8236">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Referencias">Referencias<a class="anchor-link" href="#Referencias">¶</a></h2><ol>
 <li><p>La Santa Sede. El libro del pueblo de Dios, la Biblia. Libreria Editrice Vaticana. 1990. URL: <a href="https://www.vatican.va/archive/ESL0506/__P118.HTM">https://www.vatican.va/archive/ESL0506/__P118.HTM</a> (última vez consultado el 2 de agosto de 2025).</p>
 </li>
