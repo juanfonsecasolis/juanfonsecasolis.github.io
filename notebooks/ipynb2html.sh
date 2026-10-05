@@ -7,10 +7,10 @@ NB_CONVERT="${PYTHON} -m nbconvert"
 FLAGS="--output-dir='../html' --to html --template=../template.tpl --config=../conf.json --embed-images"
 
 if [[ -z "$1" ]]; then
-    echo "No notebook name received, running script against all notebooks registered..."  
+    echo "No notebook name received, generating html for all notebooks registered..."  
     notebooks=("principiosSolid" "transformadaOndeletas" "evaluacionCodecOpus" "pruebasDePares" "pruebasEstresSistemasLIT" "echoesAndReverberations" "movingAverageEarlyAlerts" "interpolationAsymetricKernels")
 else
-    echo "Running script against '$1'..."
+    echo "Generating html for notebook '$1'..."
     notebooks=("$1")
 fi
 
