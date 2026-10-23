@@ -3,7 +3,7 @@
 Welcome. At this site, you can get information about my portfolio and areas of research.
 
 ## Software quality
-Since 2013, I have been working in software testing, performing end-to-end functional automation and manual verifications in web technologies. I am familiar with Selenium Webdriver (DotNet, Python, Java), Playwright (TS/JS), Appium, and performance. On 2024 I obtained the ISTQB CTFL 4.0 certification. Please take a look at my automation portfolio on [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
+Since 2013, I have been working in software testing, performing end-to-end functional automation and manual verifications in web technologies. I am familiar with Selenium Webdriver (DotNet, Python, Java), Playwright (TS/JS), Appium, and performance. Also, generative AI with Cursor. On 2024 I obtained the ISTQB CTFL 4.0 certification. Please take a look at my automation portfolio on [https://github.com/juanfonsecasolis-automation](https://github.com/juanfonsecasolis-automation). 
 
 ## Digital Signal Processing (DSP)
 I have also specialized in digital signal processing, particularly audio. My master thesis was about recognizing the sound of accessible pedestrian signals (APS), first studied by Mario Monge and Sharon Bejarano in 2013. I also like analysing other one-dimensional signals; like economical indicators or server response times. For content related to DSP, please take a look at my [Jupyter notebooks](https://juanfonsecasolis.github.io/#jupyter-notebooks) and [publications](https://juanfonsecasolis.github.io/#publications).
