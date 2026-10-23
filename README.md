@@ -1,3 +1,5 @@
+> "Perseverance is a virtue of the less brilliant." - Santiago Ramón y Cajal
+
 Welcome. At this site, you can get information about my portfolio and areas of research.
 
 ## Software quality
