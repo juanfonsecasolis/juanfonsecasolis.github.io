@@ -7900,8 +7900,8 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Although this formula works, it doesn't give you the flexibility of applying other types of interpolation (for instance, polynomic interpolation) without re-defining the equation. So, is there a way to perform interpolation using a generic method?</p>
-<h1 id="Interpolation-kernels">Interpolation kernels<a class="anchor-link" href="#Interpolation-kernels">¶</a></h1><p>The answer is yes, and for explaining the reason we need to introduce a mathematical animal called <em>interpolation kernel</em>, denoted by $I[n]$. When the interpolation kernel is <a href="https://en.wikipedia.org/wiki/Convolution">convolved</a> with each sample available, the sum of all convolutions provides the interpolated function, denoted by $\tilde{x}[n]$, as follows [2]:</p>
+<p>Although this formula works, it doesn't give you the flexibility to apply other types of interpolation (for instance, polynomic interpolation) without re-defining the equation. Is there a way to perform interpolation using a generic method?</p>
+<h1 id="Interpolation-kernels">Interpolation kernels<a class="anchor-link" href="#Interpolation-kernels">¶</a></h1><p>The answer is yes, but before explaining it we need to introduce a mathematical animal called <em>interpolation kernel</em>, denoted by $I[n]$. When the interpolation kernel is <a href="https://en.wikipedia.org/wiki/Convolution">convolved</a> with each sample available, the sum of all convolutions provides the interpolated function, denoted by $\tilde{x}[n]$, as follows [2]:</p>
 <p>$$
     \tilde{x}[n] = \{x*I\}[n] = \sum_{k=-\infty}^{\infty}{x[k]I \left[ \frac{n-kT}{T} \right] }  \quad (2),
 $$</p>
@@ -8332,11 +8332,11 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h1><p>Interpolation is a technique that allows approximation of unknown values between samples on a signal sampled at a regular interval. It can be either performed manually or by summing convolutions of the samples with an interpolation kernel. The shape of the kernel determines the types of interpolation (linear, polynomic, etc...). For signals sampled at an irregular period we can apply zero-padding, to upsample the signal, and then custom asymmetric kernels. We confirmed the findings using the LIBOR rate, a signal used to calculate loans in four maturity levels (months).</p>
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h1><p>Interpolation is a technique that allows approximation of unknown values between samples on a signal sampled at a regular interval. It can be either performed manually or by summing convolutions of the samples with an interpolation kernel. The shape of the kernel determines the types of interpolation (linear, polynomial, etc). For signals sampled at an irregular period, we can apply zero-padding to upsample the signal and then custom asymmetric kernels. We confirmed the findings using the LIBOR rate, a signal used to calculate loans in four maturity levels (months).</p>
 <h1 id="References:">References:<a class="anchor-link" href="#References:">¶</a></h1><ol>
-<li><p>Banco Central de Costa Rica. <strong>Tasa libor 1 mes</strong>. URL: <a href="https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&amp;CodCuadro=%20334">https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&amp;CodCuadro=%20334</a> (last consulted on 04/11/15).</p>
+<li><p>Banco Central de Costa Rica. Tasa libor 1 mes. URL: <a href="https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&amp;CodCuadro=%20334">https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&amp;CodCuadro=%20334</a> (last consulted on 04/11/15).</p>
 </li>
-<li><p>P. Prandoni, M. Vertterli. <strong>Signal processing for communications.</strong> EPFL press 2008.</p>
+<li><p>P. Prandoni, M. Vertterli. Signal processing for communications. EPFL press 2008.</p>
 </li>
 <li><p>Wikipedia contributors. (2019, August 1). Libor scandal. In Wikipedia, The Free Encyclopedia. Retrieved 23:50, August 15, 2019, from <a href="https://en.wikipedia.org/w/index.php?title=Libor_scandal&amp;oldid=908807968">https://en.wikipedia.org/w/index.php?title=Libor_scandal&amp;oldid=908807968</a>.</p>
 </li>
@@ -8462,7 +8462,7 @@ Last 12 month(s) Libor rates: [3.97829, 3.89643]
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<p><a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"></a><img alt="licencia Creative Commons" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA0UlEQVR42q2T1xaCMAyGk7SloCCI4gD33uP9X07AUuRGOdKc3jRNv/5JGgDjhkYtA1JmFxDKxVyHqN39U10BdFyhH2EbotaoIfCwKlVb0Cea9ZoBA4GWDUwysC1kuzTnsaqvCvqIf3u/A4cwQbuDnHsyTpAHac5TdZ4v1A1UO/wBHIAls650wixn7hLdH1qhCitgtYBKIYs8yWPkflVheR1zkTWA5AtMPIjSGoZPPG8rNawC69WQ9kvDXXbmNw08rQ38w7QtV8U7LppOiulZNmwv7nMJBY4ricMAAAAASUVORK5CYII=" style="border-width:0"><p style="text-align: center;"></p> This work is under a <a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"></a>Creative Commons Atribución 4.0 Internacional license. The website <a href="https://juanfonsecasolis.github.io/"></a>juanfonsecasolis.github.io It is a Costa Rican blog dedicated to independent research on issues related to digital signal processing. To reuse this article and cite the source you can use Bibtex:</img></p>
+<p><a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"></a><img alt="licencia Creative Commons" src="../img/80x15_by-nd.png" style="border-width:0"/><p style="text-align: center;"></p> This work is under a <a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"></a>Creative Commons Atribución 4.0 Internacional license. The website <a href="https://juanfonsecasolis.github.io/"></a>juanfonsecasolis.github.io It is a Costa Rican blog dedicated to independent research on issues related to digital signal processing. To reuse this article and cite the source you can use Bibtex:</p>
 <pre><code>@online{Fonseca2015,
   author = {Juan M. Fonseca-Solís},
   title = { Interpolating the Libor rate },
