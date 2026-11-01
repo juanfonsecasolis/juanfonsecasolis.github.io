@@ -7900,8 +7900,8 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Although this formula works, it doesn't give you the flexibility to apply other types of interpolation (for instance, polynomic interpolation) without re-defining the equation. Is there a way to perform interpolation using a generic method?</p>
-<h1 id="Interpolation-kernels">Interpolation kernels<a class="anchor-link" href="#Interpolation-kernels">¶</a></h1><p>The answer is yes, but before explaining it we need to introduce a mathematical animal called <em>interpolation kernel</em>, denoted by $I[n]$. When the interpolation kernel is <a href="https://en.wikipedia.org/wiki/Convolution">convolved</a> with each sample available, the sum of all convolutions provides the interpolated function, denoted by $\tilde{x}[n]$, as follows [2]:</p>
+<p>Although this formula works, it doesn't give you the flexibility to apply other types of interpolation, for instance: polynomic interpolation,  without re-defining the equation. The question is, is there a way to perform interpolation using a generic method?</p>
+<h1 id="Interpolation-kernels">Interpolation kernels<a class="anchor-link" href="#Interpolation-kernels">¶</a></h1><p>The answer is yes, through convolution and a mathematical animal called <em>interpolation kernel</em>, denoted by $I[n]$. When the interpolation kernel is <a href="https://en.wikipedia.org/wiki/Convolution">convolved</a> with each sample available, the sum of all convolutions provides the interpolated function, denoted by $\tilde{x}[n]$, as follows [2]:</p>
 <p>$$
     \tilde{x}[n] = \{x*I\}[n] = \sum_{k=-\infty}^{\infty}{x[k]I \left[ \frac{n-kT}{T} \right] }  \quad (2),
 $$</p>
